@@ -76,21 +76,19 @@ function LoginPage() {
 export default LoginPage;
 
 const AuthWrapper = styled.div`
-  margin:0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   justify-content: center;
-  width:80%;
+  width: 80%;
   form {
-    width: 100%
+    width: 100%;
     margin: 0 auto;
   }
   .form {
-    min-width:40rem;
+    min-width: 40rem;
     background: #0e101c;
-    
-
   }
   h1 {
     font-weight: 100;
@@ -111,8 +109,8 @@ const AuthWrapper = styled.div`
     box-sizing: border-box;
     width: 100%;
     border-radius: 1rem;
-    background-color:#f0f0f0;
-    border:none;
+    background-color: #f0f0f0;
+    border: none;
     padding: 1.2rem 1.5rem;
     margin-bottom: 10px;
     font-size: 1rem;
@@ -125,16 +123,4 @@ const AuthWrapper = styled.div`
     font-size: 1rem;
     font-weight: 400;
   }
-  // button[type="submit"],
-  // input[type="submit"] {
-  //   background: #f04124;
-  //   color: white;
-  //   text-transform: uppercase;
-  //   border: none;
-  //   margin-top: 40px;
-  //   padding: 20px;
-  //   font-size: 16px;
-  //   font-weight: 100;
-  //   letter-spacing: 10px;
-  // }
 `;
