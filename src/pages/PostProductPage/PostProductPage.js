@@ -7,11 +7,11 @@ function PostPruductPage() {
         <PostPruduct>
             <legend><b>중고거래 글쓰기</b></legend>
             <form action="#">
-                <PotoFileSet>
+                <FileSet>
                     <label for="input-file">
                         <img src="camera.svg"></img>
                     </label>
-                </PotoFileSet>
+                </FileSet>
                 <p><input type="file" id="input-file" style="display:none"></input></p>
                 <hr></hr>
                 <TitleSet>
@@ -98,7 +98,7 @@ const PostPruduct = styled.fieldset`
                         }
 `
 
-const PotoFileSet = styled.p`
+const FileSet = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;

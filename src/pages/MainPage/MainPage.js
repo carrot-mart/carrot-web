@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
+import {keywords} from"../../Tests"
 
 function MainPage() {
+    const PopularItemData = keywords.animals;
+    const PopularSearchData = keywords.animals;
+    
+
     return (    
-    <MainPage>
+    <>
         <MainRepresentative>
             <MainRepresentativeText>
                 <p id="Title">당신 근처의<br />당근 장터</p>
@@ -15,46 +20,21 @@ function MainPage() {
                 <div id="Img3"><img src="data/flower_5.jpg" /></div>
             </MainRepresentativeImg>
         </MainRepresentative>
-        <RepresentativeSerch>
+        <RepresentativeSearch>
             <ul>
+            {PopularItemData.강아지.map((item) => 
                 <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />디지털기기</a>
+                    <div>
+                        <img src={item.img}/>
+                        <br />
+                        <strong>
+                            {item.content}
+                        </strong>
+                    </div>
                 </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />인기매물</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />생활가전</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />가구/인테리어</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />유아동</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />생활/가공식품</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />유아도서</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />스포츠/레저</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />여성잡화</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />여성의류</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />남성패션/잡화</a>
-                </li>
-                <li>
-                    <a href=""><img src="data/뇌-2.png" /><br />게임/취미</a>
-                </li>
+            )}
             </ul>
-        </RepresentativeSerch>
+        </RepresentativeSearch>
         <PopularItems>
             <p id="Title">중고거래 인기매물</p>
             <ul>
@@ -72,10 +52,10 @@ function MainPage() {
                 </li>
             </ul>
         </PopularItems>
-        <PopularSerch>
+        <PopularSearch>
             <p id="Title">중고거래 인기검색</p>
-            <PopularSerchText>
-                <PopularSerchTextMenu>
+            <PopularSearchText>
+                <PopularSearchTextMenu>
                     <li><a href="">자전거</a></li>
                     <li><a href="">캠핑</a></li>
                     <li><a href="">패딩</a></li>
@@ -86,10 +66,10 @@ function MainPage() {
                     <li><a href="">난로</a></li>
                     <li><a href="">컴퓨터</a></li>
                     <li><a href="">아이패드</a></li>
-                </PopularSerchTextMenu>
-            </PopularSerchText>
+                </PopularSearchTextMenu>
+            </PopularSearchText>
             <div>
-                <PopularSerchIcon1>
+                <PopularSearchIcon1>
                     <li>
                         <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
                     </li>
@@ -99,10 +79,10 @@ function MainPage() {
                     <li>
                         <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
                     </li>
-                </PopularSerchIcon1>
+                </PopularSearchIcon1>
             </div>
                 <div>
-                    <PopularSerchIcon2>
+                    <PopularSearchIcon2>
                     <li>
                         <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
                     </li>
@@ -112,10 +92,10 @@ function MainPage() {
                     <li>
                         <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
                     </li>
-                </PopularSerchIcon2>
+                </PopularSearchIcon2>
             </div>
-        </PopularSerch>
-    </MainPage>
+        </PopularSearch>
+    </>
     );
 
 }
@@ -172,7 +152,7 @@ const MainRepresentativeImg = styled.div`
     }
 `
 
-const RepresentativeSerch = styled.div`
+const RepresentativeSearch = styled.div`
     width: auto;
     height: 200px;
     display: flex;
@@ -234,7 +214,7 @@ const PopularItems = styled.div`
         }
 `
 
-const PopularSerch = styled.div`
+const PopularSearch = styled.div`
     #Title {
         padding: 60px 200px;
         font-size: 35px;
@@ -246,7 +226,7 @@ const PopularSerch = styled.div`
         }
 `
 
-const PopularSerchText = styled.div`
+const PopularSearchText = styled.div`
     width: auto;
     height: 150px;
     display: flex;
@@ -256,7 +236,7 @@ const PopularSerchText = styled.div`
 
 
 `
-const PopularSerchTextMenu = styled.ul`
+const PopularSearchTextMenu = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -276,7 +256,7 @@ const PopularSerchTextMenu = styled.ul`
         }
 `
 
-const PopularSerchIcon1 = styled.ul `
+const PopularSearchIcon1 = styled.ul `
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,7 +280,7 @@ const PopularSerchIcon1 = styled.ul `
         }
 `
 
-const PopularSerchIcon2 = styled.ul`
+const PopularSearchIcon2 = styled.ul`
     display: flex;
     align-items: center;
     justify-content: center;
