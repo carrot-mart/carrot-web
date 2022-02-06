@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import TownTop from '../../img/TownImg/TownTop.png';
+import TownTop from '../../asset/TownImg/TownTop.png';
 
 // 연희님
 import TownInfo from "./TownInfo";
@@ -60,7 +60,7 @@ const TownInfoTopBox = styled.div`
   height: 800px;
   text-align: center;
   display: flex;
-  flexdirection: "row";
+  flex-direction: "row";
 `;
 
 const TownInfoTopBoxleft = styled.div`

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
 
-import Userdefault from '../../img/TownImg/userdefault.svg';
+import Userdefault from '../../asset/TownImg/userdefault.svg';
 
 function TownPostscript() {
     return (

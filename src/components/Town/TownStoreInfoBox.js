@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 
 
-import StorePicture2 from '../../img/TownImg/store2.png';
-import StorePicture3 from '../../img/TownImg/store3.png';
-import StorePicture8 from '../../img/TownImg/store8.png';
-import StorePicture4 from '../../img/TownImg/store4.svg';
-import StorePicture5 from '../../img/TownImg/store5.png';
-import StorePicture6 from '../../img/TownImg/store6.png';
-import StorePicture1 from '../../img/TownImg/store1.png';
-import StorePicture7 from '../../img/TownImg/store7.png';
-import PostscriptClick from '../../img/TownImg/PostscriptClick.png';
+import StorePicture2 from '../../asset/TownImg/store2.png';
+import StorePicture3 from '../../asset/TownImg/store3.png';
+import StorePicture8 from '../../asset/TownImg/store8.png';
+import StorePicture4 from '../../asset/TownImg/store4.svg';
+import StorePicture5 from '../../asset/TownImg/store5.png';
+import StorePicture6 from '../../asset/TownImg/store6.png';
+import StorePicture1 from '../../asset/TownImg/store1.png';
+import StorePicture7 from '../../asset/TownImg/store7.png';
+import PostscriptClick from '../../asset/TownImg/PostscriptClick.png';
 
 function TownStoreInfoBox() {
     return (

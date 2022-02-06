@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import Market from '../../img/TownImg/Market.svg';
-import Phone from '../../img/TownImg/Phone.svg';
-import Location from '../img/TownImg/Location.svg';
-import Clock from '../../img/TownImg/Clock.svg';
-import Mapsample from '../../img/TownImg/Mapsample.png';
+import Market from '../../asset/TownImg/Market.svg';
+import Phone from '../../asset/TownImg/Phone.svg';
+import Localimg from '../../asset/TownImg/Localimg.svg';
+import Clock from '../../asset/TownImg/Clock.svg';
+import Mapsample from '../../asset/TownImg/Mapsample.png';
 // import TownInfoCard from "./TownInfoCard";
 
 function TownInfoDetail() {
@@ -53,7 +53,7 @@ function TownInfoDetail() {
                                 <img src={Phone} alt="default" /> &nbsp; 02-588-0666
                             </li>
                             <li>
-                                <img src={Location.src} alt="default" /> &nbsp;
+                                <img src={Localimg} alt="default" /> &nbsp;
                                 <span>서울 동작구 동작대로7길 65 1층</span>
                             </li>
                         </ul>
