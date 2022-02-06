@@ -1,16 +1,12 @@
-import { Link } from "react-router-dom";
-
-import Navigation from "./components/Navigation";
-import MainPage from "./pages/MainPage/MainPage";
-import Bottom from "./components/Bottom";
+import logo from './logo.svg';
+import './App.css';
+import TownMainPage from "./pages/TownPage";
 
 function App() {
   return (
-    <>
-      <Navigation />
-      <MainPage />
-      <Bottom />
-    </>
+    <div className="App">
+      < TownMainPage />
+    </div>
   );
 }
 
