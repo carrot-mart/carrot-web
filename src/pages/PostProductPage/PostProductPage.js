@@ -4,14 +4,14 @@ import styled from 'styled-components';
 function PostPruductPage() {
 
     return (
-        <PostPruduct>
+        <Post>
             <legend><b>중고거래 글쓰기</b></legend>
             <form action="#">
-                <PotoFileSet>
+                <FileSet>
                     <label for="input-file">
                         <img src="camera.svg"></img>
                     </label>
-                </PotoFileSet>
+                </FileSet>
                 <p><input type="file" id="input-file" style="display:none"></input></p>
                 <hr></hr>
                 <TitleSet>
@@ -56,13 +56,9 @@ function PostPruductPage() {
                         <img src="plus.svg"></img>
                         &nbsp;자주 쓰는 문구
                     </label>
-                    <div className='model'>
-                        <h2>게시글에 쓰고 싶은 문구를 선택해주세요</h2>
 
-                        <input type="text" placeholder="문구를 입력해주세요"></input>
-                        <input type="submit" value = "추가"></input>
-                        
-                    </div>
+                    </ModalPage>
+
                 </OftenSentenceSet>
                 <p><input type="button" id="input_button" style="display:none"></input></p>
                 <hr></hr>
@@ -70,7 +66,7 @@ function PostPruductPage() {
                     <input type="submit" value="등록"></input>
                 </PostButton>
             </form>
-        </PostPruduct>
+        </Post>
 
         );
 
@@ -78,7 +74,7 @@ function PostPruductPage() {
 
 export default PostPruductPage;
 
-const PostPruduct = styled.fieldset`
+const Post = styled.fieldset`
     border: hidden;
     width: 600px;
     height: auto;
@@ -98,7 +94,7 @@ const PostPruduct = styled.fieldset`
                         }
 `
 
-const PotoFileSet = styled.p`
+const FileSet = styled.p`
     display: flex;
     align-items: center;
     justify-content: center;
