@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { useNavigate } from "react-router-dom";
 
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionLabel from "../../components/MyPage/SellBuyRecord/SectionLabel";
