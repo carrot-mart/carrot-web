@@ -16,9 +16,12 @@
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+<<<<<<< HEAD
     "redux": "^4.1.2",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.4.1",
+=======
+>>>>>>> e53d4fab6f72378390e6c45c7ac8b1b609d2d6ab
     "styled-components": "^5.3.3",
     "web-vitals": "^2.1.4"
   },
