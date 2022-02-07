@@ -2,11 +2,8 @@ import React, { component } from 'react';
 import { useState } from "react";
 import { BrowserRouter, Link, Routes ,Route , Router } from "react-router-dom";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-import Modal2 from "./Modal2";
-import Workspace from "../common/Workspace";
+
 
 export const Modal = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +31,7 @@ export const Modal = () => {
                <h1>채팅</h1>
                <Talk_search_box>
                  <a className="talk-search-btn" href="#">
-                 <FontAwesomeIcon icon={faSearch} className="search" />
+                 
                   </a> 
                   <input type="text" className="talk-search-txt" name=""placeholder="Search" />
                   
