@@ -14,7 +14,6 @@ export const Modal = () => {
 
     return (
         <>
-        {/* <BrowserRouter> */}
         <Body>
         <ModalContainer>
         <ModalBtn onClick={handleModal}>
@@ -34,7 +33,6 @@ export const Modal = () => {
     
         </ModalContainer>
         </Body>
-        {/* </BrowserRouter> */}
         </>
       );
     };
