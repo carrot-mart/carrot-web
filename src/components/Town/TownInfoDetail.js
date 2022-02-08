@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 import Market from '../../asset/TownImg/Market.svg';
 import Phone from '../../asset/TownImg/Phone.svg';
-import Localimg from '../../asset/TownImg/Localimg.svg';
+import Location from '../../asset/TownImg/Location.svg';
 import Clock from '../../asset/TownImg/Clock.svg';
 import Mapsample from '../../asset/TownImg/Mapsample.png';
-// import TownInfoCard from "./TownInfoCard";
+import TownInfoCard from "./TownInfoCard";
 
 function TownInfoDetail() {
     const [Customer, Customers] = useState(0);
@@ -23,7 +23,7 @@ function TownInfoDetail() {
                         <TownStoreDetailpageRound>프로필사진</TownStoreDetailpageRound>
 
                         <TownStoreDetailpageTitle>
-                            <h3>송곳</h3>
+                            {/* <h3>송곳</h3> */}
                             <p> &nbsp;지역&nbsp; | &nbsp;공감👨‍👩‍👧‍👦&nbsp;{Customer}</p>
                         </TownStoreDetailpageTitle>
 
@@ -53,7 +53,7 @@ function TownInfoDetail() {
                                 <img src={Phone} alt="default" /> &nbsp; 02-588-0666
                             </li>
                             <li>
-                                <img src={Localimg} alt="default" /> &nbsp;
+                                <img src={Location} alt="default" /> &nbsp;
                                 <span>서울 동작구 동작대로7길 65 1층</span>
                             </li>
                         </ul>

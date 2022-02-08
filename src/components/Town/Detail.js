@@ -1,69 +1,65 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import styled from "styled-components";
 
 
-import TownInfoCard from "./TownInfoCard";
-import TownInfoDetail from "./Detail";
+import TownDetailCard from "./DetailCard";
 
+function TownInfoDetail({ card }) {
+   
 
-function TownInfo() {
-
-    let [modal, setmodal] = useState(true);
     return (
-        <>
-            {
-                modal === true
-                    ? <TownDetailInfoModal modal={modal} setmodal={setmodal}></TownDetailInfoModal>
-                    : <TownStoreDetailPageModal />
-            }
-        </>
+        <TownStoreDetailPageBox>
+            <TownStoreDetailpageContainer>
 
+                {test.map((card, index) => (
+                    <div>
+                        <TownDetailCard card={card} >
+                        </TownDetailCard>
+                        
+                        <CardResponse>
+                            <hr />
+                            
+                    </CardResponse>
+                    </div>
+                ))}
+                
+            </TownStoreDetailpageContainer>
+        </TownStoreDetailPageBox>
     );
 }
 
-function TownDetailInfoModal(props){
-    return(
-        <TownInfoContainer  >
-            <h1>우리동네 정보</h1>
-            {test.map((card, index) => (
-                <div onClick={ () => { props.setmodal(false) }} >
-                    <TownInfoCard card={card} >
-                    </TownInfoCard>
-                </div>
-            ))}
-        </TownInfoContainer>
-    )
-}
+export default TownInfoDetail;
 
-
-function TownStoreDetailPageModal(){
-    return(
-        <TownInfoDetail />
-
-    )
-}
-
-
-export default TownInfo;
-
-const TownInfoContainer = styled.div`
-	width : 100%;
-	height:  700px;
-	display: grid;
-	margin : 15rem 0;
-	grid-gap: 2rem;
-	grid-template-columns: repeat(4, minmax(22%, auto));
-	grid-template-rows: 1fr 5fr 5fr;
-	background-color: rgba(238, 106, 84, 20%);
-	padding: 4rem 6rem;
-	h1 {
-		font-size: 3rem;
-		width: 100vw;
-		grid-column: span 4;
-		text-align: left;
-		margin: 5px 3px;
-	}
+const TownStoreDetailPageBox = styled.div`
+  width: 100%;
+  height: 100%;
 `;
+
+const TownStoreDetailpageContainer = styled.div`
+  border: 1px solid black;
+  background: white;
+  margin: 200px auto 0 auto;
+  width: 800px;
+  height: 1400px;
+`;
+
+
+const CardResponse = styled.div`
+	padding: 150px 70px;
+    height : 200px;
+
+	p {
+		align-items: center;
+		margin: 0;
+	}
+
+    hr {
+        width : 650px;
+    }
+
+`;
+
+
 
 const test = [
     {

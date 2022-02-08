@@ -39,7 +39,7 @@ export default TownMainPage;
 const TownMainContainer = styled.div`
     margin : 0 auto;
   width:1440px;
-  height:3000px;
+  height:4000px;
 `;
 
 const Nothing = styled.div`

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import TownTop from '../../asset/TownImg/TownTop.png';
+import Location from '../../asset/TownImg/Location.svg';
 
 // 연희님
 import TownInfo from "./TownInfo";
@@ -29,7 +30,7 @@ function TownInfoTopBoxModal(props) {
             <TownInfoTopBoxright>
                 <h1>
                     <img src={Location} />
-                    &nbsp; 내가 찾아보는 <br />
+                     내가 찾아보는 <br />
                     &nbsp;&nbsp;동네정보
                 </h1>
                 <h4>
@@ -41,7 +42,7 @@ function TownInfoTopBoxModal(props) {
                         props.setmodal(false);
                     }}
                 >
-                    <h3>★ 동네 설정하고 가게를 찾아보세요!</h3>
+                    <h3>★ 동네 설정하고 정보를 찾아보세요!</h3>
                 </TownInfoTopBoxButton>
             </TownInfoTopBoxright>
         </TownInfoTopBox>
@@ -86,14 +87,15 @@ const TownInfoTopBoxright = styled.div`
   }
 
   img {
-    width: 50px;
+    width: 40px;
+    padding-right : 10px;
   }
   h4 {
     font-size: 1.5em;
   }
 `;
 
-const TownInfoTopBoxButton = styled.div`
+const TownInfoTopBoxButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,4 +108,4 @@ const TownInfoTopBoxButton = styled.div`
   color: white;
 `;
 
-//Modal
+
