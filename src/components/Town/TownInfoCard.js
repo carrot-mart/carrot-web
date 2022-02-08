@@ -13,35 +13,40 @@ function TownInfoCard({ card }) {
     const [clickMessage, setClickMessage] = useState(false);
 
     return (
-        <StyledTownInfoCard >
-            <StyledTownInfoCardbutton >{card.cartegory}</StyledTownInfoCardbutton>
-            <CardContent>{card.content}</CardContent>
-            <CardWritterInfo>
-                <p className="cardWriter">{card.nickname}</p>
-                <p className="cardRegion">{card.region}</p>
-                <p className="time">{card.time}</p>
-            </CardWritterInfo>
-            <hr />
-            <CardResponse>
-                <ResponseButton
-                    clickEmoticon={clickEmoticon}
-                    onClick={() => setClickEmoticon(!clickEmoticon)}
-                >
-                    <p>공감하기</p>
-                    {clickEmoticon ? <BsEmojiSmileFill /> : <BsEmojiSmile />}
-                </ResponseButton>
-                <ResponseButton onClick={() => setClickMessage(!clickMessage)}>
-                    <p>답변하기</p>
-                    {clickMessage ? <BsChatFill /> : <BsChat />}
-                </ResponseButton>
-                <p className="views">조회수 {card.views}</p>
-            </CardResponse>
-        </StyledTownInfoCard>
+		<StyledTownInfoCardBox>
+			<StyledTownInfoCard >
+				<StyledTownInfoCardbutton >{card.cartegory}</StyledTownInfoCardbutton>
+				<CardContent>{card.content}</CardContent>
+				<CardWritterInfo>
+					<p className="cardWriter">{card.nickname}</p>
+					<p className="cardRegion">{card.region}</p>
+					<p className="time">{card.time}</p>
+				</CardWritterInfo>
+				<hr />
+				<CardResponse>
+					<ResponseButton
+						clickEmoticon={clickEmoticon}
+						onClick={() => setClickEmoticon(!clickEmoticon)}
+					>
+						<p>공감하기</p>
+						{clickEmoticon ? <BsEmojiSmileFill /> : <BsEmojiSmile />}
+					</ResponseButton>
+					<ResponseButton onClick={() => setClickMessage(!clickMessage)}>
+						<p>답변하기</p>
+						{clickMessage ? <BsChatFill /> : <BsChat />}
+					</ResponseButton>
+					<p className="views">조회수 {card.views}</p>
+				</CardResponse>
+			</StyledTownInfoCard>
+		</StyledTownInfoCardBox>
     );
 }
 
 export default TownInfoCard;
 
+
+const StyledTownInfoCardBox = styled.button`
+`;
 const StyledTownInfoCard = styled.button`
 	margin : 1.2rem 0;
 	display: flex;
@@ -79,29 +84,29 @@ const CardContent = styled.div`
 	overflow: hidden;
 	flex-grow: 1;
 	text-align: left;
-	font-size: 1.1rem;
+	font-size: 0.9rem;
 
-	p {
-		font-size: 2rem;
-	}
 `;
 
 const CardWritterInfo = styled.div`
 	display: flex;
-	font-size: 0.9rem;
 	color: grey;
 
 	.cardWriter {
 		font-weight: bolder;
+		font-size : 0.75rem;
 		margin-right: 0.5rem;
 	}
 
 	.cardRegion {
 		flex-grow: 1;
+		margin-right: 0.5rem;
+		font-size : 0.75rem;
 	}
 
 	p {
 		margin: 0.5rem 0 0 0;
+		font-size : 0.75rem;
 	}
 `;
 
@@ -123,7 +128,7 @@ const CardResponse = styled.div`
 const ResponseButton = styled.button`
 	display: flex;
 	align-items: center;
-	font-size: 1rem;
+	font-size: 0.8rem;
 	background-color: white;
 	border: none;
 	transition-duration: 0.2s;

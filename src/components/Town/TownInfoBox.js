@@ -22,30 +22,32 @@ function TownInfoBox() {
 
 function TownInfoTopBoxModal(props) {
     return (
-        <TownInfoTopBox>
-            <TownInfoTopBoxleft>
-                <img src={TownTop} />
-            </TownInfoTopBoxleft>
+        <TownInfoTopContainer>
+          <TownInfoTopBox>
+              <TownInfoTopBoxleft>
+                  <img src={TownTop} />
+              </TownInfoTopBoxleft>
 
-            <TownInfoTopBoxright>
-                <h1>
-                    <img src={Location} />
-                     내가 찾아보는 <br />
-                    &nbsp;&nbsp;동네정보
-                </h1>
-                <h4>
-                    우리 동네 소식이 궁굼한가요? <br />
-                    동네 주민이 남긴 진짜 동네 정보를 함께 확인해보세요!
-                </h4>
-                <TownInfoTopBoxButton
-                    onClick={() => {
-                        props.setmodal(false);
-                    }}
-                >
-                    <h3>★ 동네 설정하고 정보를 찾아보세요!</h3>
-                </TownInfoTopBoxButton>
-            </TownInfoTopBoxright>
-        </TownInfoTopBox>
+              <TownInfoTopBoxright>
+                  <h1>
+                      <img src={Location} />
+                      내가 찾아보는 <br />
+                      &nbsp;&nbsp;동네정보
+                  </h1>
+                  <h4>
+                      우리 동네 소식이 궁굼한가요? <br />
+                      동네 주민이 남긴 진짜 동네 정보를<br /> 함께 확인해보세요!
+                  </h4>
+                  <TownInfoTopBoxButton
+                      onClick={() => {
+                          props.setmodal(false);
+                      }}
+                  >
+                      <h3>★ 동네 설정하고 정보를 찾아보세요!</h3>
+                  </TownInfoTopBoxButton>
+              </TownInfoTopBoxright>
+          </TownInfoTopBox>
+        </TownInfoTopContainer>
     );
 }
 
@@ -55,9 +57,18 @@ function TownInfoModal(props) {
 
 export default TownInfoBox;
 
+const TownInfoTopContainer = styled.div`
+  width: 100%;
+  margin : 250px 0;
+  height: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: "row";
+`;
+
 const TownInfoTopBox = styled.div`
-  margin: 200px 50px;
-  width: 1440px;
+  margin: 0 auto;
+  width: 1150px;
   height: 800px;
   text-align: center;
   display: flex;
@@ -65,25 +76,26 @@ const TownInfoTopBox = styled.div`
 `;
 
 const TownInfoTopBoxleft = styled.div`
-  margin: 20px;
-  width: 700px;
+  width: 100%;
   height: 800px;
 
   img {
     width: 100%;
+    height: 700px;
   }
 `;
 
 const TownInfoTopBoxright = styled.div`
   float: right;
-
-  margin: 20px;
   margin-top: 150px;
-  width: 720px;
+  width: 100%;
   height: 400px;
+  
+  
 
   h1 {
-    font-size: 2.8em;
+    font-size: 2.7em;
+    margin-bottom:50px;
   }
 
   img {
@@ -92,6 +104,7 @@ const TownInfoTopBoxright = styled.div`
   }
   h4 {
     font-size: 1.5em;
+    margin-bottom:80px;
   }
 `;
 
@@ -100,8 +113,8 @@ const TownInfoTopBoxButton = styled.button`
   align-items: center;
   justify-content: center;
   font-size: 1.3em;
-  margin-left: 100px;
-  width: 520px;
+  margin-left: 60px;
+  width: 480px;
   height: 70px;
   border-radius: 40px;
   background-color: rgb(240, 65, 36);

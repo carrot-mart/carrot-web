@@ -12,9 +12,10 @@ import StorePicture1 from '../../asset/TownImg/store1.png';
 import StorePicture7 from '../../asset/TownImg/store7.png';
 import PostscriptClick from '../../asset/TownImg/PostscriptClick.png';
 
-function TownStoreInfoBox() {
+function TownStoreBox() {
     return (
-        <TownStoreLastBox>
+        <TownStoreContainer>
+            <TownStoreMainBox>
             <h1>우리동네 가게 소식</h1>
             <TownStoretitleList>
                 <TownStoretitleListButton>
@@ -73,70 +74,72 @@ function TownStoreInfoBox() {
                 다양한 동네가게를 볼 수 있어요.
             </TownStoreH3>
 
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379688'>
-                    <img src={StorePicture1} />
-                    <h4>여성의류전문점</h4>
-                    <h5>지니샵</h5>
-                    <p>전라남도 영암군 삼호읍</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379690'>
-                    <img src={StorePicture2} />
-                    <h4>카페</h4>
-                    <h5>봉명동내커피</h5>
-                    <p>광주광역시 동구 금남로2가</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379692'>
-                    <img src={StorePicture3} />
-                    <h4>네일샵</h4>
-                    <h5>쌍촌동 다예네일</h5>
-                    <p>광주광역시 서구 쌍촌동</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379697'>
-                    <img src={StorePicture4} />
-                    <h4>십자수/뜨개</h4>
-                    <h5>뜨개지니</h5>
-                    <p>경기도 양주시 만송동</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379698'>
-                    <img src={StorePicture5} />
-                    <h4>일반중식점</h4>
-                    <h5>라땅쟈 마라탕</h5>
-                    <p>경기도 시흥시 정왕동</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379700'>
-                    <img src={StorePicture6} />
-                    <h4>카페/디저트</h4>
-                    <h5>설빙장림점</h5>
-                    <p>부산광역시 사하구 장림동</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379707'>
-                    <img src={StorePicture7} />
-                    <h4>가스설비</h4>
-                    <h5>경동나비엔 음성중앙점</h5>
-                    <p>충청북도 음성군 대소면</p>
-                </a>
-            </TownStoreListDetail>
-            <TownStoreListDetail>
-                <a href='https://town.daangn.com/bp/1379897'>
-                    <img src={StorePicture8} />
-                    <h4>김치판매</h4>
-                    <h5>권여사김치찜</h5>
-                    <p>경기도 수원시 장안구 정자동</p>
-                </a>
-            </TownStoreListDetail>
+            <TownStoreDetailBox>
+                <TownStoreListDetail>
+                    <a href='https://town.daangn.com/bp/1379688'>
+                        <img src={StorePicture1} />
+                        <h4>여성의류전문점</h4>
+                        <h5>지니샵</h5>
+                        <p>전라남도 영암군 삼호읍</p>
+                    </a>
+                </TownStoreListDetail>
+                <TownStoreListDetail>
+                    <a href='https://town.daangn.com/bp/1379690'>
+                        <img src={StorePicture2} />
+                        <h4>카페</h4>
+                        <h5>봉명동내커피</h5>
+                        <p>광주광역시 동구 금남로2가</p>
+                    </a>
+                </TownStoreListDetail>
+                <TownStoreListDetail>
+                    <a href='https://town.daangn.com/bp/1379692'>
+                        <img src={StorePicture3} />
+                        <h4>네일샵</h4>
+                        <h5>쌍촌동 다예네일</h5>
+                        <p>광주광역시 서구 쌍촌동</p>
+                    </a>
+                </TownStoreListDetail>
+                <TownStoreListDetail>
+                    <a href='https://town.daangn.com/bp/1379697'>
+                        <img src={StorePicture4} />
+                        <h4>십자수/뜨개</h4>
+                        <h5>뜨개지니</h5>
+                        <p>경기도 양주시 만송동</p>
+                    </a>
+                </TownStoreListDetail>
+                <TownStoreListDetail>
+                    <a href='https://town.daangn.com/bp/1379698'>
+                        <img src={StorePicture5} />
+                        <h4>일반중식점</h4>
+                        <h5>라땅쟈 마라탕</h5>
+                        <p>경기도 시흥시 정왕동</p>
+                    </a>
+                </TownStoreListDetail>
+                <TownStoreListDetail>
+                    <a href='https://town.daangn.com/bp/1379700'>
+                        <img src={StorePicture6} />
+                        <h4>카페/디저트</h4>
+                        <h5>설빙장림점</h5>
+                        <p>부산광역시 사하구 장림동</p>
+                    </a>
+                </TownStoreListDetail>
+                <TownStoreListDetail>
+                    <a href='https://town.daangn.com/bp/1379707'>
+                        <img src={StorePicture7} />
+                        <h4>가스설비</h4>
+                        <h5>경동나비엔 음성중앙점</h5>
+                        <p>충청북도 음성군 대소면</p>
+                    </a>
+                </TownStoreListDetail>
+                <TownStoreListDetail>
+                    <a href='https://town.daangn.com/bp/1379897'>
+                        <img src={StorePicture8} />
+                        <h4>김치판매</h4>
+                        <h5>권여사김치찜</h5>
+                        <p>경기도 수원시 장안구 정자동</p>
+                    </a>
+                </TownStoreListDetail>
+            </TownStoreDetailBox>
 
             <TownStoreLastBoxButton>
                 <a href='https://town.daangn.com/'>
@@ -146,60 +149,65 @@ function TownStoreInfoBox() {
                     </h3>
                 </a>
             </TownStoreLastBoxButton>
-
-        </TownStoreLastBox>
+            </TownStoreMainBox>
+        </TownStoreContainer>
 
     );
 }
 
-export default TownStoreInfoBox;
+export default TownStoreBox;
 
 
 
-const TownStoreLastBox = styled.div`
-    margin : 400px 0;
-    width: 1440px;
+const TownStoreContainer = styled.div`
+    margin : 600px 0;
+    width: 100%;
+    
     height: 1300px ;
     background-color: rgba(255, 239, 207, 0.55);
-    padding : 30px 80px ;
+    padding : 5px 0 ;
+`;
 
+const TownStoreMainBox = styled.div`
+    width : 1200px;
+    margin : 0 auto;
     h1{
         font-size: 2.9em;
+        padding : 20px;
+        margin-left : 15px;
     }
+    
 `;
 
 const TownStoretitleList = styled.div`
-    width: 1440px;
-    height: 100px ;
-    margin-top: 24px;
-    margin-left: 16px;
+    width: 1150px;
+    margin : 0 auto;
+    height: 80px ;
     display: flex;
     justify-content: space-around;
-    align-items: end;
 `;
 
 
 const TownStoretitleListButton = styled.button`
     border: none;
-    padding: 15px 9px;
     background-color: rgba(255, 255, 255, 0.2);
 
     a {
         text-decoration: none;
         color: black;
         background-color: white;
-        padding: 1rem;
+        padding: 0.6rem;
         border-radius: 80px;
-        font-size : 1.8em;
+        font-size : 1.5em;
         text-decoration: none;
         border: 1px solid #cdcdcd;
     }
     a:hover{
         background-color: rgb(240, 65, 36);
         font-weight:bold;
-        padding: 1rem;
+        padding: 0.6rem;
         border-radius: 80px;
-        font-size : 1.8em;
+        font-size : 1.5em;
         color: white; 
         text-decoration: none;
     }
@@ -208,15 +216,23 @@ const TownStoretitleListButton = styled.button`
 
 const TownStoreH3 = styled.h3`
     font-size : 1.5em;
-    margin : 100px 20px 50px 20px;
+    margin : 80px 20px 50px 40px;
   `;
+
+
+const TownStoreDetailBox = styled.div`
+    width : 1150px;
+    margin : 0 auto;
+    
+`;
+
 
 const TownStoreListDetail = styled.div`
     background-color: #fff;
     float: left;
-    width: 300px;
+    width: 240px;
     height: 300px;
-    margin: 20px 30px;
+    margin: 10px 20px 70px 20px;
     border-radius:5px;
 
     a{
@@ -251,7 +267,7 @@ const TownStoreListDetail = styled.div`
 
 
 const TownStoreLastBoxButton = styled.div`
-    margin : 830px 450px;
+    margin : 0 auto;
     width:550px;
     height : 60px;
     padding : 5px;

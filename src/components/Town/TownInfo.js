@@ -24,13 +24,15 @@ function TownInfo() {
 function TownDetailInfoModal(props){
     return(
         <TownInfoContainer  >
-            <h1>우리동네 정보</h1>
-            {test.map((card, index) => (
-                <div onClick={ () => { props.setmodal(false) }} >
-                    <TownInfoCard card={card} >
-                    </TownInfoCard>
-                </div>
-            ))}
+            <TownInfoBox>
+                <h1>우리동네 정보</h1>
+                {test.map((card, index) => (
+                    <div onClick={ () => { props.setmodal(false) }} >
+                        <TownInfoCard card={card} >
+                        </TownInfoCard>
+                    </div>
+                ))}
+            </TownInfoBox>
         </TownInfoContainer>
     )
 }
@@ -47,16 +49,24 @@ function TownStoreDetailPageModal(){
 export default TownInfo;
 
 const TownInfoContainer = styled.div`
+    margin : 250px 0;
 	width : 100%;
-	height:  700px;
-	display: grid;
-	margin : 15rem 0;
+	height:  1050px;
+    background-color: rgba(238, 106, 84, 20%);
+	
+	
+`;
+
+const TownInfoBox = styled.div`
+    width : 1150px;
+    margin : 0 auto;
+    display: grid;
 	grid-gap: 2rem;
 	grid-template-columns: repeat(4, minmax(22%, auto));
 	grid-template-rows: 1fr 5fr 5fr;
-	background-color: rgba(238, 106, 84, 20%);
+	
 	padding: 4rem 6rem;
-	h1 {
+    h1 {
 		font-size: 3rem;
 		width: 100vw;
 		grid-column: span 4;
