@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import ChatPage from "./components/ChatPage/ChatPage";
+import LoginPage from "./components/LoginPage/LoginPage";
+import RegisterPage from "./components/RegisterPage/RegisterPage";
+import Navigation from "./components/Navigation";
+import Bottom from "./components/Bottom";
+import Modal from "./components/Modal";
+import MyPost from "./components/MyPost";
+
+
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+import { useDispatch, useSelector } from "react-redux";
+import { setUser, clearUser } from "./redux/actions/user_action";
+import { MainPanel } from "./components/ChatPage/MainPanel/MainPanel";
+
+
+function App(props) {
+  const navigate = useNavigate();
+  let dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.user.isLoading);
+
+  useEffect(() => {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/");
+        dispatch(setUser(user));
+
+        const uid = user.uid;
+
+      } else {
+        navigate("/login");
+        dispatch(clearUser());
+
+      }
+    });
+  }, []);
+
+  if (isLoading) {
+    return <div>...loading</div>;
+  } else {
+    return (
+      <>
+      <Navigation />
+      <MyPost />
+      <Modal />
+      <Bottom />
+      </>
+      // <Routes>
+      //   <Route path="/" element={<ChatPage />} />
+      //   <Route path="/login" element={<LoginPage />} />
+      //   <Route path="/register" element={<RegisterPage />} />
+      // </Routes>
+    );
+  }
 }
 
 export default App;
