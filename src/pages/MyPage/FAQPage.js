@@ -4,27 +4,25 @@ import styled from "styled-components";
 // 내부
 import FAQContentBox from "../../components/FAQPage/FAQContentBox";
 import HelpBox from "../../components/FAQPage/HelpMailBox";
+import Navigation from "../../components/Navigation";
+import Bottom from "../../components/Bottom";
 
 function FAQPage() {
   return (
-    <div>
+    <>
+      <Navigation />
       <QnAWrapping>
         <FAQContentBox />
         <HelpBox />
       </QnAWrapping>
-    </div>
+      <Bottom />
+    </>
   );
 }
 
 export default FAQPage;
 
 const QnAWrapping = styled.div`
-  margin: 0 auto;
-  width: 80%;
-  .title {
-    padding: 15px 30px;
-    text-align: left;
-    font-weight: bold;
-    font-size: 3.5vh;
-  }
+  margin: 8rem auto;
+  max-width: 1440px;
 `;

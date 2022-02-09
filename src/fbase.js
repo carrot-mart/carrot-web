@@ -9,7 +9,7 @@ import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyDzGnhAWWP9oac-Mnay0VvSrscYZ-FyIfA",
   authDomain: "react-firebase-app-1faf4.firebaseapp.com",
-  databaseURL: "https://react-firebase-app-1faf4-default-rtdb.firebaseio.com/",
+  databaseURL: "https://react-firebase-app-1faf4-default-rtdb.firebaseio.com",
   projectId: "react-firebase-app-1faf4",
   storageBucket: "react-firebase-app-1faf4.appspot.com",
   messagingSenderId: "181629495403",
@@ -18,8 +18,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const app = initializeApp(firebaseConfig);
 export const authentication = getAuth(app);
+
 export const firebaseInstance = firebase;
 export const authService = getAuth();
-// export const db = app.database();
 
 export default firebase;

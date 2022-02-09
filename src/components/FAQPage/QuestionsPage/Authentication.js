@@ -27,7 +27,20 @@ function Authentication() {
 export default Authentication;
 const AnserSection = styled.div`
   margin: 0 auto;
+  width: 100%;
   display: block;
+  a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    &:visited,
+    link {
+      color: #3d3d3d;
+      text-decoration: none;
+    }
+    &: hover {
+      color: #f04124;
+    }
+  }
 `;
 const List = styled(Link)`
   display: block;
