@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
+import "../../globalStyles.css";
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionLabel from "../../components/MyPage/SellBuyRecord/SectionLabel";
+import Navigation from "../../components/Navigation";
 import { keywords } from "../../Tests";
 
 function SellBuyRecord() {
@@ -16,14 +18,17 @@ function SellBuyRecord() {
   };
 
   return (
-    <StyledSellBuyRecord>
-      <SectionLabel
-        viewSell={viewSell}
-        setViewSell={setViewSell}
-        changeData={changeData}
-      />
-      <ProductGrid productData={data} />
-    </StyledSellBuyRecord>
+    <>
+      <Navigation />
+      <StyledSellBuyRecord>
+        <SectionLabel
+          viewSell={viewSell}
+          setViewSell={setViewSell}
+          changeData={changeData}
+        />
+        <ProductGrid productData={data} />
+      </StyledSellBuyRecord>
+    </>
   );
 }
 
@@ -32,5 +37,6 @@ export default SellBuyRecord;
 const StyledSellBuyRecord = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 10rem;
+  width: 80%;
+  margin: auto;
 `;

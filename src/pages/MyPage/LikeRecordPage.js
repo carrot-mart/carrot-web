@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import { useEffect, useState } from "react";
 
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionTitle from "../../components/MyPage/SectionTitle";
+import Navigation from "../../components/Navigation";
 import "../../globalStyles.css";
-import { useEffect, useState } from "react";
 import { db } from "../../fbase";
 
 function LikeRecordPage() {
@@ -24,10 +25,13 @@ function LikeRecordPage() {
   return isLoading ? (
     <div>loading</div>
   ) : (
-    <StyledLikeRecord>
-      <SectionTitle>찜한 목록</SectionTitle>
-      <ProductGrid productData={data} />
-    </StyledLikeRecord>
+    <>
+      <Navigation />
+      <StyledLikeRecord>
+        <SectionTitle>찜한 목록</SectionTitle>
+        <ProductGrid productData={data} />
+      </StyledLikeRecord>
+    </>
   );
 }
 
