@@ -18,6 +18,7 @@ const StyledSectionTitle = styled.div`
   align-items: center;
   margin: 1rem 0;
   width: 100%;
+  height: 10rem;
 `;
 
 const LineDivider = styled.hr`
@@ -31,9 +32,9 @@ const SectionLabel = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2.2rem;
-  width: 8rem;
-  margin: 0 1rem;
-  font-size: 1rem;
+  height: fit-content;
+  width: 100%;
+  margin: 1rem;
+  font-size: 2rem;
   font-weight: bolder;
 `;

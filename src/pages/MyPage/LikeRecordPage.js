@@ -1,7 +1,8 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionTitle from "../../components/MyPage/SectionTitle";
+import "../../globalStyles.css";
 import { useEffect, useState } from "react";
 import { db } from "../../fbase";
 
@@ -35,6 +36,7 @@ export default LikeRecordPage;
 const StyledLikeRecord = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 10rem;
+  width: 80%;
+  margin: auto;
   align-items: center;
 `;
