@@ -8,12 +8,14 @@ import SellBuyRecordPage from "./pages/MyPage/SellBuyRecordPage";
 import RegionSettingsPage from "./pages/MyPage/RegionSetttingsPage";
 import LikeRecordPage from "./pages/MyPage/LikeRecordPage";
 import SearchResultPage from "./pages/MainPage/SearchResultPage";
+import TownMainPage from "./pages/TownPage";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/town" element={<TownMainPage />} />
         <Route path="/mypage/likerecord" element={<LikeRecordPage />} />
         <Route path="/mypage/region" element={<RegionSettingsPage />} />
         <Route path="/mypage/sellbuyrecord" element={<SellBuyRecordPage />} />
