@@ -26,6 +26,7 @@ function TownDetailInfoModal(props){
         <TownInfoContainer  >
             <TownInfoBox>
                 <h1>우리동네 정보</h1>
+                
                 {test.map((card, index) => (
                     <div onClick={ () => { props.setmodal(false) }} >
                         <TownInfoCard card={card} >
