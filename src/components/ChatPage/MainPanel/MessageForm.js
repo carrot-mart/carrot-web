@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import mime from 'mime-types';
 import { getDatabase, ref, set, remove, push, child } from "firebase/database";
 import { getStorage, ref as strRef, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import styled from "styled-components";
 
 function MessageForm() {
     const chatRoom = useSelector(state => state.chatRoom.currentChatRoom)
@@ -52,12 +53,12 @@ function MessageForm() {
             return;
         }
         setLoading(true);
-        //firebase에 메시지를 저장하는 부분 
+
         try {
-            // await messagesRef.child(chatRoom.id).push().set(createMessage())
+
             await set(push(child(messagesRef, chatRoom.id)), createMessage())
 
-            // typingRef.child(chatRoom.id).child(user.uid).remove();
+ 
             await remove(child(typingRef, `${chatRoom.id}/${user.uid}`));
             setLoading(false)
             setContent("")
@@ -92,8 +93,7 @@ function MessageForm() {
         const metadata = { contentType: mime.lookup(file.name) }
         setLoading(true)
         try {
-            // https://firebase.google.com/docs/storage/web/upload-files#full_example
-            // Upload file and metadata to the object 'images/mountains.jpg'
+
             const storageRef = strRef(storage, filePath);
             const uploadTask = uploadBytesResumable(storageRef, file, metadata);
 
@@ -159,34 +159,13 @@ function MessageForm() {
     }
 
     return (
-        <div style={{
-            float:'left',
-            width:'100%',
-            height:'65px',
-            position:'relative',
-            border: '.3rem solid #ececec',
-            borderTop:'0',
-            borderRadius: '0px 0px 20px 0px',
-            backgroundColor:'white'
-            }}>
-        <div style={{
-            float:'left',
-            width:'10%',
-            height:'65px',
-            display:'flex',
-            alignItems:'center',
-            justifyContent:'center'
-            }}>
-            <button
-                onClick={handleOpenImageRef}
-                className="message-form-button"
-                style={{ width: '2.3rem',
-                         height:'2.3rem',
-                         float:'left',
-                         borderRadius:'100%'
-                        }}
-                disabled={loading ? true : false}
-            >
+        <StyledForm>
+            <PhotoUp>
+                <button
+                    onClick={handleOpenImageRef}
+                    className="message-form-button"
+                    disabled={loading ? true : false}
+                >
                 <BiImages size='20' />
             </button>
             <input
@@ -196,15 +175,11 @@ function MessageForm() {
                 ref={inputOpenImageRef}
                 onChange={handleUploadImage}
             />
-            </div>
+            </PhotoUp>
             
             
             {/* 대화 텍스트창 */}
-            <Form onSubmit={handleSubmit} style={{
-                width:'80%', 
-                float:'left',
-                height:'65px'
-                }}>
+            <Form onSubmit={handleSubmit} className='textbox'>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                     <Form.Control
                         onKeyDown={handleKeyDown}
@@ -221,32 +196,70 @@ function MessageForm() {
             }
             
             {/* 보내기와 업로드 버튼들 */}
-                <div style={{
-                    float:'left',
-                    width:'10%',
-                    height:'65px',
-                    display:'flex',
-                    alignItems:'center',
-                    justifyContent:'center'
-                    }}>
+                <SendMessage >
                     <button
                         onClick={handleSubmit}
                         className="message-form-button"
-                        style={{ 
-                            width: '2.3rem',
-                            height:'2.3rem',
-                            borderRadius:'100%',
-                            float:'left'
-                                }}
                         disabled={loading ? true : false}
                     >
                         <BsArrowUpShort size="24" color="#fff" />
                     </button>
-                    </div>
+                    </SendMessage>
             
 
-        </div>
+        </StyledForm>
     )
 }
 
-export default MessageForm
+export default MessageForm;
+
+const StyledForm = styled.div`
+float:left;
+width:100%;
+height:65px;
+position:relative;
+border: .3rem solid #ececec;
+border-top:0;
+border-radius: 0px 0px 20px 0px;
+background-color:white;
+.message-form-button{
+    width: 2.3rem;
+    height:2.3rem;
+    float:left;
+    borderRadius:100%;
+    background: #ff772b;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    font-size: 16px;
+    font-weight: 100;
+}
+.message-form-button:hover {
+    background: #b8571f;
+  }
+  .textbox{
+    width:80% ;
+    float:left;
+    height:65px;
+  }
+`;
+
+const PhotoUp = styled.div`
+float:left;
+width:10%;
+height:65px;
+display:flex;
+alignItems:center;
+justifyContent:center;
+
+`;
+
+const SendMessage = styled.div`
+float:left;
+width:10%;
+height:65px;
+display:flex;
+alignItems:center;
+justifyContent:center;
+
+`;

@@ -15,7 +15,7 @@ export const Bell = () => {
         <>
         <ModalContainer>
         <ModalBtn onClick={handleModal}>
-        {isOpen === false ?  <VscBell className='bellicon' size='25' color='black' /> : <VscBell className='bellicon2' size='25' color='#ff772b' />}
+        {isOpen === false ?  <VscBell className='bellicon' size='25' /> : <VscBell className='bellicon2' size='25' color='#ff772b' />} <h2>알림</h2>
         </ModalBtn>
     
         {isOpen ===false ?
@@ -45,7 +45,6 @@ export const Bell = () => {
     };
 
 const ModalBtn = styled.div`
-  background-color: none;
   text-decoration: none;
   border: none;
   display: flex;
@@ -53,16 +52,16 @@ const ModalBtn = styled.div`
   align-items: center;
   float:left; 
   margin-right:5px;
-  margin-top:15px;
-  color: white;
   border-radius: 30px;
   cursor: pointer;
+  h2{
+    margin-left:5px;
+  }
   
   
 `;
 const ModalContainer = styled.div`
   position:relative;
-  // margin-top:33px;
 
   
 
@@ -75,8 +74,8 @@ const ModalContainer = styled.div`
   `;
   const Bell_about = styled.div`
     position:absolute;
-    right:-190%;
-    top:150%;
+    right:-14%;
+    top:120%;
     clear:both;
     width:280px;
     height:360px;

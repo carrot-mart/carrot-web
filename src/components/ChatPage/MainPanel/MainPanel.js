@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { setUserPosts } from '../../../redux/actions/chatRoom_action';
 import Skeleton from '../../../commons/components/Skeleton';
 import { getDatabase, ref, onChildAdded, onChildRemoved, child, off } from "firebase/database";
+import styled from "styled-components";
 
 export class MainPanel extends Component {
 
@@ -187,22 +188,11 @@ export class MainPanel extends Component {
     render() {
         const { messages, searchTerm, searchResults, typingUsers, messagesLoading } = this.state;
         return (
-            <div style={{ 
-                height:'460px',
-                boxSizing:'border-box',
-                backgroundColor:'white'
-                }} >
+            <Mpstyled>
 
                 <MessageHeader handleSearchChange={this.handleSearchChange} />
                 {/* 메세지 로딩창 */}
-                <div style={{
-                    width: '100%',
-                    height: '325px',
-                    border: '.3rem solid #ececec',
-                    borderTop:'0',
-                    padding: '1rem',
-                    overflowY: 'auto'
-                }}>
+                <MessageLoad>
 
                     {this.renderMessageSkeleton(messagesLoading)}
 
@@ -215,11 +205,11 @@ export class MainPanel extends Component {
                     {this.renderTypingUsers(typingUsers)}
                     <div ref={node => (this.messageEndRef = node)}  />
 
-                </div>
+                </MessageLoad>
 
                 <MessageForm />
 
-            </div>
+            </Mpstyled>
         )
     }
 }
@@ -231,4 +221,19 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(MainPanel)
+export default connect(mapStateToProps)(MainPanel);
+
+const Mpstyled = styled.div`
+    height:460px;
+    boxSizing:border-box;
+    background-color:#ffffff;
+`;
+
+const MessageLoad = styled.div`
+    width: 100%;
+    height: 325px;
+    border: .3rem solid #ececec;
+    border-top:0;
+    padding: 1rem;
+    overflow-y: auto;
+`;

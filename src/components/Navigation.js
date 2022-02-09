@@ -28,7 +28,7 @@ function Navigation() {
                 <li className='menus'><Link to = "/" className='line'><h2>인기매물</h2></Link></li>
                 <li className='menus'><Link to = "/" className='line'><h2>동네정보</h2></Link></li>
                 <li className='menus'><Link to = "/" className='line'><h2><FaRegUser className='usericon' size='22' /> 나의당근</h2></Link></li>
-                <li className='menus'><Link to = "/" className='line'><Bell /> <h2>알림</h2></Link></li>   
+                <li className='menus'><Link to = "/" className='line'><Bell /></Link></li>   
             </ul>
         </Top_menu>
      </Top_head>
@@ -70,52 +70,48 @@ const Top_head = styled.div`
 const Top_search = styled.div`
 .search-box{
   position:absolute;
-  padding: 10px;
-  top: 25%;
-  left:20%;
+   padding:20px;
+   top: 30%;
+   left:20%;
   height: 30px;
   background-color: #fff;
   border: 1px solid #e9ecef;
   border-radius: 20px;
   width: 400px;
+  display:flex;
+  align-items:center;
 }
 .search-btn{
   text-decoration: none;
   float: right;
   width: 30px;
   height: 30px;
-  background-color: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: #b4b9be;
   font-size:16px;
 }
 .search-txt{
   display: flex;
-  width: 280px;
+  width: 380px;
   padding:0 6px;
   border:none;
   background: none;
   outline: none;
   float: left;
   font-size: 1rem;
-  line-height: 30px;
+  
+  
 }
 `;
 const Top_menu = styled.div`
 height:100px;
 position:absolute;
 right:10px;
-display:flex;
-align-items:center;
-justify-content: center;
 
 .menu_list{
- display:flex;
- align-items:center;
- justify-content: center;
+  height:100px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
 }
  .menus{
   display:flex;
@@ -132,6 +128,7 @@ justify-content: center;
    font-size:18px;
    font-weight:normal;
    float:left;
+   margin-top:10px;
  }
  .menus::after{
   content: "|";
@@ -142,11 +139,6 @@ justify-content: center;
 }
 .menus h2:hover{
   color:#b4b9be;
-}
-.My{
-  float:left;
-  margin-right:5px;
-  margin-top:15px;
 }
  .line{
   text-decoration:none;

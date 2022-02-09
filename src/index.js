@@ -9,7 +9,7 @@ import promiseMiddleware from 'redux-promise';
 import ReduxThunk from 'redux-thunk';
 import Reducer from './redux/reducers';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as Router, Route, Routes
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 

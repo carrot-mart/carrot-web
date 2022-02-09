@@ -5,7 +5,6 @@ import { AiFillGithub } from "react-icons/ai";
 
 function Bottom() {
     return (
-    <Body>
     <Footer>
            <Inner>
             <Link to = "/" className="mainlogo2">
@@ -38,29 +37,23 @@ function Bottom() {
             </Footer_inner>
             </Inner>
         </Footer>
-    </Body>
     );
   }
   
-  const Body = styled.body`
+  const Footer = styled.footer`
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    // min-width:1920px;
     font-family:'Nanum Gothic', sans-serif; 
     color:#333333;
-
-  ul,li{
-    list-style:none; 
-    float:left; 
-    margin:0; 
-    padding:0;
-  }
-  `;
-  const Footer = styled.footer`
-  width:100%;
-  height:370px;
-  background-color: #495057;
+    width:100%;
+    height:370px;
+    background-color: #495057;
+    ul,li{
+        list-style:none; 
+        float:left; 
+        margin:0; 
+        padding:0;
+    }
   `;
   const Inner = styled.div`
     position:relative;

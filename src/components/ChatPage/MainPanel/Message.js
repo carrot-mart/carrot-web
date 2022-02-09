@@ -1,6 +1,7 @@
 import React from 'react'
 import Media from 'react-bootstrap/Media';
 import moment from 'moment';
+import styled from "styled-components";
 
 function Message({ message, user }) {
 
@@ -17,7 +18,7 @@ function Message({ message, user }) {
 
     return (
         // 메세지 블럭 자체들
-        <div style={{ marginBottom: '3px', display:'flex' }}>
+        <MessageBlock style={{ marginBottom: '3px', display:'flex' }}>
             {/* 프로필모양 */}
             <img
                 style={{ borderRadius: '10px' }}
@@ -28,12 +29,10 @@ function Message({ message, user }) {
                 alt={message.user.name} 
             />
             {/* 메세지 창들 */}
-            <div style={{
-                backgroundColor: isMessageMine(message, user) && "#ECECEC"
-            }}>
+            <Balloon >
                 {/* 메세지 보낸 사람 이름 */}
                 <h6>{message.user.name}{" "}
-                    <span style={{ fontSize: '10px', color: 'gray' }}>
+                    <span>
                         {/* 보낸시간 */}
                         {timeFromNow(message.timestamp)}
                     </span>
@@ -41,13 +40,33 @@ function Message({ message, user }) {
                 {isImage(message) ?
                     <img style={{ maxWidth: '300px' }} alt="이미지" src={message.image} />
                     :
-                    <p>
+                    <p style={{
+                        backgroundColor: isMessageMine(message, user) && "#ECECEC",
+                        color: isMessageMine(message, user) && "#000000"
+                    }}>
                         {message.content}
                     </p>
                 }
-            </div>
-        </div>
+            </Balloon>
+        </MessageBlock>
     )
 }
 
-export default Message
+export default Message;
+
+const MessageBlock = styled.div`
+  margin-bottom:3px;
+  display:flex;
+`;
+const Balloon = styled.div`
+span{
+    font-size:10px; 
+    color: gray;
+}
+p{
+  background-color:#ff772b;
+  color:#ffffff;
+  border-radius:0px 20px 20px 20px;
+  padding:20px;
+}
+`;

@@ -15,6 +15,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import { Media } from 'react-bootstrap';
 import { getDatabase, ref, onValue, remove, child, update } from "firebase/database";
+import styled from "styled-components";
 
 
 
@@ -87,7 +88,7 @@ function MessageHeader({ handleSearchChange }) {
 
 
     return (
-        <div style={{
+        <HeaderStyled style={{
             width: '100%',
             height: '70px',
             border: '.3rem solid #ececec',
@@ -105,8 +106,18 @@ function MessageHeader({ handleSearchChange }) {
                     </Col>    
                 </Row>
             </Container>
-        </div>
+        </HeaderStyled>
     )
 }
 
-export default MessageHeader
+export default MessageHeader;
+
+const HeaderStyled = styled.div`
+width: 100%;
+height: 70px;
+border: .3rem solid #ececec;
+border-radius: 0px 20px 0px 0px;
+display:flex;
+align-items:center;
+background-color:white;
+`;

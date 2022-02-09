@@ -8,6 +8,8 @@ import { setPhotoURL } from '../../../redux/actions/user_action';
 import { getDatabase, ref, child, update } from "firebase/database";
 import { getAuth, signOut, updateProfile } from "firebase/auth";
 import { getStorage, ref as strRef, getDownloadURL, uploadBytesResumable } from "firebase/storage";
+import styled from "styled-components";
+
 
 
 function UserPanel() {
@@ -18,9 +20,9 @@ function UserPanel() {
     const handleLogout = () => {
         const auth = getAuth();
         signOut(auth).then(() => {
-            // Sign-out successful.
+
         }).catch((error) => {
-            // An error happened.
+
         });
     }
 
@@ -35,7 +37,7 @@ function UserPanel() {
 
         const metadata = { contentType: mime.lookup(file.name) };
         const storage = getStorage();
-        // https://firebase.google.com/docs/storage/web/upload-files#full_example
+
         try {
             //스토리지에 파일 저장하기 
             let uploadTask = uploadBytesResumable(strRef(storage, `user_image/${user.uid}`), file, metadata)
@@ -43,7 +45,7 @@ function UserPanel() {
 
             uploadTask.on('state_changed',
                 (snapshot) => {
-                    // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+
                     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
                     console.log('Upload is ' + progress + '% done');
                     switch (snapshot.state) {
@@ -56,25 +58,24 @@ function UserPanel() {
                     }
                 },
                 (error) => {
-                    // A full list of error codes is available at
-                    // https://firebase.google.com/docs/storage/web/handle-errors
+
                     switch (error.code) {
                         case 'storage/unauthorized':
-                            // User doesn't have permission to access the object
+ 
                             break;
                         case 'storage/canceled':
-                            // User canceled the upload
+
                             break;
 
-                        // ...
+
 
                         case 'storage/unknown':
-                            // Unknown error occurred, inspect error.serverResponse
+
                             break;
                     }
                 },
                 () => {
-                    // Upload completed successfully, now we can get the download URL
+
                     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
                         // 프로필 이미지 수정
                         updateProfile(user, {
@@ -88,20 +89,19 @@ function UserPanel() {
                     });
                 }
             );
-            // console.log('uploadTaskSnapshot', uploadTaskSnapshot)
+
         } catch (error) {
             console.log(error)
         }
     }
 
     return (
-        <div>
-            {/* Logo */}
-            <h3 style={{ color: 'white' }}>
+        <StyledUser>
+            <h3>
                 <IoIosChatboxes />{" "} 당근채팅
             </h3>
 
-            <div style={{ display: 'flex', marginBottom: '1rem' }}>
+            <Droplist>
                 <Dropdown>
                     <Dropdown.Toggle
                         style={{ background: 'transparent', border: '1px solid white' }}
@@ -110,15 +110,12 @@ function UserPanel() {
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
-                        {/* <Dropdown.Item onClick={handleOpenImageRef}>
-                            프로필 사진 변경
-                        </Dropdown.Item> */}
                         <Dropdown.Item onClick={handleLogout}>
                             로그아웃
                         </Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown> 
-            </div>
+            </Droplist>
 
          <input
                 onChange={handleUploadImage}
@@ -127,8 +124,20 @@ function UserPanel() {
                 ref={inputOpenImageRef}
                 type="file"
             /> 
-        </div>
+        </StyledUser>
     )
 }
 
-export default UserPanel
+export default UserPanel;
+
+const StyledUser = styled.div`
+  h3{
+      color:white;
+  }
+`;
+
+const Droplist = styled.div`
+display: flex; 
+margin-bottom: 1rem;
+`;
+

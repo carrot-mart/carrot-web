@@ -10,6 +10,7 @@ import { getDatabase, ref, onChildAdded } from "firebase/database";
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import { AiOutlineSearch } from 'react-icons/ai';
+import styled from "styled-components";
 
 export class DirectMessages extends Component {
 
@@ -83,7 +84,7 @@ export class DirectMessages extends Component {
         const { users } = this.state;
         return (
             
-            <div>
+            <Dm>
                 <InputGroup className="mb-3">
                             <InputGroup.Prepend >
                                 <InputGroup.Text id="basic-addon1"style={{backgroundColor:'#e5e5e5'}}>
@@ -101,7 +102,7 @@ export class DirectMessages extends Component {
                 {/* 채팅상대 리스트 */}
                     {this.renderDirectMessages(users)}
                 </ul>
-            </div>
+            </Dm>
         )
     }
 }
@@ -113,3 +114,10 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(DirectMessages);
+
+const Dm = styled.div`
+ul{
+    list-style-type:none; 
+    padding:0;
+}
+`;

@@ -2,24 +2,40 @@ import React from 'react'
 import SidePanel from './SidePanel/SidePanel';
 import MainPanel from './MainPanel/MainPanel';
 import { useSelector } from 'react-redux';
+import styled from "styled-components";
+
 
 function ChatPage() {
     const currentUser = useSelector(state => state.user.currentUser)
     const currentChatRoom = useSelector(state => state.chatRoom.currentChatRoom)
+
     return (
-        <div style={{ display: 'flex' }}>
-            <div style={{ width: '275px'}}>
+        <Chat>
+            <ChatSide>
                 <SidePanel
                     key={currentUser && currentUser.uid}
                 />
-            </div>
-            <div style={{ width: '500px'}}>
+            </ChatSide>
+            <ChatMain>
                 <MainPanel
                     key={currentChatRoom && currentChatRoom.id}
                 />
-            </div>
-        </div>
+            </ChatMain>
+        </Chat>
     )
 }
 
-export default ChatPage
+export default ChatPage;
+
+const Chat = styled.div`
+display: flex;
+
+`;
+const ChatSide = styled.div`
+width: 275px;
+
+`;
+const ChatMain = styled.div`
+width: 500px;
+
+`;
