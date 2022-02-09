@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import { BsXCircle, BsPlusLg } from "react-icons/bs";
 
 import SectionTitle from "../../components/MyPage/SectionTitle";
+import "../../globalStyles.css";
 
 function RegionSettingsPage() {
   const [isSelected, setIsSelected] = useState(false);
@@ -35,7 +36,8 @@ export default RegionSettingsPage;
 const StyledRegionSettings = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 10rem;
+  width: 80%;
+  margin: auto;
   align-items: center;
 `;
 
@@ -53,7 +55,7 @@ const RegionSelectedBox = styled.div`
   background-color: rgb(255, 119, 43);
   border-radius: 5rem;
   width: 100%;
-  height: 3rem;
+  height: 5rem;
   color: white;
   justify-items: center;
   padding: 0 1.2rem;
@@ -66,7 +68,7 @@ const RegionNotSelectedBox = styled.div`
   border: 1px solid rgb(196, 196, 196);
   border-radius: 5rem;
   width: 100%;
-  height: 3rem;
+  height: 5rem;
   color: rgb(107, 107, 107);
   padding: 0 1.2rem;
   justify-content: center;
