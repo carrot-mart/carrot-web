@@ -2,25 +2,30 @@ import styled, { css } from "styled-components";
 
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionTitle from "../../components/MyPage/SectionTitle";
-import { keywords } from "../../Tests";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../../fbase";
 
 function LikeRecordPage() {
+  const keyword = "plants";
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
-  const test = keywords.animals.all;
-  console.log(test);
 
-  // const dataRef = db.ref("keywords/animals/전체");
-  // dataRef.on("value", (snapshot) => {
-  //   setData(snapshot.val());
-  // });
+  useEffect(() => {
+    setIsLoading(true);
+    db.ref(`keywords/${keyword}/전체`)
+      .once("value")
+      .then((snapshot) => {
+        setIsLoading(false);
+        setData(snapshot.val());
+      });
+  }, [keyword]);
 
-  return (
+  return isLoading ? (
+    <div>loading</div>
+  ) : (
     <StyledLikeRecord>
       <SectionTitle>찜한 목록</SectionTitle>
-      <ProductGrid productData={test} />
-      <tempBox />
+      <ProductGrid productData={data} />
     </StyledLikeRecord>
   );
 }
@@ -32,10 +37,4 @@ const StyledLikeRecord = styled.div`
   flex-direction: column;
   padding: 1rem 10rem;
   align-items: center;
-`;
-
-const tempBox = styled.div`
-  width: 100%;
-  background-color: red;
-  height: 100px;
 `;
