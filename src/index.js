@@ -17,6 +17,7 @@ ReactDOM.render(
         <Route path="/mypage/likerecord" element={<LikeRecordPage />} />
         <Route path="/mypage/region" element={<RegionSettingsPage />} />
         <Route path="/mypage/sellbuyrecord" element={<SellBuyRecordPage />} />
+        <Route path="/mypage/regionsettings" element={<RegionSettingsPage />} />
         <Route path="/product/:id" element={<SearchResultPage />} />
       </Routes>
     </BrowserRouter>
