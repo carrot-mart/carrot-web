@@ -1,14 +1,21 @@
 import React, { useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import "./globalStyles.css";
-import MyPostPage from "./pages/MyPage/MyPostPage";
-import PostProductPage from "./pages/PostProductPage/PostProductPage";
-import Modal from "./components/Modal";
+import { useDispatch, useSelector } from "react-redux";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
-import { useDispatch, useSelector } from "react-redux";
 import { setUser, clearUser } from "./redux/actions/user_action";
 import { MainPanel } from "./components/ChatPage/MainPanel/MainPanel";
+import "./globalStyles.css";
+import Navigation from "./components/Navigation"
+import Footer from "./components/Footer"
+import MyPostPage from "./pages/MyPage/MyPostPage";
+import PostProductPage from "./pages/PostProductPage/PostProductPage";
+import TownPage from "./pages/TownPage";
+import MainPage from "./pages/MainPage/MainPage";
+import Modal from "./components/Modal";
+
+
+
 
 
 function App(props) {
@@ -38,7 +45,10 @@ function App(props) {
   } else {
   return (
     <>
-      <MyPostPage />
+      <Navigation />
+      <MainPage />
+      <Modal />
+      <Footer />
     </>
   );
 }
