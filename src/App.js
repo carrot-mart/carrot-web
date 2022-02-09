@@ -1,10 +1,15 @@
 import "./globalStyles.css";
 import TownMainPage from "./pages/TownPage";
+import LikeRecordPage from "./pages/MyPage/LikeRecordPage";
+import { Link } from "react-router-dom";
+import SearchResultPage from "./pages/MainPage/SearchResultPage";
 
 function App() {
   return (
     <div className="App">
-      <TownMainPage />
+      <Link to="/mypage/likerecord">Like Record</Link>
+      <Link to="/mypage/sellbuyrecord">SellBuyRecird</Link>
+      <SearchResultPage />
     </div>
   );
 }
