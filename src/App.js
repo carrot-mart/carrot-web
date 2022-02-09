@@ -1,11 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import "./globalStyles.css";
 import TownMainPage from "./pages/TownPage";
 
 function App() {
   return (
     <div className="App">
-      < TownMainPage />
+      <TownMainPage />
     </div>
   );
 }
