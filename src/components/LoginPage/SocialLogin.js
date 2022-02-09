@@ -1,5 +1,4 @@
 // 외부
-import React from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { AiFillFacebook } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +7,7 @@ import styled from "styled-components";
 import { authService } from "../../fbase";
 import { Routes, useRoutes } from "react-router";
 // import firebase from "firebase/compat/auth";
-import fbase, { authentication, firebaseInstance } from "../../firebase";
+import fbase, { authentication, firebaseInstance } from "../../fbase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import fbase from "../firebase";
+import fbase from "../fbase";
 import styled from "styled-components";
 
 // 내부
