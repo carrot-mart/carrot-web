@@ -1,9 +1,9 @@
-import {
-    BsChat,
-    BsChatFill,
-    BsEmojiSmile,
-    BsEmojiSmileFill,
-} from "react-icons/bs";
+// import {
+//     BsChat,
+//     BsChatFill,
+//     BsEmojiSmile,
+//     BsEmojiSmileFill,
+// } from "react-icons/bs";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
@@ -28,11 +28,11 @@ function TownInfoCard({ card }) {
                     onClick={() => setClickEmoticon(!clickEmoticon)}
                 >
                     <p>공감하기</p>
-                    {clickEmoticon ? <BsEmojiSmileFill /> : <BsEmojiSmile />}
+                    {/* {clickEmoticon ? <BsEmojiSmileFill /> : <BsEmojiSmile />} */}
                 </ResponseButton>
                 <ResponseButton onClick={() => setClickMessage(!clickMessage)}>
                     <p>답변하기</p>
-                    {clickMessage ? <BsChatFill /> : <BsChat />}
+                    {/* {clickMessage ? <BsChatFill /> : <BsChat />} */}
                 </ResponseButton>
                 <p className="views">조회수 {card.views}</p>
             </CardResponse>

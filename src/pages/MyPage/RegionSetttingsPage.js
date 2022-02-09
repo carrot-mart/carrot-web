@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import { BsXCircle, BsPlusLg } from "react-icons/bs";
+// import { BsXCircle, BsPlusLg } from "react-icons/bs";
 
 import SectionTitle from "../../components/MyPage/SectionTitle";
 
@@ -16,13 +16,13 @@ function RegionSettingsPage() {
         <RegionSelectedBox>
           <RegionText>{regionName}</RegionText>
           <IconButton onClick={select_btn}>
-            <BsXCircle />
+            {/* <BsXCircle /> */}
           </IconButton>
         </RegionSelectedBox>
       ) : (
         <RegionNotSelectedBox>
           <IconButton onClick={select_btn}>
-            <BsPlusLg />
+            {/* <BsPlusLg /> */}
           </IconButton>
         </RegionNotSelectedBox>
       )}
