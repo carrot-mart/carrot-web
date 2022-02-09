@@ -1,3 +1,5 @@
+import logo from './logo.svg';
+
 import "./globalStyles.css";
 import TownMainPage from "./pages/TownPage";
 import LikeRecordPage from "./pages/MyPage/LikeRecordPage";

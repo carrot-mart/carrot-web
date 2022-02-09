@@ -2,30 +2,28 @@ import React, { useState } from 'react';
 import styled from "styled-components";
 
 import TownInfoBox from '../components/Town/TownInfoBox'
-import TownStoreInfoBox from '../components/Town/TownStoreInfoBox'
+import TownStoreBox from '../components/Town/TownStoreBox'
 import TownPostscript from '../components/Town/TownPostscript'
 
 
 
-// 승혁님
-// import Top from "../components/Top";
+// 승혁
+import Navigation from "../components/Navigation";
+import Bottom from "../components/Bottom";
 
 
 function TownMainPage() {
 
-
     return (
 
         <TownMainContainer>
-            {/* <Top></Top> */}
-            <TownInfoBox>
-
-            </TownInfoBox>
-
-            <TownStoreInfoBox />
-            <TownPostscript />
-
-            <Nothing />
+            <TownMainBox>
+                <Navigation />
+                <TownInfoBox />
+                <TownStoreBox />
+                <TownPostscript />
+                <Bottom />
+            </TownMainBox>
 
         </TownMainContainer>
 
@@ -38,12 +36,16 @@ export default TownMainPage;
 
 const TownMainContainer = styled.div`
     margin : 0 auto;
-  width:1440px;
-  height:3000px;
+    width: 100%;
+    hegiht:fit-content;
+    min-height: 5rem;
 `;
 
-const Nothing = styled.div`
-    height : 900px;
+const TownMainBox = styled.div`
+    margin : 0 auto;
+    width : 100%;
+    hegiht:fit-content;
+    min-height: 5rem;
 `;
 
 
