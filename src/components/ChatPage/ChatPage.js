@@ -32,10 +32,10 @@ display: flex;
 
 `;
 const ChatSide = styled.div`
-width: 275px;
+width: 27.5rem;
 
 `;
 const ChatMain = styled.div`
-width: 500px;
+width: 50rem;
 
 `;

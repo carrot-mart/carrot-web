@@ -1,5 +1,4 @@
 import React from 'react'
-import Media from 'react-bootstrap/Media';
 import moment from 'moment';
 import styled from "styled-components";
 
@@ -18,12 +17,12 @@ function Message({ message, user }) {
 
     return (
         // 메세지 블럭 자체들
-        <MessageBlock style={{ marginBottom: '3px', display:'flex' }}>
+        <MessageBlock>
             {/* 프로필모양 */}
             <img
                 style={{ borderRadius: '10px' }}
-                width={48}
-                height={48}
+                width={38}
+                height={38}
                 className="mr-3"
                 src={message.user.image}
                 alt={message.user.name} 
@@ -41,8 +40,8 @@ function Message({ message, user }) {
                     <img style={{ maxWidth: '300px' }} alt="이미지" src={message.image} />
                     :
                     <p style={{
-                        backgroundColor: isMessageMine(message, user) && "#ECECEC",
-                        color: isMessageMine(message, user) && "#000000"
+                        backgroundColor: isMessageMine(message, user) && "#ff772b",
+                        color: isMessageMine(message, user) && "#ffffff"
                     }}>
                         {message.content}
                     </p>
@@ -57,15 +56,19 @@ export default Message;
 const MessageBlock = styled.div`
   margin-bottom:3px;
   display:flex;
+  font-size:1.4rem;
 `;
 const Balloon = styled.div`
+h6{
+    font-size:1.5rem;
+}
 span{
-    font-size:10px; 
+    font-size:1rem; 
     color: gray;
 }
 p{
-  background-color:#ff772b;
-  color:#ffffff;
+  background-color:#ECECEC;
+  color:#000;
   border-radius:0px 20px 20px 20px;
   padding:20px;
 }

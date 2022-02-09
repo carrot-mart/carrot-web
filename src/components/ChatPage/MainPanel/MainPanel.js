@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import MessageHeader from './MessageHeader';
-import Message from './Message';
-import MessageForm from './MessageForm';
 import { connect } from 'react-redux';
 import { setUserPosts } from '../../../redux/actions/chatRoom_action';
 import Skeleton from '../../../commons/components/Skeleton';
 import { getDatabase, ref, onChildAdded, onChildRemoved, child, off } from "firebase/database";
 import styled from "styled-components";
+
+import MessageHeader from './MessageHeader';
+import Message from './Message';
+import MessageForm from './MessageForm';
+
 
 export class MainPanel extends Component {
 
@@ -224,14 +226,15 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(MainPanel);
 
 const Mpstyled = styled.div`
-    height:460px;
+    height:46rem;
     boxSizing:border-box;
     background-color:#ffffff;
 `;
 
 const MessageLoad = styled.div`
     width: 100%;
-    height: 325px;
+    height: fit-content;
+    height: 32.5rem;
     border: .3rem solid #ececec;
     border-top:0;
     padding: 1rem;

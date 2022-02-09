@@ -1,15 +1,14 @@
 import React, { useRef } from 'react'
 import { IoIosChatboxes } from 'react-icons/io';
 import Dropdown from 'react-bootstrap/Dropdown';
-import Image from 'react-bootstrap/Image';
 import { useDispatch, useSelector } from 'react-redux';
 import mime from 'mime-types';
-import { setPhotoURL } from '../../../redux/actions/user_action';
-import { getDatabase, ref, child, update } from "firebase/database";
+import { getDatabase, ref, update } from "firebase/database";
 import { getAuth, signOut, updateProfile } from "firebase/auth";
 import { getStorage, ref as strRef, getDownloadURL, uploadBytesResumable } from "firebase/storage";
 import styled from "styled-components";
 
+import { setPhotoURL } from '../../../redux/actions/user_action';
 
 
 function UserPanel() {
@@ -133,11 +132,15 @@ export default UserPanel;
 const StyledUser = styled.div`
   h3{
       color:white;
+      font-size:2.7rem;
+  }
+  #dropdown-basic{
+    font-size:1.4rem;
   }
 `;
 
 const Droplist = styled.div`
 display: flex; 
-margin-bottom: 1rem;
+margin:2rem 0rem;
 `;
 

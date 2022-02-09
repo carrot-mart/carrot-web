@@ -2,9 +2,6 @@ import React from 'react';
 import { BrowserRouter, Link, Router } from "react-router-dom";
 import styled from "styled-components";
 
-
-import Modal from "./Modal";
-
 function MyPost() {
     return (
     <StyledPost>
@@ -44,9 +41,6 @@ function MyPost() {
     margin: 0;
     padding: 0;
     background-color: #fff;
-    font-family:'Nanum Gothic', sans-serif; 
-    
-
   ul,li{
     list-style:none; 
     float:left; 
@@ -55,14 +49,16 @@ function MyPost() {
   }
   `;
   const Section = styled.div`
-  width:1000px;
-  height:900px;
+  width:100rem;
+  min-height:90rem;
+  height: fit-content;
   margin:0 auto;
   position:relative;
   h1{
-    font-size:20px;
+    font-size:2rem;
     margin:20px 0;
     text-decoration: none;
+    font-weight:bold;
 }
 .inner{
   text-decoration:none;
@@ -76,7 +72,7 @@ function MyPost() {
 .mypost_main h1{
   margin:0;
   text-align:center;
-  width:150px;
+  width:15rem;
   border:1px solid #f04124;
   border-radius:10px;
   padding:10px;
@@ -88,7 +84,8 @@ function MyPost() {
   border:1px solid #dddddd;
   float:left;
   width:100%;
-  height:180px;
+  min-height:18rem;
+  height: fit-content;
   margin-top:15px;
   padding:10px 30px;
   box-sizing: border-box;

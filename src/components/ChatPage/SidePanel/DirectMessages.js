@@ -1,16 +1,14 @@
 import React, { Component } from 'react'
-import { FaRegSmile } from 'react-icons/fa';
-import firebase from '../../../firebase';
-import { Routes, Route, useNavigate , Link } from "react-router-dom";
 import { connect } from 'react-redux';
-import {
-    setCurrentChatRoom, setPrivateChatRoom
-} from '../../../redux/actions/chatRoom_action';
 import { getDatabase, ref, onChildAdded } from "firebase/database";
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 import { AiOutlineSearch } from 'react-icons/ai';
 import styled from "styled-components";
+
+import {
+    setCurrentChatRoom, setPrivateChatRoom
+} from '../../../redux/actions/chatRoom_action';
 
 export class DirectMessages extends Component {
 
@@ -88,14 +86,14 @@ export class DirectMessages extends Component {
                 <InputGroup className="mb-3">
                             <InputGroup.Prepend >
                                 <InputGroup.Text id="basic-addon1"style={{backgroundColor:'#e5e5e5'}}>
-                                    <AiOutlineSearch />
+                                    <AiOutlineSearch size={18} />
                                 </InputGroup.Text>
                             </InputGroup.Prepend>
                             <FormControl
                                 placeholder="Search Messages"
                                 aria-label="Search"
                                 aria-describedby="basic-addon1"
-                                style={{backgroundColor:'#e5e5e5'}}
+                                style={{backgroundColor:'#e5e5e5',fontSize:'1.5rem'}}
                             />
                         </InputGroup>
                 <ul style={{ listStyleType: 'none', padding: 0 }} > 
@@ -119,5 +117,9 @@ const Dm = styled.div`
 ul{
     list-style-type:none; 
     padding:0;
+    font-size:1.7rem;
+}
+.mb-3{
+    font-size:1.5rem;
 }
 `;

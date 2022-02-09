@@ -62,9 +62,6 @@ const ModalBtn = styled.div`
 `;
 const ModalContainer = styled.div`
   position:relative;
-
-  
-
   `;
   const ModalBackdrop = styled.div`
 
@@ -77,8 +74,9 @@ const ModalContainer = styled.div`
     right:-14%;
     top:120%;
     clear:both;
-    width:280px;
-    height:360px;
+    width:28rem;
+    min-height:36rem;
+    height: fit-content;
     border:1px solid #ff772b;
     border-radius:20px;
     box-sizing:border-box;
@@ -111,7 +109,7 @@ const ModalContainer = styled.div`
       .talk_user{
         border:1px solid black;
         border-radius:100%;
-        width:30px;
+        width:3rem;
       }
       ul li:after{
         content:""
@@ -124,32 +122,33 @@ const ModalContainer = styled.div`
         border-bottom:1px solid #e5e5e5;
         line-height:normal;
         width:100%;
-        height:45px;
+        min-height:45px;
+        height: fit-content;
         padding:0 15px;
-        
     }
     .bell_list_top h1{
-        line-height:30px;
-        font-size: 15px;
+        margin-top:1.5rem;
+        font-size: 1.5rem;
+        font-weight:bold;
     }
     ul{
         width:100%;
-        height:313px;
+        height:31.3rem;
         padding:0 15px;
     }
     ul li{
         line-height: normal;
         float: left;
         margin-top:15px;
-        height:54px;  
+        height:5.4rem;  
     }
     ul li img, ul li p{
         float:left;
     }
     ul li p{
-        width:200px;
+        width:20rem;
         margin-left:10px;
-        font-size: 13px;
+        font-size: 1.3rem;
         margin-top:0;
         color:#000;
     }

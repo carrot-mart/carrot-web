@@ -10,7 +10,6 @@ import Bell from "./Bell";
 function Navigation() {
   return (
   <StyledNavigation>
-   <StyledHeader>
      <Top_head>
         <Link to = "/">
           <img src="img/main_logo.png" alt="메인로고" className='mainlogo' />
@@ -32,7 +31,6 @@ function Navigation() {
             </ul>
         </Top_menu>
      </Top_head>
-   </StyledHeader> 
   </StyledNavigation>
   );
 }
@@ -43,22 +41,19 @@ const StyledNavigation = styled.body`
   margin: 0;
   padding: 0;
   background-color: #fff;
-  font-family:'Nanum Gothic', sans-serif; 
+  height:10rem;
+  border-bottom:1px solid #b4b9be;
   color:#333333;
 ul,li{
   list-style:none; 
   float:left; 
 }
 `;
-const StyledHeader = styled.header`
-  height:100px;
-  border-bottom:1px solid #b4b9be;
-`;
 const Top_head = styled.div`
   position:relative;
-  width:1200px; 
+  width:120rem; 
   margin:0 auto;
-  height:100px;
+  height:10rem;
   div{
     float:left;
   }
@@ -73,19 +68,19 @@ const Top_search = styled.div`
    padding:20px;
    top: 30%;
    left:20%;
-  height: 30px;
+  height: 3rem;
   background-color: #fff;
   border: 1px solid #e9ecef;
   border-radius: 20px;
-  width: 400px;
+  width: 40rem;
   display:flex;
   align-items:center;
 }
 .search-btn{
   text-decoration: none;
   float: right;
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   color: #b4b9be;
   font-size:16px;
 }
@@ -97,21 +92,23 @@ const Top_search = styled.div`
   background: none;
   outline: none;
   float: left;
-  font-size: 1rem;
+  font-size: 1.5rem;
   
   
 }
 `;
 const Top_menu = styled.div`
-height:100px;
+height:10rem;
 position:absolute;
 right:10px;
+display:flex;
+align-items:center;
+justify-content: center;
 
 .menu_list{
-  height:100px;
-  display:flex;
-  align-items:center;
-  justify-content: center;
+ display:flex;
+ align-items:center;
+ justify-content: center;
 }
  .menus{
   display:flex;
@@ -128,7 +125,6 @@ right:10px;
    font-size:18px;
    font-weight:normal;
    float:left;
-   margin-top:10px;
  }
  .menus::after{
   content: "|";
@@ -139,6 +135,11 @@ right:10px;
 }
 .menus h2:hover{
   color:#b4b9be;
+}
+.My{
+  float:left;
+  margin-right:5px;
+  margin-top:15px;
 }
  .line{
   text-decoration:none;
@@ -151,7 +152,7 @@ right:10px;
     align-items: center;
     margin-right:5px;
  }
-`;
+ `;
 
 
 

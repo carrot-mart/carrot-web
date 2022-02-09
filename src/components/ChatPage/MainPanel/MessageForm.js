@@ -189,12 +189,10 @@ function MessageForm() {
                         rows={2} />
                 </Form.Group>
             </Form>
-
             {
                 !(percentage === 0 || percentage === 100) &&
                 <ProgressBar variant="warning" label={`${percentage}%`} now={percentage} />
             }
-            
             {/* 보내기와 업로드 버튼들 */}
                 <SendMessage >
                     <button
@@ -216,50 +214,51 @@ export default MessageForm;
 const StyledForm = styled.div`
 float:left;
 width:100%;
-height:65px;
+height:6.5rem;
 position:relative;
 border: .3rem solid #ececec;
 border-top:0;
 border-radius: 0px 0px 20px 0px;
 background-color:white;
 .message-form-button{
-    width: 2.3rem;
-    height:2.3rem;
+    width: 4rem;
+    height:4rem;
     float:left;
-    borderRadius:100%;
+    border-radius:100%;
     background: #ff772b;
     color: white;
     text-transform: uppercase;
     border: none;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 100;
 }
-.message-form-button:hover {
-    background: #b8571f;
-  }
-  .textbox{
-    width:80% ;
-    float:left;
-    height:65px;
-  }
+    .message-form-button:hover {
+        background: #b8571f;
+    }
+    
+    .textbox{
+        width:80%;
+        float:left;
+        margin-top:1.2rem
+    }
 `;
 
 const PhotoUp = styled.div`
 float:left;
 width:10%;
-height:65px;
+height:6.5rem;
 display:flex;
-alignItems:center;
-justifyContent:center;
+align-items:center;
+justify-content:center;
 
 `;
 
 const SendMessage = styled.div`
 float:left;
 width:10%;
-height:65px;
+height:6.5rem;
 display:flex;
-alignItems:center;
-justifyContent:center;
+align-items:center;
+justify-content:center;
 
 `;

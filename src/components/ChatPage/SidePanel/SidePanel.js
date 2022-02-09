@@ -1,21 +1,13 @@
 import React from 'react'
+import styled from "styled-components";
 
 import UserPanel from './UserPanel';
 import DirectMessages from './DirectMessages';
-import styled from "styled-components";
+
 
 function SidePanel() {
     return (
-        <StyledSide style={{
-                backgroundColor: "#ff772b",
-                padding: '2rem',
-                height: '460px',
-                color: 'white',
-                width: '275px',
-                borderRadius:'20px 0px 0px 20px'
-
-            }}
-        >
+        <StyledSide>
             <UserPanel />
 
             <DirectMessages />
@@ -27,9 +19,9 @@ export default SidePanel
 
 const StyledSide = styled.div`
 background-color: #ff772b;
-padding: 2rem;
-height: 460px;
+padding: 2.5rem;
+height: 46rem;
 color: white;
-width: 275px;
+width: 27.5rem;
 border-radius:20px 0px 0px 20px;
 `;

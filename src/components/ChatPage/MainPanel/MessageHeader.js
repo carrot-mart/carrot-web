@@ -2,18 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import Image from 'react-bootstrap/Image';
-import Accordion from 'react-bootstrap/Accordion';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { FaLock } from 'react-icons/fa';
-import { FaLockOpen } from 'react-icons/fa';
-import { MdFavorite, MdFavoriteBorder } from 'react-icons/md';
-import { AiOutlineSearch } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
-import { Media } from 'react-bootstrap';
 import { getDatabase, ref, onValue, remove, child, update } from "firebase/database";
 import styled from "styled-components";
 
@@ -88,15 +77,7 @@ function MessageHeader({ handleSearchChange }) {
 
 
     return (
-        <HeaderStyled style={{
-            width: '100%',
-            height: '70px',
-            border: '.3rem solid #ececec',
-            borderRadius: '0px 20px 0px 0px',
-            display:'flex',
-            alignItems:'center',
-            backgroundColor:'white'
-            }} >
+        <HeaderStyled>
             <Container>
                 <Row>
                     <Col>
@@ -114,10 +95,14 @@ export default MessageHeader;
 
 const HeaderStyled = styled.div`
 width: 100%;
-height: 70px;
+height: 7rem;
 border: .3rem solid #ececec;
 border-radius: 0px 20px 0px 0px;
 display:flex;
 align-items:center;
 background-color:white;
+h2{
+    font-weight:bold;
+}
+
 `;

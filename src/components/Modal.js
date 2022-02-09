@@ -14,7 +14,7 @@ export const Modal = () => {
 
     return (
         <>
-        <Body>
+        <ModalMap>
         <ModalContainer>
         <ModalBtn onClick={handleModal}>
         {isOpen === false ?  <img src="img/talk.png" alt="당근채팅" /> : <img src="img/talk2.png" alt="당근채팅2" className='talk_logo' />}
@@ -32,7 +32,7 @@ export const Modal = () => {
         }
     
         </ModalContainer>
-        </Body>
+        </ModalMap>
         </>
       );
     };
@@ -55,7 +55,7 @@ const ModalBtn = styled.div`
   }
 `;
 
-const Body = styled.body`  
+const ModalMap = styled.body`  
 position:relative;
 position:fixed;
   right:10%;
@@ -63,7 +63,6 @@ position:fixed;
   z-index:50;      
       `;
 const ModalContainer = styled.div`
-
   position:relative;
   `;
   const ModalBackdrop = styled.div`
