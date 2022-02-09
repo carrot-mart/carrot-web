@@ -52,33 +52,35 @@ export default TownPostscript;
 
 
 const TownStorePostscriptBox = styled.div`
-    width : 100%
+    width : 100%;
+    margin : 20rem auto;
 `;
 
 const TownStorePostscript = styled.div`
   margin : 0 auto;
-  padding-left : 10px;
-  width : 1200px;
-  height: 620px;
+  width : 100%;
+  max-width : 120rem;
+  height: fit-content;
+  min-height : 50rem;
   h2{
-      margin : 0 0 60px 15px;
-      font-size:2.5em;
+      margin : 0 0 6rem 2rem;
+      font-size:4rem;
   }
 `;
 
 const TownStorePostscriptDetailBox = styled.div`
-  width : 1150px;
-  height : 500px;
+  width : 100%;
+  height : fit-content;
   margin : 0 auto;
+  font-size: 1.6rem;
   
 `;
 
 
 const TownStorePostscriptDetail = styled.div`
     float: left;
-    width: 340px;
-    height: 465px;
-    margin: 0 39px 0 0;
+    height : fit-content;
+    margin: 0 4rem 0 1rem;
     border-radius:5px;
 
     a{
@@ -92,7 +94,7 @@ const TownStorePostscriptDetail = styled.div`
 
     h5{
         font-size: 1.3em;
-        padding-left : 20px;
+        padding-left : 1rem;
     }
     h4{
         font-size: 1.3em;
@@ -100,32 +102,32 @@ const TownStorePostscriptDetail = styled.div`
     }
 
     img{
-        width: 50px;
-        padding-left : 20px;
+        width: 5rem;
+        padding-left : 2rem;
     }
 `;
 
 const TownStorePostscriptDetailText = styled.div`
     background-color : #DCEAFE;
-    padding : 1px 10px;
-    width:320px;
-    height: 310px;
+    padding : 1rem;
+    width:32rem;
+    height: 31rem;
     line-height : 100%;
 
     h4{
         font-weight: bold;
         font-size: 1.6em;
-        margin-left:10px;
+        margin-left:1rem;
         color: rgb(18, 116, 90);
     }
     
     p{
-        margin-left:10px;
+        margin-left:1rem;
         font-size: 1.2em;
         color: rgb(145, 143, 143);
     }
     h5{
-        margin-left:10px;
+        margin-left:1rem;
         font-size: 1.4em;
         line-height : 180%;
         padding-left : 0;

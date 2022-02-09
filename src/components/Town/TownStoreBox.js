@@ -160,29 +160,30 @@ export default TownStoreBox;
 
 
 const TownStoreContainer = styled.div`
-    margin : 600px 0;
+    margin : 400px 0;
     width: 100%;
     
-    height: 1300px ;
+    height: fit-content;
     background-color: rgba(255, 239, 207, 0.55);
-    padding : 5px 0 ;
+    padding : 50px 0 ;
 `;
 
 const TownStoreMainBox = styled.div`
-    width : 1200px;
+    width : 100%;
+    max-width: 125rem;
     margin : 0 auto;
     h1{
-        font-size: 2.9em;
-        padding : 20px;
-        margin-left : 15px;
+        font-size: 4.6em;
+        padding : 5rem;
     }
     
 `;
 
 const TownStoretitleList = styled.div`
-    width: 1150px;
+    max-width: 115rem;
     margin : 0 auto;
-    height: 80px ;
+    height: fit-content;
+    min-height: 5rem;
     display: flex;
     justify-content: space-around;
 `;
@@ -196,7 +197,7 @@ const TownStoretitleListButton = styled.button`
         text-decoration: none;
         color: black;
         background-color: white;
-        padding: 0.6rem;
+        padding: 0.5rem;
         border-radius: 80px;
         font-size : 1.5em;
         text-decoration: none;
@@ -205,7 +206,7 @@ const TownStoretitleListButton = styled.button`
     a:hover{
         background-color: rgb(240, 65, 36);
         font-weight:bold;
-        padding: 0.6rem;
+        padding: 0.5rem;
         border-radius: 80px;
         font-size : 1.5em;
         color: white; 
@@ -215,13 +216,13 @@ const TownStoretitleListButton = styled.button`
 
 
 const TownStoreH3 = styled.h3`
-    font-size : 1.5em;
-    margin : 80px 20px 50px 40px;
+    font-size : 2.5em;
+    margin : 10rem 0 5rem 5rem;
   `;
 
 
 const TownStoreDetailBox = styled.div`
-    width : 1150px;
+    width : 95%;
     margin : 0 auto;
     
 `;
@@ -230,10 +231,12 @@ const TownStoreDetailBox = styled.div`
 const TownStoreListDetail = styled.div`
     background-color: #fff;
     float: left;
-    width: 240px;
-    height: 300px;
-    margin: 10px 20px 70px 20px;
+    width: 24rem;
+    height: 30rem;
+    margin: 1rem 2rem 5rem 2rem;
     border-radius:5px;
+    font-size : 2rem;
+    line-height:70%;
 
     a{
         text-decoration: none;
@@ -251,15 +254,15 @@ const TownStoreListDetail = styled.div`
     }
 
     h4{
-        margin-left:10px;
+        margin-left:1rem;
         color: rgb(18, 116, 90);
     }
     h5{
-        margin-left:10px;
+        margin-left:1rem;
     }
 
     p{
-        margin-left:10px;
+        margin-left:1rem;
         font-size: 0.8em;
         color: rgb(145, 143, 143);
     }
@@ -268,10 +271,10 @@ const TownStoreListDetail = styled.div`
 
 const TownStoreLastBoxButton = styled.div`
     margin : 0 auto;
-    width:550px;
-    height : 60px;
-    padding : 5px;
-    font-size : 1.5em;
+    width:55rem;
+    height : 6rem;
+    padding : 0.5rem;
+    font-size : 2.5em;
     background-color : #cdcdcd;
     display: flex;
     align-items: center;
@@ -285,6 +288,6 @@ const TownStoreLastBoxButton = styled.div`
     }
     
     img{
-        width : 35px;
+        width : 3.5rem;
     }
   `;

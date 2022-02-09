@@ -59,8 +59,9 @@ export default TownInfoBox;
 
 const TownInfoTopContainer = styled.div`
   width: 100%;
-  margin : 250px 0;
-  height: 800px;
+  margin : 30rem 0;
+  hegiht:fit-content;
+  min-height: 5rem;
   text-align: center;
   display: flex;
   flex-direction: "row";
@@ -68,8 +69,7 @@ const TownInfoTopContainer = styled.div`
 
 const TownInfoTopBox = styled.div`
   margin: 0 auto;
-  width: 1150px;
-  height: 800px;
+  max-width: 500rem;
   text-align: center;
   display: flex;
   flex-direction: "row";
@@ -77,7 +77,7 @@ const TownInfoTopBox = styled.div`
 
 const TownInfoTopBoxleft = styled.div`
   width: 100%;
-  height: 800px;
+  height: fit-content;
 
   img {
     width: 100%;
@@ -91,11 +91,11 @@ const TownInfoTopBoxright = styled.div`
   width: 100%;
   height: 400px;
   
-  
 
   h1 {
-    font-size: 2.7em;
+    font-size: 4.7em;
     margin-bottom:50px;
+    line-height : 150%;
   }
 
   img {
@@ -103,8 +103,9 @@ const TownInfoTopBoxright = styled.div`
     padding-right : 10px;
   }
   h4 {
-    font-size: 1.5em;
+    font-size: 2.5em;
     margin-bottom:80px;
+    line-height : 150%;
   }
 `;
 
@@ -112,7 +113,7 @@ const TownInfoTopBoxButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.3em;
+  font-size: 2em;
   margin-left: 60px;
   width: 480px;
   height: 70px;

@@ -9,6 +9,7 @@ import TownPostscript from '../components/Town/TownPostscript'
 
 // 승혁
 import Navigation from "../components/Navigation";
+import Bottom from "../components/Bottom";
 
 
 function TownMainPage() {
@@ -21,7 +22,7 @@ function TownMainPage() {
                 <TownInfoBox />
                 <TownStoreBox />
                 <TownPostscript />
-
+                <Bottom />
             </TownMainBox>
 
         </TownMainContainer>
@@ -36,12 +37,15 @@ export default TownMainPage;
 const TownMainContainer = styled.div`
     margin : 0 auto;
     width: 100%;
-    height : 5000px;
+    hegiht:fit-content;
+    min-height: 5rem;
 `;
 
 const TownMainBox = styled.div`
     margin : 0 auto;
     width : 100%;
+    hegiht:fit-content;
+    min-height: 5rem;
 `;
 
 
