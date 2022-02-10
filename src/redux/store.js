@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 import likesReducer from "./features/likes/likesSlice";
 import loginReducer from "./features/login/loginSlice";
+import detailReducer from "./features/detail/detailSlice";
 
 export default configureStore({
-  reducer: { likes: likesReducer, login: loginReducer },
+  reducer: { likes: likesReducer, login: loginReducer, detail: detailReducer },
 });
