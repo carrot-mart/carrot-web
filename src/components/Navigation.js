@@ -8,6 +8,16 @@ import { FiSearch } from "react-icons/fi";
 import Bell from "./Bell";
 
 function Navigation() {
+  const homeRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const onHomeClick = () => {
+    homeRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const onContactClick = () => {
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
   return (
   <StyledNavigation>
      <Top_head>
@@ -24,7 +34,7 @@ function Navigation() {
         </Top_search>
         <Top_menu>
            <ul className='menu_list'>
-                <li className='menus'><Link to = "/" className='line'><h2>인기매물</h2></Link></li>
+                <li className='menus'><Link to = "/"   className='line'><h2>인기매물</h2></Link></li>
                 <li className='menus'><Link to = "/" className='line'><h2>동네정보</h2></Link></li>
                 <li className='menus'><Link to = "/" className='line'><h2><FaRegUser className='usericon' size='22' /> 나의당근</h2></Link></li>
                 <li className='menus'><Link to = "/" className='line'><Bell /></Link></li>   

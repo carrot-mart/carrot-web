@@ -13,6 +13,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
 import TownPage from './pages/TownPage';
+//import LoginPage from './components/LoginPage/LoginPage';
+import LoginPage from './pages/LoginPage';
+import MyPostPage from './pages/MyPage/MyPostPage';
 
 const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore)
 
@@ -27,8 +30,9 @@ ReactDOM.render(
       <Routes >
           <Route path="/" element={<App />} />
           <Route path="/town" element={<TownPage />} />
-          {/* <Route path="/login" element={<LoginPage />} />
-          <Route path="/mypage/sellbuyrecord" element={<SellBuyRecordPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/postpage" element={<MyPostPage />} />
+          {/* <Route path="/mypage/sellbuyrecord" element={<SellBuyRecordPage />} />
           <Route path="/mypage/region" element={<SelectRegion />} />
           <Route path="/sign" element={<SignPage />} /> */}
       </Routes>

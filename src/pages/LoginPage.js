@@ -15,7 +15,7 @@ function LoginPage() {
   } = useForm();
   const [errorFromSubmit, setErrorFromSubmit] = useState("");
   const [loading, setLoading] = useState(false);
-  // const [isLoggedIn, setIsLoggedIn] = useState(authService.currentUser);
+
   const onSubmit = async (data) => {
     try {
       setLoading(true);
@@ -33,55 +33,64 @@ function LoginPage() {
   };
 
   return (
-    <AuthWrapper>
-      <div style={{ textAlign: "center" }}>
-        <h3>로그인</h3>
-      </div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Email</label>
-        <input
-          name="email"
-          type="email"
-          {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
-        />
-        {errors.email && <p>This email field is required</p>}
+    <>
+      <MainLogo src="img/main_logo.png" alt="메인로고" className="mainlogo" />
+      <ContentCover>
+        <AuthWrapper>
+          <div style={{ textAlign: "center" }}>
+            <h3>로그인</h3>
+          </div>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <label>Email</label>
+            <input
+              name="email"
+              type="email"
+              {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+            />
+            {errors.email && <p>이메일주소를 입력해 주세요.</p>}
 
-        <label>Password</label>
-        <input
-          name="password"
-          type="password"
-          autoComplete="off"
-          {...register("password", {
-            required: true,
-            minLength: 10,
-            maxLength: 20,
-            pattern: /^(?=.*[a-zA-Z])(?=.*[0-9]).{10,25}$/,
-          })}
-        />
-
-        {errorFromSubmit && <p>{errorFromSubmit}</p>}
-        <input type="submit" disabled={loading} />
-        <Link
-          style={{ color: "gray", textDecoration: "none" }}
-          to="../register"
-        >
-          회원가입 바로가기
-        </Link>
-      </form>
-      <SocialLogin />
-    </AuthWrapper>
+            <label>Password</label>
+            <input
+              name="password"
+              type="password"
+              autoComplete="off"
+              {...register("password", {
+                required: true,
+              })}
+            />
+            {/* {errors.password && <p>비밀번호를 입력해 주세요.</p>} */}
+            {errorFromSubmit && <p>{errorFromSubmit}</p>}
+            <LoginBtn type="submit" disabled={loading} value={"로그인"} />
+            <RegisterLink
+              style={{ color: "gray", textDecoration: "none" }}
+              to="../register"
+            >
+              회원가입 바로가기
+            </RegisterLink>
+          </form>
+          <SocialLogin />
+        </AuthWrapper>
+      </ContentCover>
+    </>
   );
 }
 
 export default LoginPage;
-
-const AuthWrapper = styled.div`
+const MainLogo = styled.img`
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+`;
+const ContentCover = styled.div`
   margin: 0 auto;
+  width: 60rem;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   justify-content: center;
-  width: 80%;
+`;
+const AuthWrapper = styled.div`
+  width: 100%;
+  font-size: 2rem;
   form {
     width: 100%;
     margin: 0 auto;
@@ -94,11 +103,12 @@ const AuthWrapper = styled.div`
     font-weight: 100;
     color: white;
     text-align: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgb(79, 98, 148);
+    padding-bottom: 1rem;
+    border-bottom: 0.1rem solid rgb(79, 98, 148);
   }
   p {
     color: #bf1650;
+    font-size: 1.3rem;
   }
   p::before {
     display: inline;
@@ -109,18 +119,28 @@ const AuthWrapper = styled.div`
     box-sizing: border-box;
     width: 100%;
     border-radius: 1rem;
-    background-color: #f0f0f0;
-    border: none;
+    border: 1px solid #c0c0c0;
     padding: 1.2rem 1.5rem;
-    margin-bottom: 10px;
-    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    &:focus {
+      outline: 2px solid #f04124;
+    }
   }
   label {
     line-height: 2;
     text-align: left;
     display: block;
     margin: 5px 0;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 400;
   }
+`;
+const RegisterLink = styled(Link)`
+  font-size: 1.4rem;
+`;
+const LoginBtn = styled.input`
+  background: #f04124;
+  color: #fff;
+  cursor: pointer;
 `;

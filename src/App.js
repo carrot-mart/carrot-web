@@ -13,6 +13,7 @@ import PostProductPage from "./pages/PostProductPage/PostProductPage";
 import TownPage from "./pages/TownPage";
 import MainPage from "./pages/MainPage/MainPage";
 import Modal from "./components/Modal";
+import TestLoginAfterMain from "./components/LoginPage/TestLoginAfterMain";
 
 
 
@@ -45,10 +46,11 @@ function App(props) {
   } else {
   return (
     <>
-      <Navigation />
-      <MainPage />
+      {/* <Navigation />
+      <TestLoginAfterMain />
       <Modal />
-      <Footer />
+      <Footer /> */}
+      <MyPostPage />
     </>
   );
 }

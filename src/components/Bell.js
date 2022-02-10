@@ -29,8 +29,8 @@ export const Bell = () => {
                 </div>
                     <ul>
                         <li><Link to="/"><img src="img/talkuser.png" alt="" className="talk_user" /><p>신촌 이웃을 사로잡은 금주의 인기매물, 지금 만나보세요!<span>6일전</span></p></Link></li>
-                        <li><Link to="/"><img src="img/talkuser.png" alt="" className="talk_user" /><p>000님이 "~" 글에 제안을 했습니다.[30,000원]<span>8일전</span></p></Link></li>
-                        <li><Link to="/"><img src="img/talkuser.png" alt="" className="talk_user" /><p>000님이 "~" 글에 제안을 했습니다.[30,000원]<span>10일전</span></p></Link></li>
+                        <li><Link to="/"><img src="img/talkuser.png" alt="" className="talk_user" /><p>정연희님이 "~" 글에 제안을 했습니다.[30,000원]<span>8일전</span></p></Link></li>
+                        <li><Link to="/"><img src="img/talkuser.png" alt="" className="talk_user" /><p>장은비님이 "~" 글에 제안을 했습니다.[40,000원]<span>10일전</span></p></Link></li>
                         <li><Link to="/"><img src="img/talkuser.png" alt="" className="talk_user" /><p>신촌 이웃을 사로잡은 금주의 인기매물, 지금 만나보세요!<span>14일전</span></p></Link></li>
                     </ul>
             </Bell_about>
