@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+       <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+       <link rel="stylesheet" type="text/css" href="style.css">
+
+    </head>
+    <body>
+        <div id="root"></div>
+          <div class="search_boxes">
+            <div class="search_box">
+              <select name="" id="region" onchange="categoryChange(this)">
+                <option value>시/도 선택</option>
+                <option value="general01">강원</option>
+                <option value="general02">경기</option>
+                <option value="general03">경남</option>
+                <option value="general04">경북</option>
+                <option value="general05">광주</option>
+                <option value="general06">대구</option>
+                <option value="general07">대전</option>
+                <option value="general08">부산</option>
+                <option value="general09">서울</option>
+                <option value="general10">울산</option>
+                <option value="general11">인천</option>
+                <option value="general12">전남</option>
+                <option value="general13">전북</option>
+                <option value="general14">제주</option>
+                <option value="general15">충남</option>
+                <option value="general16">충북</option>
+              </select>
+              <span class="icoArrow"><img src=Arrow.jpg alt="Arrow"></span>
+              </div>
+            <div class="search_box">
+              <select name="" id="state">
+                <option>군/구 선택</option>
+              </select>
+              <span class="icoArrow"><img src=Arrow.jpg alt="Arrow"></span>
+            </div>
+          </div>
+ 
+ 
+          <script>
+              function categoryChange(e) {
+                const state = document.getElementById("state");
+
+                const seoul = ["강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구","마포구","서대문구","서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구"];
+
+
+                if (e.value == "general01") {
+                  add = gangwon;
+                } else if (e.value == "general02") {
+                  add = gyeonggi;
+                } else if (e.value == "general03") {
+                  add = gyeongsangnam;
+                } else if (e.value == "general04") {
+                  add = gyeongsangbuk;
+                } else if (e.value == "general05") {
+                  add = gwangju;
+                } else if (e.value == "general06") {
+                  add = daegu;
+                } else if (e.value == "general07") {
+                  add = daejeon;
+                } else if (e.value == "general08") {
+                  add = busan;
+                } else if (e.value == "general09") {
+                  add = seoul;
+                } else if (e.value == "general10") {
+                  add = ulsan;
+                } else if (e.value == "general11") {
+                  add = incheon;
+                } else if (e.value == "general12") {
+                  add = jeonnam;
+                } else if (e.value == "general13") {
+                  add = jeonbuk;
+                } else if (e.value == "general14") {
+                  add = jeju;
+                } else if (e.value == "general15") {
+                  add = chungnam;
+                } else if (e.value == "general16") {
+                  add = chungbuk;
+                }
+
+                state.options.length = 1;
+                // 군/구 갯수;
+
+                for (property in add) {
+                  let opt = document.createElement("option");
+                  opt.value = add[property];
+                  opt.innerHTML = add[property];
+                  state.appendChild(opt);
+                }
+              }
+          </script>
+
+    </body>
+</html>
