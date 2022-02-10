@@ -16,9 +16,9 @@ const StyledSectionTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 0 5rem;
+  margin: 10rem 0 5rem;
   width: 100%;
-  height: 8rem;
+  height: 12rem;
 `;
 
 const LineDivider = styled.hr`

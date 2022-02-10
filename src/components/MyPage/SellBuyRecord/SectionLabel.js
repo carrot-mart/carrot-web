@@ -37,7 +37,7 @@ const StyledSectionLabel = styled.div`
   display: flex;
   flex-direction: column;
   margin: 1rem 0;
-  height: 8rem;
+  height: 12rem;
   align-items: center;
   margin: 1rem 0 5rem;
 `;
