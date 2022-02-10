@@ -55,8 +55,8 @@ function MyPost() {
   margin:0 auto;
   position:relative;
   h1{
-    font-size:2rem;
-    margin:20px 0;
+    font-size:1.8rem;
+    margin:30px 0;
     text-decoration: none;
     font-weight:bold;
 }
