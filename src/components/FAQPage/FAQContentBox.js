@@ -54,7 +54,8 @@ function QnAnserBox() {
 
 export default QnAnserBox;
 const FAQWrap = styled.div`
-  margin: 0px;
+  margin: auto;
+  width: 80%;
   Routes {
     margin: 50px auto;
     width: 100%;
@@ -66,15 +67,14 @@ const FAQWrap = styled.div`
 
 const AnswerBox = styled.div`
   margin: 0 auto;
-  width: 100%;  
-  padding:30px;
+  width: 100%;
+  padding: 30px;
   box-sizing: border-box;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
+
 const AnswerList = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -84,16 +84,17 @@ const AnswerList = styled.div`
 const StyleLink = styled(Link)`
   margin: 0 auto;
   width: 33.13%;
-  line-height:60px;
-  text-align:center;
+  line-height: 60px;
+  text-align: center;
   border: 1px solid #ddd;
-  color:#4d4d4d;
-  font-size:2vh;
-  font-weight:400;
-  &: hover, 
-  &: active, &:link, &:focus {
-    color:#F04124;
-    font-weight:bold;
+  color: #4d4d4d;
+  font-size: 2vh;
+  font-weight: 400;
+  :active,
+  :link,
+  :focus {
+    color: #f04124;
+    font-weight: bold;
     text-decoration: none;
   }
 `;
