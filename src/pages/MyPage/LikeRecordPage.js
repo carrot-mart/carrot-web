@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionTitle from "../../components/MyPage/SectionTitle";
 import Navigation from "../../components/Navigation";
 import "../../globalStyles.css";
-import { db } from "../../fbase";
-import { useSelector } from "react-redux";
 
 function LikeRecordPage() {
   const likeData = useSelector((state) => state.likes);
@@ -14,7 +12,6 @@ function LikeRecordPage() {
 
   return (
     <>
-      <Navigation />
       <StyledLikeRecord>
         <SectionTitle>찜한 목록</SectionTitle>
         <ProductGrid productData={likeData} />

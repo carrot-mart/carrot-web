@@ -2,12 +2,17 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
+import { like, unlike } from "../../redux/features/likes/likesSlice";
 import "../../globalStyles.css";
 
 function ProductCard({ product }) {
-  const [clickEmoticon, setClickEmoticon] = useState(false);
+  const [likes, setLikes] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const like = true;
+  
 
   return (
     <StyledProductCard
@@ -24,10 +29,17 @@ function ProductCard({ product }) {
           <ProductResponse
             onClick={(e) => {
               e.stopPropagation();
-              setClickEmoticon(!clickEmoticon);
+              likes
+                ? dispatch(unlike({ product }))
+                : dispatch(like({ product }));
+              setLikes(!likes);
             }}
           >
-            {clickEmoticon ? <BsHeartFill fill="red" /> : <BsHeart />}
+            {likes ? (
+              <BsHeartFill fill="orangered" />
+            ) : (
+              <BsHeart fill="orangered" />
+            )}
           </ProductResponse>
         </div>
       </ProductInfo>
@@ -92,9 +104,11 @@ const ProductResponse = styled.div`
 const ProductCost = styled.p`
   font-size: 1.7rem;
   font-weight: bolder;
+  color: orangered;
 `;
 
 const ProductRegion = styled.p`
   font-size: 1.5rem;
   flex-grow: 1;
+  color: grey;
 `;

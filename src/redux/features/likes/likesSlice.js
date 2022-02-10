@@ -14,7 +14,7 @@ export const likesSlice = createSlice({
     },
     unlike: {
       reducer: (state, action) => {
-        state = state.filter((element) => element.id !== action.payload.id);
+        state.filter((element) => element.id !== action.payload.id);
       },
       prepare: ({ product }) => ({
         payload: product,
