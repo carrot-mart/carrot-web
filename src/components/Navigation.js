@@ -8,16 +8,6 @@ import { FiSearch } from "react-icons/fi";
 import Bell from "./Bell";
 
 function Navigation() {
-  const homeRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
-
-  const onHomeClick = () => {
-    homeRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const onContactClick = () => {
-    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
   return (
   <StyledNavigation>
      <Top_head>
