@@ -69,7 +69,7 @@ function Navigation() {
 
 export default Navigation;
 
-const StyledNavigation = styled.body`
+const StyledNavigation = styled.div`
   margin: 0;
   padding: 0;
   background-color: #fff;

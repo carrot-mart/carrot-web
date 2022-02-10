@@ -3,28 +3,26 @@ import styled from "styled-components";
 import FAQContentBox from "../../components/FAQPage/FAQContentBox";
 import HelpBox from "../../components/FAQPage/HelpMailBox";
 import SectionTitle from "../../components/MyPage/SectionTitle";
+import Navigation from "../../components/Navigation";
+import Bottom from "../../components/Bottom";
 
 function FAQPage() {
   return (
-    <div>
+    <>
+      <Navigation />
       <QnAWrapping>
         <SectionTitle>자주 묻는 질문</SectionTitle>
         <FAQContentBox />
         <HelpBox />
       </QnAWrapping>
-    </div>
+      <Bottom />
+    </>
   );
 }
 
 export default FAQPage;
 
 const QnAWrapping = styled.div`
-  margin: 0 auto;
-  width: 80%;
-  .title {
-    padding: 15px 30px;
-    text-align: left;
-    font-weight: bold;
-    font-size: 3.5vh;
-  }
+  margin: 8rem auto;
+  max-width: 1440px;
 `;

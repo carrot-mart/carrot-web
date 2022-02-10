@@ -5,6 +5,13 @@ import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store";
 import { Provider } from "react-redux";
 
+import TestLoginAfterMain from "./components/LoginPage/TestLoginAfterMain";
+// import TownPage from "./pages/TownPage";
+import LoginPage from "./pages/LoginPage";
+// import SellBuyRecordPage from "./pages/MyPage/SellBuyRecordPage";
+// import SelectRegion from "./components/MyPage/SelectRegion/SelectRegion";
+import RegisterPage from "./pages/RegisterPage";
+import FAQPage from "./pages/MyPage/FAQPage";
 import App from "./App";
 import SellBuyRecordPage from "./pages/MyPage/SellBuyRecordPage";
 import RegionSettingsPage from "./pages/MyPage/RegionSetttingsPage";
@@ -12,9 +19,8 @@ import LikeRecordPage from "./pages/MyPage/LikeRecordPage";
 import SearchResultPage from "./pages/MainPage/SearchResultPage";
 import TownStoreDetailPage from "./pages/TownStoreDetailPage";
 import TownMainPage from "./pages/TownPage";
-import LoginPage from "./pages/LoginPage";
 import MyPage from "./pages/MyPage";
-import FAQPage from "./pages/MyPage/FAQPage";
+
 
 ReactDOM.render(
   <React.StrictMode>
