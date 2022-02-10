@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionTitle from "../../components/MyPage/SectionTitle";
-import Navigation from "../../components/Navigation";
 import "../../globalStyles.css";
 
 function LikeRecordPage() {
@@ -13,7 +12,7 @@ function LikeRecordPage() {
   return (
     <>
       <StyledLikeRecord>
-        <SectionTitle>찜한 목록</SectionTitle>
+        <SectionTitle>관심 목록</SectionTitle>
         <ProductGrid productData={likeData} />
       </StyledLikeRecord>
     </>

@@ -5,6 +5,7 @@ import "../../globalStyles.css";
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionLabel from "../../components/MyPage/SellBuyRecord/SectionLabel";
 import { keywords } from "../../Tests";
+import MyPageLink from "../../components/MyPage/MyPageLink";
 
 function SellBuyRecord() {
   const sellRecordData = keywords.animals.강아지;
@@ -19,6 +20,7 @@ function SellBuyRecord() {
   return (
     <>
       <StyledSellBuyRecord>
+        <MyPageLink />
         <SectionLabel
           viewSell={viewSell}
           setViewSell={setViewSell}

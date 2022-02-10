@@ -1,14 +1,14 @@
-// 외부
 import styled from "styled-components";
 
-// 내부
 import FAQContentBox from "../../components/FAQPage/FAQContentBox";
 import HelpBox from "../../components/FAQPage/HelpMailBox";
+import SectionTitle from "../../components/MyPage/SectionTitle";
 
 function FAQPage() {
   return (
     <div>
       <QnAWrapping>
+        <SectionTitle>자주 묻는 질문</SectionTitle>
         <FAQContentBox />
         <HelpBox />
       </QnAWrapping>
