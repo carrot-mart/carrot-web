@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import "../../globalStyles.css";
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionLabel from "../../components/MyPage/SellBuyRecord/SectionLabel";
-import Navigation from "../../components/Navigation";
 import { keywords } from "../../Tests";
+import MyPageLink from "../../components/MyPage/MyPageLink";
 
 function SellBuyRecord() {
   const sellRecordData = keywords.animals.강아지;
@@ -19,8 +19,8 @@ function SellBuyRecord() {
 
   return (
     <>
-      <Navigation />
       <StyledSellBuyRecord>
+        <MyPageLink />
         <SectionLabel
           viewSell={viewSell}
           setViewSell={setViewSell}

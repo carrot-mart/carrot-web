@@ -73,19 +73,14 @@ const Title = styled.div`
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   div:first-child,
   div:last-child {
     width: 40%;
     height: 1px;
     background-color: #ccc;
   }
-`;
-const LoginBtnWrap = styled.div`
-  padding: 3rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: conlumn;
 `;
 const GoogleSignBtn = styled.button`
   width: 100%;
@@ -97,7 +92,7 @@ const GoogleSignBtn = styled.button`
   align-items: center;
   color: #3d3d3d;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: #fff;
   border: 0.1rem solid #ddd;
   border-radius: 1rem;
@@ -111,7 +106,7 @@ const FacebookSignBtn = styled.button`
   align-items: center;
   font-weight: bold;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   background-color: #3c5a99;
   border: 0.1rem solid #ddd;
   border-radius: 1rem;

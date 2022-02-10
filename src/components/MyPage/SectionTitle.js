@@ -1,24 +1,33 @@
 import styled from "styled-components";
+import MyPageLink from "./MyPageLink";
 
 function SectionTitle({ children }) {
   return (
-    <StyledSectionTitle>
-      <LineDivider />
-      <SectionLabel>{children}</SectionLabel>
-      <LineDivider />
-    </StyledSectionTitle>
+    <StyledWrapper>
+      <MyPageLink />
+      <StyledSectionTitle>
+        <LineDivider />
+        <SectionLabel>{children}</SectionLabel>
+        <LineDivider />
+      </StyledSectionTitle>
+    </StyledWrapper>
   );
 }
 
 export default SectionTitle;
 
+const StyledWrapper = styled.div`
+  align-items: flex-start;
+  width: 100%;
+`;
+
 const StyledSectionTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem 0 5rem;
+  margin: 2rem 0 5rem;
   width: 100%;
-  height: 8rem;
+  height: 12rem;
 `;
 
 const LineDivider = styled.hr`
