@@ -161,7 +161,7 @@ a:hover {
         color: black;
         }
 
-`
+`;
 
 const PopularMenuIcon1 = styled.div`
   display: flex;
@@ -230,7 +230,7 @@ const PopularMenuIcon1 = styled.div`
         color: red;
         font-size:10px;
         }
-`
+`;
 
 const PopularMenuIcon2 = styled.div`
 display: flex;
@@ -292,7 +292,7 @@ a {
     color: red;
     font-size:10px;
     }
-`
+`;
 
 const PopularMenuIcon3 = styled.div`
 display: flex;
@@ -354,4 +354,4 @@ a {
     color: red;
     font-size:10px;
     }
-`
+`;
