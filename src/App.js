@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import MainPage from './pages/MainPage/MainPage';
+import PostPage from './pages/PostProductPage/PostProductPage';
 
 function App() {
   return (
-    MainPage()
+    PostPage()
   );
 }
 

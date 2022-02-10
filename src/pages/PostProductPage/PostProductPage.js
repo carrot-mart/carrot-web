@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
 
-function PostPruductPage() {
+function PostPage() {
 
     return (
-        <PostPruduct>
+        
+        <Post>
+            <fieldset>
             <legend><b>중고거래 글쓰기</b></legend>
             <form action="#">
                 <FileSet>
@@ -12,7 +14,7 @@ function PostPruductPage() {
                         <img src="camera.svg"></img>
                     </label>
                 </FileSet>
-                <p><input type="file" id="input-file" style="display:none"></input></p>
+                <p><input type="file" id="input-file"></input></p>
                 <hr></hr>
                 <TitleSet>
                     <input type="text" placeholder="글제목"></input>
@@ -42,47 +44,52 @@ function PostPruductPage() {
                 </p>
                 <hr></hr>
                 <PriceSet>
-                    <input placeholder="가격(선택사항)"></input>
+                    <input id="price" placeholder="가격(선택사항)"></input>
                     <label>가격제안받기</label>
-                    <input type="checkbox"></input>
+                    <input id="priceCheck" type="checkbox"></input>
                 </PriceSet>
                 <hr></hr>
                 <TextSet>
                     <input type="text" placeholder="게시글 내용을 작성해주세요(가품 및 판매금지품목은 게시가 제한될 수 있어요.)"></input>
                 </TextSet>
                 <hr></hr>  
+                
+                <p>
                 <OftenSentenceSet>
-                    <label for="input_button">
-                        <img src="plus.svg"></img>
-                        &nbsp;자주 쓰는 문구
-                    </label>
-                    <div className='model'>
-                        <h2>게시글에 쓰고 싶은 문구를 선택해주세요</h2>
+                        <option value="">자주 쓰는 문구를 선택해주세요</option>
+                        <option value="직거래해주세요">직거래해주세요</option>
+                        <option value="주말에만 가능해요">주말에만 가능해요</option>
+                        <option value="평일에만 가능해요">평일에만 가능해요</option>
+                        <option value="시간조율 가능해요">시간조율 가능해요</option>
+                        <option value="오전에만 가능해요">오전에만 가능해요</option>
+                        <option value="오후에만 가능해요">오후에만 가능해요</option>
+                        <option value="저녁에만 가능해요">저녁에만 가능해요</option>
 
-                        <input type="text" placeholder="문구를 입력해주세요"></input>
-                        <input type="submit" value = "추가"></input>
-                        
-                    </div>
-                </OftenSentenceSet>
-                <p><input type="button" id="input_button" style="display:none"></input></p>
+                    </OftenSentenceSet>
+                </p>
                 <hr></hr>
                 <PostButton>
                     <input type="submit" value="등록"></input>
                 </PostButton>
-            </form>
-        </PostPruduct>
+            </form> 
+            </fieldset>
 
+        </Post>
+        
         );
 
 }
 
-export default PostPruductPage;
+export default PostPage;
 
-const PostPruduct = styled.fieldset`
-    border: hidden;
-    width: 600px;
-    height: auto;
-
+const Post = styled.div`
+display: flex;
+justify-content: center;
+    fieldset {
+        border: hidden;
+        width: 600px;
+        height: auto;
+    }
     hr {
         border: solid 1px;
         border-bottom: 0px;
@@ -93,9 +100,12 @@ const PostPruduct = styled.fieldset`
     b {
         font-size: 25px;
         }
-    input,select:focus {
-                        outline: none;
-                        }
+    input:focus {
+        outline: none;
+        }
+    select:focus {
+        outline: none;
+        }
 `
 
 const FileSet = styled.p`
@@ -109,6 +119,9 @@ const FileSet = styled.p`
     img {
         width: 30px;
         height: 30px;
+        }
+        p{
+            display:none
         }
 `
 
@@ -127,11 +140,12 @@ const CategorySet = styled.select`
 `
 
 const PriceSet = styled.p`
-    input {
+    #price {
         border: hidden;
         height: 30px;
         width: 480px;
         }
+
 `
 
 const TextSet = styled.p`
@@ -142,11 +156,10 @@ const TextSet = styled.p`
         }
 `
 
-const OftenSentenceSet = styled.p`
-    img {
-        width: 13px;
-        height: 13px;
-        }
+const OftenSentenceSet = styled.select`
+border: hidden;
+height: 30px;
+width: 600px;
 `
 
 const PostButton = styled.p`

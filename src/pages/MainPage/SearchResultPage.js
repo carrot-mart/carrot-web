@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
+import {keywords} from "../../Tests"
 
 function MainPagePopularDetail() {
+    const PopularItemData = keywords.animals;
+    const PopularSearchData = keywords.animals;
+
     return (
         <PopularDetail>
             <h5>검색결과</h5>
@@ -21,41 +25,71 @@ function MainPagePopularDetail() {
             </PopularMenuText>
             <PopularMenuIcon1>
                 <ul class="icon_1">
+                {PopularItemData.강아지.map((item) => 
                     <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
+                        <div>
+                            <img src={item.img}/>
+                            <br />
+                            <p id='sentence'>
+                                {item.content}
+                            </p>
+                            <br />
+                            <span id="area">
+                                {item.region}
+                            </span>
+                            <br />
+                            <span id="price">
+                                {item.cost}
+                            </span>
+                        </div>
                     </li>
-                    <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
-                    </li>
-                    <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
-                    </li>
+                )}
                 </ul>
             </PopularMenuIcon1>
             <PopularMenuIcon2>
                 <ul class="icon_2">
+                {PopularItemData.고양이.map((item) => 
                     <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
-                    </li>
-                    <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
-                    </li>
-                    <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
-                    </li>
+                    <div>
+                        <img src={item.img}/>
+                        <br />
+                        <p id='sentence'>
+                            {item.content}
+                        </p>
+                        <br />
+                        <span id="area">
+                            {item.region}
+                        </span>
+                        <br />
+                        <span id="price">
+                            {item.cost}
+                        </span>
+                    </div>
+                </li>
+                )}
                 </ul>
             </PopularMenuIcon2>
             <PopularMenuIcon3>
                 <ul class="icon_3">
+                {PopularItemData.강아지.map((item) => 
                     <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
+                        <div>
+                            <img src={item.img}/>
+                            <br />
+                            <p id='sentence'>
+                                {item.content}
+                            </p>
+                            <br />
+                            <span id="area">
+                                {item.region}
+                            </span>
+                            <br />
+                            <span id="price">
+                                {item.cost}
+                            </span>
+                        </div>
                     </li>
-                    <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span  id="price">9000,000</span></a>
-                    </li>
-                    <li>
-                        <a href=""><img src="data/꽃.jpg" /><br /><strong>혼다 전기오토바이 자전거...</strong><br /><span>경기도 성남시 분당구 금곡동</span><br /><span id="price">9000,000</span></a>
-                    </li>
+                )}
                 </ul>
             </PopularMenuIcon3>
         </PopularDetail>
@@ -120,9 +154,14 @@ const PopularMenuIcon1 = styled.div`
         justify-content: space-around;
         list-style: none;
         padding-left: 0px;
+        margin-left:55px;
+        margin-right:50px;
+        overflow-x: hidden;
+        overflow-y: visible;
         }
 
     img {
+        margin-top:0px;
         width: 250px;
         height: 250px;
         border-radius: 18%;
@@ -137,94 +176,149 @@ const PopularMenuIcon1 = styled.div`
         color: black;
         }
 
-    strong {
-        font-size: 23px;
+        #sentence {
+            overflow:hidden;
+            text-overflow: ellipsis;
+            white-space:nowrap; 
+            width: 210px;
+            height: 20px;
+        }
+        #Title {
+            font-size: 35px;
+            padding: 60px 100px;
+            margin-top: 0px;
+            font-size: 40px
+        }
+
+        #area {
+            font-size:13px;
         }
 
     #price {
         color: red;
+        font-size:10px;
         }
 `
 
 const PopularMenuIcon2 = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+justify-content: space-around;
+list-style: none;
+padding-left: 0;
+margin: 0px;
+
+ul {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     justify-content: space-around;
     list-style: none;
-    padding-left: 0;
-    margin: 0px;
-    ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-content: space-around;
-        list-style: none;
-        padding-left: 0px;
-        }
+    padding-left: 0px;
+    margin-left:55px;
+    margin-right:50px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    }
 
-    img {
-        width: 250px;
-        height: 250px;
-        border-radius: 18%;
-        }
+img {
+    margin-top:0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 18%;
+    }
 
-    li {
-        padding: 8px 30px;
-        }
+li {
+    padding: 8px 30px;
+    }
 
-    a {
-        text-decoration-line: none;
-        color: black;
-        }
+a {
+    text-decoration-line: none;
+    color: black;
+    }
 
-    strong {
-        font-size: 23px;
-        }
+    #sentence {
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap; 
+        width: 210px;
+        height: 20px;
+    }
+    #Title {
+        font-size: 35px;
+        padding: 60px 100px;
+        margin-top: 0px;
+        font-size: 40px
+    }
 
-    #price {
-        color: red;
-        }
+    #area {
+        font-size:13px;
+    }
+
+#price {
+    color: red;
+    font-size:10px;
+    }
 `
 
 const PopularMenuIcon3 = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+justify-content: space-around;
+list-style: none;
+padding-left: 0;
+margin: 0px;
+ul {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     justify-content: space-around;
     list-style: none;
-    padding-left: 0;
-    margin: 0px;
+    padding-left: 0px;
+    margin-left:55px;
+    margin-right:50px;
+    overflow-x: hidden;
+    overflow-y: visible;
+    }
 
-    ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-content: space-around;
-        list-style: none;
-        padding-left: 0px;
-        }
+img {
+    margin-top:0px;
+    width: 250px;
+    height: 250px;
+    border-radius: 18%;
+    }
 
-    img {
-        width: 250px;
-        height: 250px;
-        border-radius: 18%;
-        }
+li {
+    padding: 8px 30px;
+    }
 
-    li {
-        padding: 8px 30px;
-        }
+a {
+    text-decoration-line: none;
+    color: black;
+    }
 
-    a {
-        text-decoration-line: none;
-        color: black;
-        }
+    #sentence {
+        overflow:hidden;
+        text-overflow: ellipsis;
+        white-space:nowrap; 
+        width: 210px;
+        height: 20px;
+    }
+    #Title {
+        font-size: 35px;
+        padding: 60px 100px;
+        margin-top: 0px;
+        font-size: 40px
+    }
 
-    strong {
-        font-size: 23px;
-        }
+    #area {
+        font-size:13px;
+    }
 
-    #price {
-        color: red;
-        }
+#price {
+    color: red;
+    font-size:10px;
+    }
 `
