@@ -140,6 +140,7 @@ const Top_search = styled.div`
     line-height: 30px;
   }
 `;
+
 const Top_menu = styled.div`
   height: 100px;
   position: absolute;
@@ -161,7 +162,7 @@ const Top_menu = styled.div`
     font-size: 17px;
     margin-left: 10px;
     position: relative;
-    text-decotaion: none;
+    text-decoration: none;
     color: black;
   }
   .menus h2 {
