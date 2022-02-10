@@ -1,10 +1,14 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import { BrowserRouter, Link, Router } from "react-router-dom";
 import styled from "styled-components";
 import { FaRegUser } from "react-icons/fa";
 import Bell from "./Bell";
 
 function Navigation() {
+  const navigate = useNavigate();
+  const login = false;
+  
   return (
   <StyledNavigation>
    <Header>
@@ -24,7 +28,7 @@ function Navigation() {
            <ul className='menu_list'>
                 <li className='menus'><Link to = "/" className='line'><h2>인기매물</h2></Link></li>
                 <li className='menus'><Link to = "/" className='line'><h2>동네정보</h2></Link></li>
-                <li className='menus'><Link to = "/" className='line'><h2><FaRegUser className='usericon' size='22' /> 나의당근</h2></Link></li>
+              <li className='menus'><button className='line' onClick={() => { login ? navigate("/mypage/likerecord") : navigate("/login"); }}><h2><FaRegUser className='usericon' size='22' /> 나의당근</h2></button></li>
                 <li className='menus'><Link to = "/" className='line'><Bell /> <h2>알림</h2></Link></li>   
             </ul>
         </Top_menu>
