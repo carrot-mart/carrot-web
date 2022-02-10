@@ -66,7 +66,7 @@ const StyledMyPage = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin: 5rem auto;
+  margin: auto;
 `;
 const LineDivider = styled.hr`
   width: 100%;

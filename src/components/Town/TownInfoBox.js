@@ -1,66 +1,67 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import TownTop from '../../asset/TownImg/TownTop.png';
-import Location from '../../asset/TownImg/Location.svg';
+import TownTop from "../../asset/TownImg/TownTop.png";
+import Location from "../../asset/TownImg/Location.svg";
 
 // 연희님
 import TownInfo from "./TownInfo";
 
 function TownInfoBox() {
-    let [modal, setmodal] = useState(true);
-    return (
-        <>
-            {modal ? (
-                <TownInfoTopBoxModal modal={modal} setmodal={setmodal} />
-            ) : (
-                <TownInfoModal />
-            )}
-        </>
-    );
+  let [modal, setmodal] = useState(true);
+  return (
+    <>
+      {modal ? (
+        <TownInfoTopBoxModal modal={modal} setmodal={setmodal} />
+      ) : (
+        <TownInfoModal />
+      )}
+    </>
+  );
 }
 
 function TownInfoTopBoxModal(props) {
-    return (
-        <TownInfoTopContainer>
-          <TownInfoTopBox>
-              <TownInfoTopBoxleft>
-                  <img src={TownTop} />
-              </TownInfoTopBoxleft>
+  return (
+    <TownInfoTopContainer>
+      <TownInfoTopBox>
+        <TownInfoTopBoxleft>
+          <img src={TownTop} />
+        </TownInfoTopBoxleft>
 
-              <TownInfoTopBoxright>
-                  <h1>
-                      <img src={Location} />
-                      내가 찾아보는 <br />
-                      &nbsp;&nbsp;동네정보
-                  </h1>
-                  <h4>
-                      우리 동네 소식이 궁굼한가요? <br />
-                      동네 주민이 남긴 진짜 동네 정보를<br /> 함께 확인해보세요!
-                  </h4>
-                  <TownInfoTopBoxButton
-                      onClick={() => {
-                          props.setmodal(false);
-                      }}
-                  >
-                      <h3>★ 동네 설정하고 정보를 찾아보세요!</h3>
-                  </TownInfoTopBoxButton>
-              </TownInfoTopBoxright>
-          </TownInfoTopBox>
-        </TownInfoTopContainer>
-    );
+        <TownInfoTopBoxright>
+          <h1>
+            <img src={Location} />
+            내가 찾아보는 <br />
+            &nbsp;&nbsp;동네정보
+          </h1>
+          <h4>
+            우리 동네 소식이 궁굼한가요? <br />
+            동네 주민이 남긴 진짜 동네 정보를
+            <br /> 함께 확인해보세요!
+          </h4>
+          <TownInfoTopBoxButton
+            onClick={() => {
+              props.setmodal(false);
+            }}
+          >
+            <h3>★ 동네 설정하고 정보를 찾아보세요!</h3>
+          </TownInfoTopBoxButton>
+        </TownInfoTopBoxright>
+      </TownInfoTopBox>
+    </TownInfoTopContainer>
+  );
 }
 
 function TownInfoModal(props) {
-    return <TownInfo />;
+  return <TownInfo />;
 }
 
 export default TownInfoBox;
 
 const TownInfoTopContainer = styled.div`
   width: 100%;
-  margin : 30rem 0;
-  hegiht:fit-content;
+  margin: 20rem 0;
+  height: fit-content;
   min-height: 5rem;
   text-align: center;
   display: flex;
@@ -90,22 +91,21 @@ const TownInfoTopBoxright = styled.div`
   margin-top: 150px;
   width: 100%;
   height: 400px;
-  
 
   h1 {
     font-size: 4.7em;
-    margin-bottom:50px;
-    line-height : 150%;
+    margin-bottom: 50px;
+    line-height: 150%;
   }
 
   img {
     width: 40px;
-    padding-right : 10px;
+    padding-right: 10px;
   }
   h4 {
     font-size: 2.5em;
-    margin-bottom:80px;
-    line-height : 150%;
+    margin-bottom: 80px;
+    line-height: 150%;
   }
 `;
 
@@ -121,5 +121,3 @@ const TownInfoTopBoxButton = styled.button`
   background-color: rgb(240, 65, 36);
   color: white;
 `;
-
-

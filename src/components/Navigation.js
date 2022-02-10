@@ -46,7 +46,7 @@ function Navigation() {
                 <button
                   className="line"
                   onClick={() => {
-                    login ? navigate("/mypage/likerecord") : navigate("/login");
+                    login ? navigate("/mypage") : navigate("/login");
                   }}
                 >
                   <h2>
