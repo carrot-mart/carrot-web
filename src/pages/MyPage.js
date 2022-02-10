@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 import defaultUserIcon from "../asset/defaultUserImage.jpeg";
+import Navigation from "../components/Navigation";
 
 function MyPage() {
   const navigate = useNavigate();
@@ -9,50 +10,53 @@ function MyPage() {
   const email = "abc@kako.com";
   const region = "서초동";
   return (
-    <StyledMyPage>
-      <UserInfo>
-        <Avatar src={require("../asset/defaultUserImage.jpeg")} />
-        <UserInfoTexts>
-          <p>안녕하세요,</p>
-          <h1>{name} 님</h1>
-          <h3>{email}</h3>
-          <h2>{region}</h2>
-        </UserInfoTexts>
-      </UserInfo>
-      <LineDivider />
-      <MenuGrid>
-        <Menu>
-          <MenuTitle>판매 / 구매내역</MenuTitle>
-          <MenuButton onClick={() => navigate("/mypage/sellbuyrecord")}>
-            내역 확인
-          </MenuButton>
-        </Menu>
-        <Menu>
-          <MenuTitle>관심 목록</MenuTitle>
-          <MenuButton onClick={() => navigate("/mypage/likerecord")}>
-            관심 목록 확인
-          </MenuButton>
-        </Menu>
-        <Menu>
-          <MenuTitle>내 동네 설정</MenuTitle>
-          <MenuButton onClick={() => navigate("/mypage/regionsettings")}>
-            내 동네 확인
-          </MenuButton>
-        </Menu>
-        <Menu>
-          <MenuTitle>내 작성글 보기</MenuTitle>
-          <MenuButton onClick={() => navigate("/mypage/likerecord")}>
-            내 작성글 확인
-          </MenuButton>
-        </Menu>
-        <Menu>
-          <MenuTitle>자주 묻는 질문</MenuTitle>
-          <MenuButton onClick={() => navigate("/mypage/faq")}>
-            확인하기
-          </MenuButton>
-        </Menu>
-      </MenuGrid>
-    </StyledMyPage>
+    <>
+      <Navigation />
+      <StyledMyPage>
+        <UserInfo>
+          <Avatar src={require("../asset/defaultUserImage.jpeg")} />
+          <UserInfoTexts>
+            <p>안녕하세요,</p>
+            <h1>{name} 님</h1>
+            <h3>{email}</h3>
+            <h2>{region}</h2>
+          </UserInfoTexts>
+        </UserInfo>
+        <LineDivider />
+        <MenuGrid>
+          <Menu>
+            <MenuTitle>판매 / 구매내역</MenuTitle>
+            <MenuButton onClick={() => navigate("/mypage/sellbuyrecord")}>
+              내역 확인
+            </MenuButton>
+          </Menu>
+          <Menu>
+            <MenuTitle>관심 목록</MenuTitle>
+            <MenuButton onClick={() => navigate("/mypage/likerecord")}>
+              관심 목록 확인
+            </MenuButton>
+          </Menu>
+          <Menu>
+            <MenuTitle>내 동네 설정</MenuTitle>
+            <MenuButton onClick={() => navigate("/mypage/regionsettings")}>
+              내 동네 확인
+            </MenuButton>
+          </Menu>
+          <Menu>
+            <MenuTitle>내 작성글 보기</MenuTitle>
+            <MenuButton onClick={() => navigate("/mypage/likerecord")}>
+              내 작성글 확인
+            </MenuButton>
+          </Menu>
+          <Menu>
+            <MenuTitle>자주 묻는 질문</MenuTitle>
+            <MenuButton onClick={() => navigate("/mypage/faq")}>
+              확인하기
+            </MenuButton>
+          </Menu>
+        </MenuGrid>
+      </StyledMyPage>
+    </>
   );
 }
 
@@ -62,7 +66,7 @@ const StyledMyPage = styled.div`
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin: auto;
+  margin: 5rem auto;
 `;
 const LineDivider = styled.hr`
   width: 100%;
