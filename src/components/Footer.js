@@ -3,10 +3,9 @@ import { BrowserRouter, Link, Router } from "react-router-dom";
 import styled from "styled-components";
 import { AiFillGithub } from "react-icons/ai";
 
-function Bottom() {
+function Footer() {
     return (
-    <Body>
-    <Footer>
+    <FooterStyled>
            <Inner>
             <Link to = "/" className="mainlogo2">
                 <img src="img/main_logo2.png" alt="메인로고2" />
@@ -23,8 +22,8 @@ function Bottom() {
             <Footer_addr>
                     <ul class="addr1">
                         <li>명승혁 audtmdgur@naver.com</li>
-                        <li>곽미진 rhkralwls@gmail.com</li>
-                        <li>허승현 rhkralwls@gmail.com</li>
+                        <li>곽미진 mj010516@naver.com</li>
+                        <li>허승현 lutise@gmail.com</li>
                     </ul>
                     <div className="addr2">
                         <li>정연희 spig0126@gmail.com</li>
@@ -33,38 +32,32 @@ function Bottom() {
                 
             </Footer_addr>
             <Git>
-            <a href="https://github.com/msh0108/carrot"><AiFillGithub className='giticon' size='60' color='black'/></a>
+            <a href="https://github.com/carrot-mart/carrot-web"><AiFillGithub className='giticon' size='60' color='black'/></a>
             </Git>
             </Footer_inner>
             </Inner>
-        </Footer>
-    </Body>
+        </FooterStyled>
     );
   }
   
-  const Body = styled.body`
+  const FooterStyled = styled.footer`
     margin: 0;
     padding: 0;
-    background-color: #fff;
-    // min-width:1920px;
-    font-family:'Nanum Gothic', sans-serif; 
     color:#333333;
-
-  ul,li{
-    list-style:none; 
-    float:left; 
-    margin:0; 
-    padding:0;
-  }
-  `;
-  const Footer = styled.footer`
-  height:370px;
-  background-color: #495057;
+    width:100%;
+    height:37rem;
+    background-color: #495057;
+    ul,li{
+        list-style:none; 
+        float:left; 
+        margin:0; 
+        padding:0;
+    }
   `;
   const Inner = styled.div`
     position:relative;
-    width:1200px;
-    height:370px;
+    width:120rem;
+    height:37rem;
     margin:0 auto;
     .mainlogo2{
         float:left;
@@ -72,7 +65,7 @@ function Bottom() {
   `;
   const Footer_inner = styled.div`
     clear: both;
-    width:739px;
+    width:73.9rem;
     margin:0 auto;
     a{
         margin:0 auto;
@@ -82,14 +75,14 @@ function Bottom() {
         top:30px;
     }
     a img{
-        width:52px;
-        height:52px;
+        width:5.2rem;
+        height:5.2rem;
     }
 `;
 const Footer_menu = styled.div`
     clear:both;
     float:left;
-    width:740px;
+    width:74rem;
     position:relative;
     ul{
         overflow: hidden;
@@ -97,7 +90,7 @@ const Footer_menu = styled.div`
     }
     ul li{
         margin:10px 17px;
-        font-size:20px;
+        font-size:2rem;
         color:#ffffff;
         cursor:pointer;
     }
@@ -109,7 +102,7 @@ const Footer_addr = styled.div`
     box-sizing: border-box;
     li{
         color:#ffffff;
-        font-size: 14px;
+        font-size: 1.4rem;
     }
     .addr1{
         margin-bottom:31px;
@@ -131,7 +124,7 @@ const Footer_addr = styled.div`
 `;
 const Git = styled.div`
     float:left;
-    width:739px;
+    width:73.9rem;
     position:relative;
     .giticon :hover{
         transition: all 1s;
@@ -139,7 +132,7 @@ const Git = styled.div`
     }
 `;
   
-  export default Bottom;
+  export default Footer;
   
   
   

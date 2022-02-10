@@ -1,0 +1,108 @@
+import React, { useState, useEffect } from 'react'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import { useSelector } from 'react-redux';
+import { getDatabase, ref, onValue, remove, child, update } from "firebase/database";
+import styled from "styled-components";
+
+
+
+function MessageHeader({ handleSearchChange }) {
+    const chatRoom = useSelector(state => state.chatRoom.currentChatRoom)
+    const isPrivateChatRoom = useSelector(state => state.chatRoom.isPrivateChatRoom)
+    const [isFavorited, setIsFavorited] = useState(false);
+    const usersRef = ref(getDatabase(), "users");
+    const user = useSelector(state => state.user.currentUser);
+    const userPosts = useSelector(state => state.chatRoom.userPosts)
+    useEffect(() => {
+        if (chatRoom && user) {
+            addFavoriteListener(chatRoom.id, user.uid)
+        }
+    }, [])
+
+    const addFavoriteListener = (chatRoomId, userId) => {
+
+        onValue(child(usersRef, `${userId}/favorited`), data => {
+            if (data.val() !== null) {
+                const chatRoomIds = Object.keys(data.val());
+                const isAlreadyFavorited = chatRoomIds.includes(chatRoomId)
+                setIsFavorited(isAlreadyFavorited)
+            }
+        })
+
+    }
+
+    const handleFavorite = () => {
+        if (isFavorited) {
+            setIsFavorited(prev => !prev)
+            remove(child(usersRef, `${user.uid}/favorited/${chatRoom.id}`))
+        } else {
+            setIsFavorited(prev => !prev)
+            update(child(usersRef, `${user.uid}/favorited`), {
+                [chatRoom.id]: {
+                    name: chatRoom.name,
+                    description: chatRoom.description,
+                    createdBy: {
+                        name: chatRoom.createdBy.name,
+                        image: chatRoom.createdBy.image
+                    }
+                }
+            })
+        }
+    }
+
+    const renderUserPosts = (userPosts) =>
+        Object.entries(userPosts)
+            .sort((a, b) => b[1].count - a[1].count)
+            .map(([key, val], i) => (
+                <div key={i} style={{ display: 'flex'}}>
+                    <img
+                        style={{ borderRadius: 25 }}
+                        width={48}
+                        height={48}
+                        className="mr-3"
+                        src={val.image}
+                        alt={val.name}
+                    />
+                    <div>
+                        <h6>{key}</h6>
+                        <p>
+                            {val.count} 개
+                        </p>
+                    </div>
+                </div>
+            ))
+                
+
+
+    return (
+        <HeaderStyled>
+            <Container>
+                <Row>
+                    <Col>
+                        <h2>
+                            {chatRoom && chatRoom.name}
+                        </h2>
+                    </Col>    
+                </Row>
+            </Container>
+        </HeaderStyled>
+    )
+}
+
+export default MessageHeader;
+
+const HeaderStyled = styled.div`
+width: 100%;
+height: 7rem;
+border: .3rem solid #ececec;
+border-radius: 0px 20px 0px 0px;
+display:flex;
+align-items:center;
+background-color:white;
+h2{
+    font-weight:bold;
+}
+
+`;

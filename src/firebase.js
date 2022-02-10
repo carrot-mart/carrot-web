@@ -24,6 +24,5 @@ export const authentication = getAuth(SocialLogin);
 
 export const firebaseInstance = firebase;
 export const authService = getAuth();
-export const db = firebase.database();
 
 export default firebase;

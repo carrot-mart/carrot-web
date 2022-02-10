@@ -57,7 +57,7 @@ function PostPruductPage() {
                         &nbsp;자주 쓰는 문구
                     </label>
 
-                    </ModalPage>
+                   
 
                 </OftenSentenceSet>
                 <p><input type="button" id="input_button" style="display:none"></input></p>

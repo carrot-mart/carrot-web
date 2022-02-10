@@ -8,7 +8,7 @@ import styled from "styled-components";
 // 내부 파일
 import SocialLogin from "../components/LoginPage/SocialLogin";
 import Modal from "../components/RegisterPage/RegisterModal";
-import fbase from "../fbase";
+import fbase from "../firebase";
 
 function RegisterPage() {
   const {

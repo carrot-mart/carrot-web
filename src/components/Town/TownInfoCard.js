@@ -1,8 +1,6 @@
 import {
     BsChat,
-    BsChatFill,
-    BsEmojiSmile,
-    BsEmojiSmileFill,
+    BsChatFill
 } from "react-icons/bs";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
@@ -29,7 +27,7 @@ function TownInfoCard({ card }) {
 						onClick={() => setClickEmoticon(!clickEmoticon)}
 					>
 						<p>공감하기</p>
-						{clickEmoticon ? <BsEmojiSmileFill /> : <BsEmojiSmile />}
+						{/* {clickEmoticon ? <BsEmojiSmileFill /> : <BsEmojiSmile />} */}
 					</ResponseButton>
 					<ResponseButton onClick={() => setClickMessage(!clickMessage)}>
 						<p>답변하기</p>
