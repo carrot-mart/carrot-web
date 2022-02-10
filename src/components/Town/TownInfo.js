@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 import TownInfoCard from "./TownInfoCard";
-import TownInfoDetail from "./TownInfoDetail";
+import TownInfoDetail from "./Detail";
 
 
 function TownInfo() {
@@ -24,13 +24,17 @@ function TownInfo() {
 function TownDetailInfoModal(props){
     return(
         <TownInfoContainer  >
-            <h1>우리동네 정보</h1>
-            {test.map((card, index) => (
-                <div onClick={ () => { props.setmodal(false) }} >
-                    <TownInfoCard card={card} >
-                    </TownInfoCard>
-                </div>
-            ))}
+            <TownInfoBox>
+                <h1>우리동네 정보</h1>
+                        
+                {test.map((card, index) => (
+                    <div onClick={ () => { props.setmodal(false) }} >
+                        <TownInfoCard card={card} >
+                        </TownInfoCard>
+                    </div>
+                ))}
+                
+            </TownInfoBox>
         </TownInfoContainer>
     )
 }
@@ -47,23 +51,32 @@ function TownStoreDetailPageModal(){
 export default TownInfo;
 
 const TownInfoContainer = styled.div`
-	width : 1410px;
-	height:  700x;
-	display: grid;
-	margin : 15rem 0;
+    margin : 250px 0;
+	width : 100%;
+	height:fit-content;
+    background-color: rgba(238, 106, 84, 20%);
+	
+	
+`;
+
+const TownInfoBox = styled.div`
+    width : 110rem;
+    margin : 0 auto;
+    display: grid;
 	grid-gap: 2rem;
 	grid-template-columns: repeat(4, minmax(22%, auto));
 	grid-template-rows: 1fr 5fr 5fr;
-	background-color: rgba(238, 106, 84, 20%);
+	
 	padding: 4rem 6rem;
-	h1 {
-		font-size: 3rem;
+    h1 {
+		font-size: 4.6rem;
 		width: 100vw;
 		grid-column: span 4;
 		text-align: left;
 		margin: 5px 3px;
 	}
 `;
+
 
 const test = [
     {
@@ -77,7 +90,7 @@ const test = [
     },
     {
         cartegory: "동네질문",
-        nickname: "GUANAJA",
+        nickname: "두파리",
         region: "동작구 노량진동",
         content:
             "노량진에 HDMI 케이블 파는 곳 있을까요?",

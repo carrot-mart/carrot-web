@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, Component } from "react";
 import styled from "styled-components";
 
 import TownInfoBox from '../components/Town/TownInfoBox'
-import TownStoreBox from '../components/Town/TownStoreInfoBox'
+import TownStoreBox from '../components/Town/TownStoreBox'
 import TownPostscript from '../components/Town/TownPostscript'
 
 
@@ -30,9 +30,7 @@ function TownMainPage() {
     );
 }
 
-
 export default TownMainPage;
-
 
 const TownMainContainer = styled.div`
     margin : 0 auto;

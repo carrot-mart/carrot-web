@@ -1,6 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import "../../../globalStyles.css";
+
 function SectionLabel({ viewSell, setViewSell, changeData }) {
   return (
     <StyledSectionLabel>
@@ -33,7 +35,12 @@ function SectionLabel({ viewSell, setViewSell, changeData }) {
 export default SectionLabel;
 
 const StyledSectionLabel = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 1rem 0;
+  height: 12rem;
+  align-items: center;
+  margin: 1rem 0 5rem;
 `;
 
 const LineDivider = styled.hr`
@@ -45,17 +52,21 @@ const LineDivider = styled.hr`
 const SectionFlex = styled.div`
   display: flex;
   width: auto;
+  height: 100%;
+  align-items: center;
   justify-content: center;
+  height: 100%;
 `;
 
 const LabelButton = styled.button`
   border: none;
   background-color: white;
   border-radius: 10px;
-  height: 2.2rem;
-  width: 8rem;
+  height: fit-content;
+  width: fit-content;
+  padding: 1rem 5rem;
   margin: 0 1rem;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bolder;
 
   ${(props) =>

@@ -1,27 +1,23 @@
-import styled, { css } from "styled-components";
+import React from "react";
+import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 import ProductGrid from "../../components/MyPage/ProductGrid";
 import SectionTitle from "../../components/MyPage/SectionTitle";
-import { keywords } from "../../Tests";
-import { useState } from "react";
-import { db } from "../../fbase";
+import Navigation from "../../components/Navigation";
+import "../../globalStyles.css";
 
 function LikeRecordPage() {
-  const [data, setData] = useState([]);
-  const test = keywords.animals.all;
-  console.log(test);
-
-  // const dataRef = db.ref("keywords/animals/전체");
-  // dataRef.on("value", (snapshot) => {
-  //   setData(snapshot.val());
-  // });
+  const likeData = useSelector((state) => state.likes);
+  console.log(likeData);
 
   return (
-    <StyledLikeRecord>
-      <SectionTitle>찜한 목록</SectionTitle>
-      <ProductGrid productData={test} />
-      <tempBox />
-    </StyledLikeRecord>
+    <>
+      <StyledLikeRecord>
+        <SectionTitle>찜한 목록</SectionTitle>
+        <ProductGrid productData={likeData} />
+      </StyledLikeRecord>
+    </>
   );
 }
 
@@ -30,12 +26,7 @@ export default LikeRecordPage;
 const StyledLikeRecord = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 10rem;
+  width: 80%;
+  margin: auto;
   align-items: center;
-`;
-
-const tempBox = styled.div`
-  width: 100%;
-  background-color: red;
-  height: 100px;
 `;
