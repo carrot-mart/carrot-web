@@ -8,6 +8,8 @@ import Navigation from "../../components/Navigation";
 import { keywords } from "../../Tests";
 
 function SellBuyRecord() {
+
+ 
   const sellRecordData = keywords.animals.강아지;
   const buyRecordData = keywords.beauty.makeup;
 
@@ -19,7 +21,6 @@ function SellBuyRecord() {
 
   return (
     <>
-      <Navigation />
       <StyledSellBuyRecord>
         <SectionLabel
           viewSell={viewSell}
