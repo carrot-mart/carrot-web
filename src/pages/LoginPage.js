@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import fbase from "../fbase";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { login, logout } from "../redux/features/login/loginSlice";
 
-// 내부
 import SocialLogin from "../components/LoginPage/SocialLogin";
 
 function LoginPage() {
@@ -15,6 +16,8 @@ function LoginPage() {
   } = useForm();
   const [errorFromSubmit, setErrorFromSubmit] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const onSubmit = async (data) => {
     try {
@@ -23,6 +26,8 @@ function LoginPage() {
         .auth() // auth 서비스에 저장
         .signInWithEmailAndPassword(data.email, data.password);
       setLoading(false);
+      dispatch(login());
+      navigate("/");
     } catch (error) {
       setErrorFromSubmit(error.message);
       setLoading(false);

@@ -49,8 +49,9 @@ function App(props) {
   return (
     <div className="App">
       <Navigation />
-      <Link to="/mypage/likerecord">Like Record</Link>
-      <Link to="/mypage/sellbuyrecord">SellBuyRecird</Link>
+      {/* <Link to="/mypage/likerecord">Like Record</Link>
+      <Link to="/mypage/sellbuyrecord">SellBuyRecird</Link> */}
+  
       
     </div>
   );

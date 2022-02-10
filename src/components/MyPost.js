@@ -10,7 +10,7 @@ function MyPost() {
       <h1>마이페이지</h1>
       </Link>
         <div class="mypost_main">
-        <Link to="/" className='inner'>
+        <Link to="/postpage" className='inner'>
             <h1>내 작성글 보기</h1>
         </Link>
         </div>

@@ -1,17 +1,16 @@
-import React from 'react';
-import { useNavigate } from "react-router-dom";
-import { BrowserRouter, Link, Router } from "react-router-dom";
+import React from "react";
+import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaRegUser } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
-
+import { useSelector } from "react-redux";
 
 import Bell from "./Bell";
 
 function Navigation() {
   const navigate = useNavigate();
-  const login = false;
-  
+  const login = useSelector((state) => state.login.value);
+
   return (
   <StyledNavigation>
      <Top_head>
@@ -30,7 +29,16 @@ function Navigation() {
            <ul className='menu_list'>
                 <li className='menus'><Link to = "/"   className='line'><h2>인기매물</h2></Link></li>
                 <li className='menus'><Link to = "/" className='line'><h2>동네정보</h2></Link></li>
-                <li className='menus'><button className='line' onClick={() => { login ? navigate("/mypage/likerecord") : navigate("/login"); }}><h2><FaRegUser className='usericon' size='22' /> 나의당근</h2></button></li>
+                <li className='menus'><button
+                  className="line"
+                  onClick={() => {
+                    login ? navigate("/mypage/likerecord") : navigate("/login");
+                  }}
+                >
+                  <h2>
+                  <FaRegUser className='usericon' size='22' /> 나의당근
+                  </h2>
+                </button></li>
                 <li className='menus'><Link to = "/" className='line'><Bell /></Link></li>   
             </ul>
         </Top_menu>
@@ -61,9 +69,9 @@ const Top_head = styled.div`
   div{
     float:left;
   }
-  .mainlogo{
-    float:left;
-    line-height:100%;
+  .mainlogo {
+    float: left;
+    line-height: 100%;
   }
 `;
 const Top_search = styled.div`
@@ -158,5 +166,4 @@ justify-content: center;
  }
  `;
 
-
-
+  
