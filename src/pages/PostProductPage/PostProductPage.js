@@ -13,8 +13,8 @@ function PostPage() {
                     <label for="input-file">
                         <img src="camera.svg"></img>
                     </label>
+                    <p><input type="file" id="input-file"></input></p>
                 </FileSet>
-                <p><input type="file" id="input-file"></input></p>
                 <hr></hr>
                 <TitleSet>
                     <input type="text" placeholder="글제목"></input>
@@ -68,6 +68,10 @@ function PostPage() {
                     </OftenSentenceSet>
                 </p>
                 <hr></hr>
+                <RegionSet>
+                    <input type="text" placeholder="자신의 동네를 써주세요"></input>
+                </RegionSet>
+                <hr></hr>
                 <PostButton>
                     <input type="submit" value="등록"></input>
                 </PostButton>
@@ -120,9 +124,9 @@ const FileSet = styled.p`
         width: 30px;
         height: 30px;
         }
-        p{
-            display:none
-        }
+    p{
+        display:none
+    }
 `
 
 const TitleSet = styled.p`
@@ -151,7 +155,7 @@ const PriceSet = styled.p`
 const TextSet = styled.p`
     input {
         border: hidden;
-        height: 700px;
+        height: 400px;
         width: 600px;
         }
 `
@@ -160,6 +164,13 @@ const OftenSentenceSet = styled.select`
 border: hidden;
 height: 30px;
 width: 600px;
+`
+const RegionSet = styled.p`
+input {
+    border: hidden;
+    height: 30px;
+    width: 600px;
+    }
 `
 
 const PostButton = styled.p`

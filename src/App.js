@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import PostPage from './pages/PostProductPage/PostProductPage';
+import MainPagePopularDetail from './pages/MainPage/SearchResultPage';
 
 function App() {
   return (
-    PostPage()
+    MainPagePopularDetail()
   );
 }
 
