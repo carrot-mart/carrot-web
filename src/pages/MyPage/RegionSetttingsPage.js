@@ -46,7 +46,7 @@ function RegionSettingsPage() {
       <RegionSelectBox>
         {/* <SelectBox /> */}
           <SelectBox>
-            <div class="search_box">
+            <div class="SearchBox">
               <select name="" id="region" onchange={categoryChange}>
                 <option value>시/도 선택</option>
                 <option value="region01">강원</option>
@@ -68,7 +68,7 @@ function RegionSettingsPage() {
               </select>
               <span class="icoArrow"><img src={Arrow} alt="Arrow" /></span>
               </div>
-            <div class="search_box">
+            <div class="SearchBox">
               <select name="" id="state">
                 <option >군/구 선택 </option>
               </select>
@@ -93,50 +93,50 @@ const StyledRegionSettings = styled.div`
   align-items: center;
 `;
 
-const RegionText = styled.div`
-  color: inherit;
-  font-size: 1.2rem;
-  text-align: left;
-  align-self: center;
-  flex-grow: 1;
-  width: 100%;
-`;
+// const RegionText = styled.div`
+//   color: inherit;
+//   font-size: 1.2rem;
+//   text-align: left;
+//   align-self: center;
+//   flex-grow: 1;
+//   width: 100%;
+// `;
 
-const RegionSelectedBox = styled.div`
-  display: flex;
-  background-color: rgb(255, 119, 43);
-  border-radius: 5rem;
-  width: 100%;
-  height: 5rem;
-  color: white;
-  justify-items: center;
-  padding: 0 1.2rem;
-  border: 1px solid transparent;
-  box-sizing: border-box;
-`;
+// const RegionSelectedBox = styled.div`
+//   display: flex;
+//   background-color: rgb(255, 119, 43);
+//   border-radius: 5rem;
+//   width: 100%;
+//   height: 5rem;
+//   color: white;
+//   justify-items: center;
+//   padding: 0 1.2rem;
+//   border: 1px solid transparent;
+//   box-sizing: border-box;
+// `;
 
-const RegionNotSelectedBox = styled.div`
-  display: flex;
-  border: 1px solid rgb(196, 196, 196);
-  border-radius: 5rem;
-  width: 100%;
-  height: 5rem;
-  color: rgb(107, 107, 107);
-  padding: 0 1.2rem;
-  justify-content: center;
-  box-sizing: border-box;
-`;
+// const RegionNotSelectedBox = styled.div`
+//   display: flex;
+//   border: 1px solid rgb(196, 196, 196);
+//   border-radius: 5rem;
+//   width: 100%;
+//   height: 5rem;
+//   color: rgb(107, 107, 107);
+//   padding: 0 1.2rem;
+//   justify-content: center;
+//   box-sizing: border-box;
+// `;
 
-const IconButton = styled.button`
-  display: flex;
-  width: 20%;
-  border: none;
-  color: inherit;
-  align-items: center;
-  background: none;
-  cursor: pointer;
-  justify-content: center;
-`;
+// const IconButton = styled.button`
+//   display: flex;
+//   width: 20%;
+//   border: none;
+//   color: inherit;
+//   align-items: center;
+//   background: none;
+//   cursor: pointer;
+//   justify-content: center;
+// `;
 
 //셀렉트 박스
 

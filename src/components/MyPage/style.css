@@ -3,7 +3,7 @@ body{font-family: "맑은고딕";}
 
 
 
-.search_box{
+.SearchBox{
   
   position: relative;
   width: 100%;
@@ -14,7 +14,7 @@ body{font-family: "맑은고딕";}
 }
 
 
-.search_box #region {
+.SearchBox #region {
   appearance: none;
   width: inherit;
   height: inherit;
@@ -28,7 +28,7 @@ body{font-family: "맑은고딕";}
   font-size: 2rem;
   text-align: center;
 }
-.search_box #region option {
+.SearchBox #region option {
   background: F04124;
   color: #000;
   padding: 3px 0;
@@ -36,7 +36,7 @@ body{font-family: "맑은고딕";}
 }
 
 
-.search_box #state {
+.SearchBox #state {
   appearance: none;
   width: inherit;
   height: inherit;
@@ -50,7 +50,7 @@ body{font-family: "맑은고딕";}
   font-size: 2rem;
   text-align: center;
 }
-.search_box #state option {
+.SearchBox #state option {
   background: F04124;
   color: #000;
   padding: 3px 0;
@@ -58,7 +58,7 @@ body{font-family: "맑은고딕";}
 }
 
 
-.search_box img{
+.SearchBox img{
   position: absolute; 
   top: 0; 
   right: 0; 
