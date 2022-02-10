@@ -9,7 +9,7 @@ function TownStoreCard({ store }) {
   const dispatch = useDispatch();
   const showDetails = () => {
     dispatch(showStoreDetail({ store }));
-    navigate("/product/details");
+    navigate("/store/details");
   };
   return (
     <StyledCard onClick={showDetails}>
