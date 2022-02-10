@@ -33,12 +33,12 @@ function Navigation() {
           <Top_menu>
             <ul className="menu_list">
               <li className="menus">
-                <Link to="/" className="line">
+                <Link to="/search" className="line">
                   <h2>인기매물</h2>
                 </Link>
               </li>
               <li className="menus">
-                <Link to="/" className="line">
+                <Link to="/town" className="line">
                   <h2>동네정보</h2>
                 </Link>
               </li>
@@ -70,7 +70,7 @@ function Navigation() {
 export default Navigation;
 
 const StyledNavigation = styled.div`
-  margin: 0;
+  margin: 0 0 3rem 0;
   padding: 0;
   background-color: #fff;
   font-family: "Nanum Gothic", sans-serif;
@@ -79,6 +79,11 @@ const StyledNavigation = styled.div`
   li {
     list-style: none;
     float: left;
+  }
+
+  button {
+    background: none;
+    border: none;
   }
 `;
 const Header = styled.header`

@@ -41,6 +41,7 @@ ReactDOM.render(
           <Route path="/store/details" element={<TownStoreDetailPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/product/details" element={<ProductDetailPage />} />
+          <Route path="/search" element={<SearchResultPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>
