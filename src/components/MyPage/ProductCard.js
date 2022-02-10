@@ -4,6 +4,7 @@ import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
+import { showProductDetail } from "../../redux/features/detail/detailSlice";
 import { like, unlike } from "../../redux/features/likes/likesSlice";
 import "../../globalStyles.css";
 
@@ -11,13 +12,12 @@ function ProductCard({ product }) {
   const [likes, setLikes] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const showDetails = () => {
+    dispatch(showProductDetail({ product }));
+    navigate("/product/details");
+  };
   return (
-    <StyledProductCard
-      onClick={() => {
-        navigate("/");
-      }}
-    >
+    <StyledProductCard onClick={showDetails}>
       <ProductImage src={product.img} />
       <ProductInfo>
         <ProductTitle>{product.title}</ProductTitle>

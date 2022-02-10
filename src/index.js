@@ -20,7 +20,7 @@ import SearchResultPage from "./pages/MainPage/SearchResultPage";
 import TownStoreDetailPage from "./pages/TownStoreDetailPage";
 import TownMainPage from "./pages/TownPage";
 import MyPage from "./pages/MyPage";
-
+import ProductDetailPage from "./pages/ProductDetailPage";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -38,8 +38,9 @@ ReactDOM.render(
             element={<RegionSettingsPage />}
           />
           <Route path="/mypage/faq" element={<FAQPage />} />
-          <Route path="/product/details" element={<TownStoreDetailPage />} />
+          <Route path="/store/details" element={<TownStoreDetailPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/product/details" element={<ProductDetailPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>
