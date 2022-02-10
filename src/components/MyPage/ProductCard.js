@@ -11,8 +11,6 @@ function ProductCard({ product }) {
   const [likes, setLikes] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const like = true;
-  
 
   return (
     <StyledProductCard
