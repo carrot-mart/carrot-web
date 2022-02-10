@@ -30,7 +30,7 @@ function Navigation() {
               </Link>
             </div>
           </Top_search>
-          <Top_menu>
+          <TopMenu>
             <ul className="menu_list">
               <li className="menus">
                 <Link to="/search" className="line">
@@ -56,11 +56,14 @@ function Navigation() {
               </li>
               <li className="menus">
                 <Link to="/" className="line">
-                  <Bell /> <h2>알림</h2>
+                  <BellIcon>
+                    <Bell />
+                  </BellIcon>{" "}
+                  <BellText>알림</BellText>
                 </Link>
               </li>
             </ul>
-          </Top_menu>
+          </TopMenu>
         </Top_head>
       </Header>
     </StyledNavigation>
@@ -73,7 +76,6 @@ const StyledNavigation = styled.div`
   margin: 0 0 3rem 0;
   padding: 0;
   background-color: #fff;
-  font-family: "Nanum Gothic", sans-serif;
   color: #333333;
   ul,
   li {
@@ -141,13 +143,13 @@ const Top_search = styled.div`
   }
 `;
 
-const Top_menu = styled.div`
+const TopMenu = styled.div`
   height: 100px;
   position: absolute;
   right: 10px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
 
   .menu_list {
     display: flex;
@@ -196,4 +198,12 @@ const Top_menu = styled.div`
     align-items: center;
     margin-right: 5px;
   }
+`;
+
+const BellIcon = styled.div`
+  margin-bottom: 1.5rem;
+`;
+
+const BellText = styled.div`
+  margin-top: 1.5rem;
 `;
