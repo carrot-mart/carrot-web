@@ -1,0 +1,51 @@
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+function Chat() {
+  return (
+    <div>
+      <AnserSection>
+        <List as="a" href="#">
+          Q. 당근채팅 웹 버전이 무엇인가요?
+        </List>
+        <List as="a" href="#">
+          Q. 당근채팅 웹 버전이 무엇인가요?
+        </List>
+        <List as="a" href="#">
+          Q. 당근채팅 웹 버전이 무엇인가요?
+        </List>
+        <List as="a" href="#">
+          Q. 당근채팅 웹 버전이 무엇인가요?
+        </List>
+        <List as="a" href="#">
+          Q. 당근채팅 웹 버전이 무엇인가요?
+        </List>
+      </AnserSection>
+    </div>
+  );
+}
+export default Chat;
+const AnserSection = styled.div`
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+  a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #3d3d3d;
+    &:visited,
+    link {
+      color: #3d3d3d;
+      text-decoration: none;
+    }
+    &: hover {
+      color: #f04124;
+    }
+  }
+`;
+const List = styled(Link)`
+  display: block;
+  padding: 18px 30px;
+  text-align: left;
+  border-bottom: 1px solid #c4c4c4;
+`;

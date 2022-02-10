@@ -94,18 +94,41 @@ function MainPagePopularDetail() {
             </PopularMenuIcon3>
         </PopularDetail>
     );
+                }
 
+function SearchResultPage() {
+  const keyword = "plants";
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    db.ref(`keywords/${keyword}/전체`)
+      .once("value")
+      .then((snapshot) => {
+        setIsLoading(false);
+        setData(snapshot.val());
+      });
+  }, [keyword]);
+
+  return (
+    <SearchResultBox>
+      <h5>검색결과</h5>
+      <ProductGrid productData={data} />
+    </SearchResultBox>
+  );
 }
 
-export default MainPagePopularDetail;
+export default SearchResultPage;
 
-const PopularDetail = styled.div`
-    h5 {
-        padding: 0px 320px;
-        font-size: 35px;
-        margin: 0px;
-        }
-` 
+const SearchResultBox = styled.div`
+  width: 80%;
+  margin: auto;
+  h5 {
+    font-size: 35px;
+    margin: 0px;
+  }
+`;
 const PopularMenuText = styled.div`
 a:hover {
     color:gray;
@@ -118,21 +141,20 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    padding-left: 0;
+    margin: 0px;
+  }
 
-    ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        justify-content: space-around;
-        list-style: none;
-        padding-left: 0;
-        margin: 0px;
-    }
+  li {
+    padding: 8px 30px;
+  }
 
-    li {
-        padding: 8px 30px;
-        }
+  a {
+    text-decoration-line: none;
+    color: black;
+  }
 
     a {
         text-decoration-line: none;
@@ -142,9 +164,17 @@ a:hover {
 `
 
 const PopularMenuIcon1 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  padding-left: 0;
+  margin: 0px;
+  ul {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     justify-content: space-around;
     list-style: none;
     padding-left: 0;
@@ -169,14 +199,14 @@ const PopularMenuIcon1 = styled.div`
         border-radius: 18%;
         }
 
-    li {
-        padding: 8px 30px;
-        }
+  li {
+    padding: 8px 30px;
+  }
 
-    a {
-        text-decoration-line: none;
-        color: black;
-        }
+  a {
+    text-decoration-line: none;
+    color: black;
+  }
 
         #sentence {
             overflow:hidden;
@@ -272,6 +302,7 @@ justify-content: space-around;
 list-style: none;
 padding-left: 0;
 margin: 0px;
+
 ul {
     display: flex;
     align-items: center;

@@ -4,17 +4,26 @@ import styled from 'styled-components';
 function PostPage() {
 
     return (
+<<<<<<< HEAD
         
         <Post>
             <fieldset>
+=======
+        <Post>
+>>>>>>> 90c1f955128d2b7a798290aa279aaa0c9447fef7
             <legend><b>중고거래 글쓰기</b></legend>
             <form action="#">
                 <FileSet>
                     <label for="input-file">
                         <img src="camera.svg"></img>
                     </label>
+<<<<<<< HEAD
                     <p><input type="file" id="input-file"></input></p>
                 </FileSet>
+=======
+                </FileSet>
+                <p><input type="file" id="input-file" style="display:none"></input></p>
+>>>>>>> 90c1f955128d2b7a798290aa279aaa0c9447fef7
                 <hr></hr>
                 <TitleSet>
                     <input type="text" placeholder="글제목"></input>
@@ -56,6 +65,7 @@ function PostPage() {
                 
                 <p>
                 <OftenSentenceSet>
+<<<<<<< HEAD
                         <option value="">자주 쓰는 문구를 선택해주세요</option>
                         <option value="직거래해주세요">직거래해주세요</option>
                         <option value="주말에만 가능해요">주말에만 가능해요</option>
@@ -71,12 +81,28 @@ function PostPage() {
                 <RegionSet>
                     <input type="text" placeholder="자신의 동네를 써주세요"></input>
                 </RegionSet>
+=======
+                    <label for="input_button">
+                        <img src="plus.svg"></img>
+                        &nbsp;자주 쓰는 문구
+                    </label>
+
+                    </ModalPage>
+
+                </OftenSentenceSet>
+                <p><input type="button" id="input_button" style="display:none"></input></p>
+>>>>>>> 90c1f955128d2b7a798290aa279aaa0c9447fef7
                 <hr></hr>
                 <PostButton>
                     <input type="submit" value="등록"></input>
                 </PostButton>
+<<<<<<< HEAD
             </form> 
             </fieldset>
+=======
+            </form>
+        </Post>
+>>>>>>> 90c1f955128d2b7a798290aa279aaa0c9447fef7
 
         </Post>
         
@@ -84,7 +110,16 @@ function PostPage() {
 
 }
 
+<<<<<<< HEAD
 export default PostPage;
+=======
+export default PostPruductPage;
+
+const Post = styled.fieldset`
+    border: hidden;
+    width: 600px;
+    height: auto;
+>>>>>>> 90c1f955128d2b7a798290aa279aaa0c9447fef7
 
 const Post = styled.div`
 display: flex;
