@@ -1,73 +1,70 @@
 import {
-    BsChat,
-    BsChatFill,
-    BsEmojiSmile,
-    BsEmojiSmileFill,
+  BsChat,
+  BsChatFill,
+  BsEmojiSmile,
+  BsEmojiSmileFill,
 } from "react-icons/bs";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import Market from '../../asset/TownImg/Market.svg';
-import Location from '../../asset/TownImg/Location.svg';
-import Mapsample from '../../asset/TownImg/Mapsample.png';
-
-
-
+import Market from "../../asset/TownImg/Market.svg";
+import Location from "../../asset/TownImg/Location.svg";
+import Mapsample from "../../asset/TownImg/Mapsample.png";
 
 function TownDetailCard({ card }) {
-    const [Customer, Customers] = useState(0);
+  const [Customer, Customers] = useState(0);
 
-    return (
-        <TownStoreDetailPageBox >
-            <TownDetailpageimg>
-                <img src="http://placeimg.com/640/480/any" alt="default"></img>
-            </TownDetailpageimg>
+  return (
+    <TownStoreDetailPageBox>
+      <TownDetailpageimg>
+        <img src="http://placeimg.com/640/480/any" alt="default"></img>
+      </TownDetailpageimg>
 
-            <TownStoreDetailpageTextbox>
-                <TownStoreDetailpageTitlebox>
-                    <TownStoreDetailpageRound>프로필사진</TownStoreDetailpageRound>
+      <TownStoreDetailpageTextbox>
+        <TownStoreDetailpageTitlebox>
+          <TownStoreDetailpageRound>프로필사진</TownStoreDetailpageRound>
 
-                    <TownStoreDetailpageTitle>
-                        <h3 className="cardWriter">{card.nickname}</h3>
-                        <p className="cardWriter"> &nbsp;{card.time}&nbsp; | &nbsp;공감👨‍👩‍👧‍👦&nbsp;{Customer}</p>
-                    </TownStoreDetailpageTitle>
+          <TownStoreDetailpageTitle>
+            <h3 className="cardWriter">{card.nickname}</h3>
+            <p className="cardWriter">
+              {" "}
+              &nbsp;{card.time}&nbsp; | &nbsp;공감👨‍👩‍👧‍👦&nbsp;{Customer}
+            </p>
+          </TownStoreDetailpageTitle>
 
-                    <TownStoreDetailpageTitleButton
-                        onClick={() => {
-                            Customers(Customer + 1);
-                        }}
-                    >
-                        {" "}
-                        + 공감하기
-                    </TownStoreDetailpageTitleButton>
-                </TownStoreDetailpageTitlebox>
+          <TownStoreDetailpageTitleButton
+            onClick={() => {
+              Customers(Customer + 1);
+            }}
+          >
+            {" "}
+            + 공감하기
+          </TownStoreDetailpageTitleButton>
+        </TownStoreDetailpageTitlebox>
 
-                <TownStoreDetailpageList>
-                    <ul>
-                        <li>
-                            <img src={Market} alt="default" /> &nbsp; {card.content}
-                            <br />
-                            
-                        </li> <br /><br />
-
-                        <li>
-                            <img src={Location} alt="default" /> &nbsp;
-                            <span>{card.region}</span>
-                        </li>
-                    </ul>
-                </TownStoreDetailpageList>
-                <MapModal>
-                    <img src={Mapsample} alt="default" />
-                </MapModal>
-            </TownStoreDetailpageTextbox>
-            
-        </TownStoreDetailPageBox>
-    );
+        <TownStoreDetailpageList>
+          <ul>
+            <li>
+              <img src={Market} alt="default" /> &nbsp; {card.content}
+              <br />
+            </li>{" "}
+            <br />
+            <br />
+            <li>
+              <img src={Location} alt="default" /> &nbsp;
+              <span>{card.region}</span>
+            </li>
+          </ul>
+        </TownStoreDetailpageList>
+        <MapModal>
+          <img src={Mapsample} alt="default" />
+        </MapModal>
+      </TownStoreDetailpageTextbox>
+    </TownStoreDetailPageBox>
+  );
 }
 
 export default TownDetailCard;
-
-
 
 const TownStoreDetailPageBox = styled.div`
   width: 100%;
@@ -167,8 +164,6 @@ const MapModal = styled.div`
   }
 `;
 
-
-
 const TownDetailpageimg = styled.div`
   width: 100%;
   height: 300px;
@@ -179,69 +174,63 @@ const TownDetailpageimg = styled.div`
 `;
 
 const StyledTownDetailCard = styled.button`
-	margin : 1.2rem 0;
-	display: flex;
-	flex-direction: column;
-	background-color: white;
-	border-radius : 10px;
-	padding: 1rem;
-	border: none;
-	height: 19rem;
-	hr {
-		border: 0;
-		border-top: 1px solid black;
-		width: 100%;
-	}
+  margin: 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  border: none;
+  height: 19rem;
+  hr {
+    border: 0;
+    border-top: 1px solid black;
+    width: 100%;
+  }
 `;
-
 
 const StyledTownDetailCardbutton = styled.div`
-	margin : 0.5rem 0;
-	background-color : #cdcdcd;
-	color : #6C6D6F;
-	width : 4rem;
-	height : 1.5rem;
-	display: flex;
-	align-items: center;
-    justify-content: center;
-	font-size : 0.8rem;
-	border-radius : 5px;
+  margin: 0.5rem 0;
+  background-color: #cdcdcd;
+  color: #6c6d6f;
+  width: 4rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  border-radius: 5px;
 `;
 const CardContent = styled.div`
-	display: flex;
-	align-items: center;
-    justify-content: center;
-	flex-direction: column;
-	overflow: hidden;
-	flex-grow: 1;
-	text-align: left;
-	font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  flex-grow: 1;
+  text-align: left;
+  font-size: 1.1rem;
 
-	p {
-		font-size: 2rem;
-	}
+  p {
+    font-size: 2rem;
+  }
 `;
 
 const CardWritterDetail = styled.div`
-	display: flex;
-	font-size: 0.9rem;
-	color: grey;
+  display: flex;
+  font-size: 0.9rem;
+  color: grey;
 
-	.cardWriter {
-		font-weight: bolder;
-		margin-right: 0.5rem;
-	}
+  .cardWriter {
+    font-weight: bolder;
+    margin-right: 0.5rem;
+  }
 
-	.cardRegion {
-		flex-grow: 1;
-	}
+  .cardRegion {
+    flex-grow: 1;
+  }
 
-	p {
-		margin: 0.5rem 0 0 0;
-	}
+  p {
+    margin: 0.5rem 0 0 0;
+  }
 `;
-
-
-
-
-
