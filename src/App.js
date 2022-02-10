@@ -16,6 +16,7 @@ import TownPage from "./pages/TownPage";
 import MainPage from "./pages/MainPage/MainPage";
 import Modal from "./components/Modal";
 import TestLoginAfterMain from "./components/LoginPage/TestLoginAfterMain";
+import LoginPage from "./pages/LoginPage";
 
 
 
@@ -48,7 +49,7 @@ function App(props) {
   } else {
   return (
     <div className="App">
-      <Navigation />
+      <LoginPage />
       {/* <Link to="/mypage/likerecord">Like Record</Link>
       <Link to="/mypage/sellbuyrecord">SellBuyRecird</Link> */}
   

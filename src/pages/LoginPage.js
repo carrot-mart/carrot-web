@@ -88,7 +88,7 @@ const MainLogo = styled.img`
 `;
 const ContentCover = styled.div`
   margin: 0 auto;
-  width: 60rem;
+  width: 1440px;
   display: flex;
   flex-direction: column;
   justify-content: center;

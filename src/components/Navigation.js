@@ -29,16 +29,18 @@ function Navigation() {
            <ul className='menu_list'>
                 <li className='menus'><Link to = "/"   className='line'><h2>인기매물</h2></Link></li>
                 <li className='menus'><Link to = "/" className='line'><h2>동네정보</h2></Link></li>
-                <li className='menus'><button
+                <li className="menus">
+                <button
                   className="line"
                   onClick={() => {
                     login ? navigate("/mypage/likerecord") : navigate("/login");
                   }}
                 >
                   <h2>
-                  <FaRegUser className='usericon' size='22' /> 나의당근
+                    <FaRegUser className="usericon" size="22" /> 나의당근
                   </h2>
-                </button></li>
+                </button>
+              </li>
                 <li className='menus'><Link to = "/" className='line'><Bell /></Link></li>   
             </ul>
         </Top_menu>
