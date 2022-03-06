@@ -7,6 +7,7 @@ import { setUser, clearUser } from "./redux/actions/user_action";
 import { MainPanel } from "./components/ChatPage/MainPanel/MainPanel";
 import "./globalStyles.css";
 import MyPostPage from "./pages/MyPage/MyPostPage";
+import LoginPage from "./pages/LoginPage";
 
 
 
