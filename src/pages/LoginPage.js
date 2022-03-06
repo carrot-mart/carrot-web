@@ -42,9 +42,9 @@ function LoginPage() {
       <MainLogo src="img/main_logo.png" alt="메인로고" className="mainlogo" />
       <ContentCover>
         <AuthWrapper>
-          <div style={{ textAlign: "center" }}>
-            <h3>로그인</h3>
-          </div>
+          <LoginTitle>
+            <h2>로그인</h2>
+          </LoginTitle>
           <form onSubmit={handleSubmit(onSubmit)}>
             <label>Email</label>
             <input
@@ -88,7 +88,7 @@ const MainLogo = styled.img`
 `;
 const ContentCover = styled.div`
   margin: 0 auto;
-  width: 1440px;
+  width: 50rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -139,6 +139,13 @@ const AuthWrapper = styled.div`
     margin: 5px 0;
     font-size: 1.5rem;
     font-weight: 400;
+  }
+`;
+const LoginTitle = styled.div`
+  text-align:center;
+  border:1px solid red;
+  h2{
+    font-size:2rem;
   }
 `;
 const RegisterLink = styled(Link)`
