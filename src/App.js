@@ -8,6 +8,7 @@ import { MainPanel } from "./components/ChatPage/MainPanel/MainPanel";
 import "./globalStyles.css";
 import MyPostPage from "./pages/MyPage/MyPostPage";
 import LoginPage from "./pages/LoginPage";
+import TownMainPage from "./pages/TownPage";
 
 
 
@@ -41,7 +42,7 @@ function App(props) {
   } else {
   return (
     <div className="App">
-      <MyPostPage />
+      <TownMainPage />
       {/* <Link to="/mypage/likerecord">Like Record</Link>
       <Link to="/mypage/sellbuyrecord">SellBuyRecird</Link> */}
   

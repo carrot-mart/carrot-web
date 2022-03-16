@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
 // 내부 파일
-import SocialLogin from "../components/LoginPage/SocialLogin";
-import Modal from "../components/RegisterPage/RegisterModal";
+import SocialRegister from "../components/RegisterPage/SocialRegister";
+import RegisterModal from "../components/RegisterPage/RegisterModal";
 import fbase from "../firebase";
 
 function RegisterPage() {
@@ -76,7 +76,9 @@ function RegisterPage() {
 
   return (
     <>
+    <MainLogo src="img/main_logo.png" alt="메인로고" className="mainlogo" />
       <RegisterInputWrap>
+        <h2>회원가입</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="email">이메일</label>
           <RegisterInput
@@ -157,7 +159,7 @@ function RegisterPage() {
             onClick={openModal}
             id="chk1"
           />
-          <Modal open={modalOpen} close={closeModal}></Modal>
+          <RegisterModal open={modalOpen} close={closeModal}></RegisterModal>
           <CheckLabel htmlFor="chk1">개인정보 수집 이용동의(필수)</CheckLabel>
           <br />
           <CheckInput
@@ -167,9 +169,9 @@ function RegisterPage() {
             onClick={openModal}
             id="chk2"
           />
-          <Modal open={modalOpen} close={closeModal}></Modal>
+          <RegisterModal open={modalOpen} close={closeModal}></RegisterModal>
           <CheckLabel htmlFor="chk2">
-            당근마켓<span>이용약관</span>(필수)
+            당근장터 <span>이용약관</span>(필수)
           </CheckLabel>
           <br />
           <CheckInput
@@ -179,7 +181,7 @@ function RegisterPage() {
             onClick={openModal}
             id="chk3"
           />
-          <Modal open={modalOpen} close={closeModal} header="약관확인"></Modal>
+          <RegisterModal open={modalOpen} close={closeModal} header="약관확인"></RegisterModal>
           <CheckLabel htmlFor="chk3">
             마케팅 활용 및 광고성 정보 수신 동의(선택)
           </CheckLabel>
@@ -191,28 +193,45 @@ function RegisterPage() {
             onClick={openModal}
             id="chk4"
           />
-          <Modal open={modalOpen} close={closeModal} header="약관확인"></Modal>
+          <RegisterModal open={modalOpen} close={closeModal} header="약관확인"></RegisterModal>
           <CheckLabel htmlFor="chk4">만 14세 미만 가입 제한(필수)</CheckLabel>
           <br />
           <RegisterButton type="submit" disabled={loading} />
-          <Link style={{ color: "gray", textDecoration: "none" }} to="../login">
+          <LoginLink style={{ color: "gray", textDecoration: "none" }} to="../login">
             로그인바로가기
-          </Link>
+          </LoginLink>
         </form>
-        <SocialLogin />
+        <SocialRegister />
       </RegisterInputWrap>
     </>
   );
 }
 
 export default RegisterPage;
-
+const MainLogo = styled.img`
+  margin: 5rem auto;
+  display: flex;
+  justify-content: center;
+`;
 const RegisterInputWrap = styled.div`
   margin: 0 auto;
-  padding: 5rem;
-  width: 80%;
-  height: auto;
-  overflow: hidden;
+  padding: 6rem;
+  width: 50rem;
+  height:0 auto;
+  border:1px solid #9f9f9f;
+  border-radius:2rem;
+  label{
+    font-size:1.5rem;
+  }
+  h2{
+    font-size:2.5rem;
+    font-weight:bold;
+    margin-bottom:4rem;
+  }
+  h3{
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
+  }
 `;
 const RegisterInput = styled.input`
   margin-bottom: 1rem;
@@ -222,7 +241,7 @@ const RegisterInput = styled.input`
   height: 3.5rem;
   border: 1px solid #c4c4c4;
   border-radius: 1rem;
-  font-size: 1rem;
+  font-size: 1.3rem;
   &:focus {
     border: none;
     outline: 1px solid #f04124;
@@ -231,6 +250,7 @@ const RegisterInput = styled.input`
 const RegisterButton = styled.input`
   margin-bottom: 1rem;
   margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
   width: 100%;
   height: 3.5rem;
   border: 1px solid #f04124;
@@ -254,4 +274,7 @@ const CheckLabel = styled.label`
   left: 1rem;
   line-height: 200%;
   z-index: -1;
+`;
+const LoginLink = styled(Link)`
+  font-size: 1.4rem;
 `;

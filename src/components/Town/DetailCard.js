@@ -1,14 +1,9 @@
-import {
-  BsChat,
-  BsChatFill,
-  BsEmojiSmile,
-  BsEmojiSmileFill,
-} from "react-icons/bs";
+
+import { GrLocation } from "react-icons/gr";
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
 import Market from "../../asset/TownImg/Market.svg";
-import Location from "../../asset/TownImg/Location.svg";
 import Mapsample from "../../asset/TownImg/Mapsample.png";
 
 function TownDetailCard({ card }) {
@@ -51,7 +46,7 @@ function TownDetailCard({ card }) {
             <br />
             <br />
             <li>
-              <img src={Location} alt="default" /> &nbsp;
+            <GrLocation /> &nbsp;
               <span>{card.region}</span>
             </li>
           </ul>

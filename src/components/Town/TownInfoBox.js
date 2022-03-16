@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { GrLocation } from "react-icons/gr";
 
-import TownTop from '../../asset/TownImg/TownTop.png';
-import Location from '../../asset/TownImg/Location.svg';
-
-// 연희님
 import TownInfo from "./TownInfo";
 
 function TownInfoBox() {
@@ -25,12 +22,12 @@ function TownInfoTopBoxModal(props) {
         <TownInfoTopContainer>
           <TownInfoTopBox>
               <TownInfoTopBoxleft>
-                  <img src={TownTop} />
+              <img src="img/TownImg/TownTop.png" />
               </TownInfoTopBoxleft>
 
               <TownInfoTopBoxright>
                   <h1>
-                      <img src={Location} />
+                  <GrLocation />
                       내가 찾아보는 <br />
                       &nbsp;&nbsp;동네정보
                   </h1>
@@ -59,12 +56,17 @@ export default TownInfoBox;
 
 const TownInfoTopContainer = styled.div`
   width: 100%;
-  margin : 30rem 0;
-  hegiht:fit-content;
-  min-height: 5rem;
+  height:100rem;
+  // margin : 30rem 0;
+  //hegiht:fit-content;
+  // min-height: 5rem;
   text-align: center;
+  //display: flex;
+  //flex-direction: "row";
+  border:1px solid red;
   display: flex;
-  flex-direction: "row";
+  justify-content: center;
+  align-items: center;
 `;
 
 const TownInfoTopBox = styled.div`
@@ -73,6 +75,7 @@ const TownInfoTopBox = styled.div`
   text-align: center;
   display: flex;
   flex-direction: "row";
+  border:1px solid blue;
 `;
 
 const TownInfoTopBoxleft = styled.div`
@@ -81,7 +84,7 @@ const TownInfoTopBoxleft = styled.div`
 
   img {
     width: 100%;
-    height: 700px;
+    height: 60rem;
   }
 `;
 
@@ -89,7 +92,7 @@ const TownInfoTopBoxright = styled.div`
   float: right;
   margin-top: 150px;
   width: 100%;
-  height: 400px;
+  height: 40rem;
   
 
   h1 {

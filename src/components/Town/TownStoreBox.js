@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import StorePicture2 from "../../asset/TownImg/store2.png";
-import StorePicture3 from "../../asset/TownImg/store3.png";
-import StorePicture8 from "../../asset/TownImg/store8.png";
-import StorePicture4 from "../../asset/TownImg/store4.svg";
-import StorePicture5 from "../../asset/TownImg/store5.png";
-import StorePicture6 from "../../asset/TownImg/store6.png";
-import StorePicture1 from "../../asset/TownImg/store1.png";
-import StorePicture7 from "../../asset/TownImg/store7.png";
+// import StorePicture2 from "../../asset/TownImg/store2.png";
+// import StorePicture3 from "../../asset/TownImg/store3.png";
+// import StorePicture8 from "../../asset/TownImg/store8.png";
+// import StorePicture4 from "../../asset/TownImg/store4.svg";
+// import StorePicture5 from "../../asset/TownImg/store5.png";
+// import StorePicture6 from "../../asset/TownImg/store6.png";
+// import StorePicture1 from "../../asset/TownImg/store1.png";
+// import StorePicture7 from "../../asset/TownImg/store7.png";
 import PostscriptClick from "../../asset/TownImg/PostscriptClick.png";
 
 function TownStoreBox() {
@@ -72,7 +72,7 @@ function TownStoreBox() {
         <TownStoreDetailBox>
           <TownStoreListDetail>
             <a href="https://town.daangn.com/bp/1379688">
-              <img src={StorePicture1} />
+              <img src="img/TownImg/store1.png" />
               <h4>여성의류전문점</h4>
               <h5>지니샵</h5>
               <p>전라남도 영암군 삼호읍</p>
@@ -80,7 +80,7 @@ function TownStoreBox() {
           </TownStoreListDetail>
           <TownStoreListDetail>
             <a href="https://town.daangn.com/bp/1379690">
-              <img src={StorePicture2} />
+              <img src="img/TownImg/store2.png" />
               <h4>카페</h4>
               <h5>봉명동내커피</h5>
               <p>광주광역시 동구 금남로2가</p>
@@ -88,7 +88,7 @@ function TownStoreBox() {
           </TownStoreListDetail>
           <TownStoreListDetail>
             <a href="https://town.daangn.com/bp/1379692">
-              <img src={StorePicture3} />
+              <img src="img/TownImg/store3.png" />
               <h4>네일샵</h4>
               <h5>쌍촌동 다예네일</h5>
               <p>광주광역시 서구 쌍촌동</p>
@@ -96,7 +96,7 @@ function TownStoreBox() {
           </TownStoreListDetail>
           <TownStoreListDetail>
             <a href="https://town.daangn.com/bp/1379697">
-              <img src={StorePicture4} />
+              <img src="img/TownImg/store4.png" />
               <h4>십자수/뜨개</h4>
               <h5>뜨개지니</h5>
               <p>경기도 양주시 만송동</p>
@@ -104,7 +104,7 @@ function TownStoreBox() {
           </TownStoreListDetail>
           <TownStoreListDetail>
             <a href="https://town.daangn.com/bp/1379698">
-              <img src={StorePicture5} />
+              <img src="img/TownImg/store5.png" />
               <h4>일반중식점</h4>
               <h5>라땅쟈 마라탕</h5>
               <p>경기도 시흥시 정왕동</p>
@@ -112,7 +112,7 @@ function TownStoreBox() {
           </TownStoreListDetail>
           <TownStoreListDetail>
             <a href="https://town.daangn.com/bp/1379700">
-              <img src={StorePicture6} />
+              <img src="img/TownImg/store6.png" />
               <h4>카페/디저트</h4>
               <h5>설빙장림점</h5>
               <p>부산광역시 사하구 장림동</p>
@@ -120,7 +120,7 @@ function TownStoreBox() {
           </TownStoreListDetail>
           <TownStoreListDetail>
             <a href="https://town.daangn.com/bp/1379707">
-              <img src={StorePicture7} />
+              <img src="img/TownImg/store7.png" />
               <h4>가스설비</h4>
               <h5>경동나비엔 음성중앙점</h5>
               <p>충청북도 음성군 대소면</p>
@@ -128,7 +128,7 @@ function TownStoreBox() {
           </TownStoreListDetail>
           <TownStoreListDetail>
             <a href="https://town.daangn.com/bp/1379897">
-              <img src={StorePicture8} />
+              <img src="img/TownImg/store8.png" />
               <h4>김치판매</h4>
               <h5>권여사김치찜</h5>
               <p>경기도 수원시 장안구 정자동</p>
@@ -152,11 +152,12 @@ function TownStoreBox() {
 export default TownStoreBox;
 
 const TownStoreContainer = styled.div`
-  margin: 400px 0;
+  margin:0;
+  padding:0;
   width: 100%;
   height: fit-content;
   background-color: rgba(255, 239, 207, 0.55);
-
+  border:1px solid red;
   h1 {
     padding: 0 !important;
     margin: 0;

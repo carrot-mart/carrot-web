@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Link, Router } from "react-router-dom";
 import styled from "styled-components";
 
-import Modal2 from "../../components/Modal2";
 import Modal from "../../components/Modal";
 
 function MyPost() {

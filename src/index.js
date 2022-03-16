@@ -19,6 +19,7 @@ import App from "./App";
 //import TownStoreDetailPage from "./pages/TownStoreDetailPage";
 import TownMainPage from "./pages/TownPage";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import MyPost from "./components/MyPost";
 // import FAQPage from "./pages/MyPage/FAQPage";
 
@@ -38,6 +39,7 @@ ReactDOM.render(
           <Route path="/town" element={<TownMainPage />} />
           <Route path="/mypost" element={<MyPost />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Routes>
       </BrowserRouter>
     </Provider>

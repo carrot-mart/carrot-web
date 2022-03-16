@@ -92,6 +92,10 @@ const ContentCover = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border:1px solid #9f9f9f;
+  border-radius:2rem;
+  padding:6rem;
+
 `;
 const AuthWrapper = styled.div`
   width: 100%;
@@ -142,16 +146,17 @@ const AuthWrapper = styled.div`
   }
 `;
 const LoginTitle = styled.div`
-  text-align:center;
-  border:1px solid red;
+  margin-bottom:2rem;
   h2{
-    font-size:2rem;
+    font-size:2.5rem;
+    font-weight:bold;
   }
 `;
 const RegisterLink = styled(Link)`
   font-size: 1.4rem;
 `;
 const LoginBtn = styled.input`
+  margin-top:2rem;
   background: #f04124;
   color: #fff;
   cursor: pointer;

@@ -1,6 +1,7 @@
 import React, { useState, Component } from "react";
 import styled from "styled-components";
 
+import TownInfoBox from '../components/Town/TownInfoBox'
 import TownStoreBox from '../components/Town/TownStoreBox'
 import TownPostscript from '../components/Town/TownPostscript'
 
@@ -16,6 +17,10 @@ function TownMainPage() {
     return (
 
         <TownMainContainer>
+                <Navigation />
+                <TownInfoBox />
+                <TownStoreBox />
+                <TownPostscript />
                 <Footer />
 
         </TownMainContainer>
@@ -26,16 +31,7 @@ function TownMainPage() {
 export default TownMainPage;
 
 const TownMainContainer = styled.div`
-    margin : 0 auto;
-    width: 100%;
-    hegiht:fit-content;
-    min-height: 5rem;
-`;
-
-const TownMainBox = styled.div`
-    margin : 0 auto;
-    width : 100%;
-    hegiht:fit-content;
-    min-height: 5rem;
+    
+    
 `;
 

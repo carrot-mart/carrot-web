@@ -53,7 +53,7 @@ export default TownPostscript;
 
 const TownStorePostscriptBox = styled.div`
     width : 100%;
-    margin : 20rem auto;
+    border:1px solid red;
 `;
 
 const TownStorePostscript = styled.div`

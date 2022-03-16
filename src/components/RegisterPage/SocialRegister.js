@@ -45,16 +45,16 @@ function SocialLogin() {
     <EasyLoginWrap>
       <Title>
         <div></div>
-        <div>간편로그인</div>
+        <div>간편 가입</div>
         <div></div>
       </Title>
       <GoogleSignBtn onClick={onSocialClick} name="google">
         <FcGoogle style={{ fontSize: "3rem", paddingRight: "1rem" }} />
-        구글로 로그인
+        구글로 회원가입
       </GoogleSignBtn>
       <FacebookSignBtn onClick={onSocialClick} name="facebook">
         <AiFillFacebook style={{ fontSize: "3rem", paddingRight: "1rem" }} />
-        페이스북으로 로그인
+        페이스북으로 회원가입
       </FacebookSignBtn>
     </EasyLoginWrap>
   );
